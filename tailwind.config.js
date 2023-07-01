@@ -11,6 +11,10 @@ module.exports = {
         gilroy: ['var(--font-gilroy)'],
         poppins: ['var(--font-poppins)'],
       },
+      colors: {
+        'local-gray-b': '#F6F5F5',
+        'local-gray-t': '#7F807E',
+      },
       // backgroundImage: {
       //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       //   'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

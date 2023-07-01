@@ -1,7 +1,7 @@
 const TheFooter = () => {
   return (
     <footer className="font-poppins">
-      <p> Съешь этих булок к чаю вис йодом</p>
+      <p> ФУТЕР</p>
     </footer>
   );
 };
