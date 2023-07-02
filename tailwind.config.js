@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         'local-gray-b': '#F6F5F5',
         'local-gray-t': '#7F807E',
+        'local-gray-act': '#F3F3F3',
       },
       // backgroundImage: {
       //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

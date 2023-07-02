@@ -18,8 +18,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import PhoneIcon from '../public/icons/phone-24-px.svg';
 
-const links = ['/', '/', '/'];
-const linksNames = ['О нас', 'Контакты', 'Направления'];
+import Directions from './Directions';
+const links = ['/', '/'];
+const linksNames = ['О нас', 'Контакты'];
 
 function TheHeader() {
   return (
@@ -42,6 +43,7 @@ function TheHeader() {
                   <Link href={link}>{linksNames[index]}</Link>
                 </li>
               ))}
+              <Directions />
             </ul>
           </div>
 
