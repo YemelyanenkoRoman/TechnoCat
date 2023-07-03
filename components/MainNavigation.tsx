@@ -11,7 +11,7 @@ type Props = {
   navLinks: NavLink[];
 };
 
-const Navigation = ({ navLinks }: Props) => {
+const MainNavigation = ({ navLinks }: Props) => {
   const pathname = usePathname();
   return (
     <>
@@ -19,7 +19,7 @@ const Navigation = ({ navLinks }: Props) => {
         const isActive = pathname === link.href;
         return (
           <li key={link.label}>
-            <Link className={isActive ? 'text-blue-600' : ''} href={link.href}>
+            <Link className={isActive ? 'text-local-grey-act-t' : ''} href={link.href}>
               {link.label}
             </Link>
           </li>
@@ -29,4 +29,4 @@ const Navigation = ({ navLinks }: Props) => {
   );
 };
 
-export default Navigation;
+export default MainNavigation;

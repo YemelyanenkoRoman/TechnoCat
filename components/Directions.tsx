@@ -1,5 +1,4 @@
 'use client';
-
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 
@@ -25,19 +24,21 @@ const Directions = () => {
 
   return (
     <div onClick={() => setOpen(!open)} className="relative">
-      <div ref={directionRef} className="cursor-pointer">
+      <div
+        ref={directionRef}
+        className={open ? 'text-local-grey-act-t absolute cursor-pointer z-10' : 'absolute cursor-pointer z-10'}
+        // className="absolute cursor-pointer z-10"
+      >
         Направления
       </div>
       {open && (
-        <div className="bg-local-gray-act shadow-lg absolute left-[-12px] top-22">
-          <ul>
-            {NavItemsDirection.map((link) => (
-              <li className="py-2 px-3 cursor-pointer rounded hover:bg-blue-100" key={link.label}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="bg-local-gray-act-2 shadow-lg absolute left-[-12px] top-[-8px] rounded-md pt-[51px]">
+          {NavItemsDirection.map((link) => (
+            <li className="py-2 px-3 cursor-pointer rounded hover:bg-blue-100" key={link.label}>
+              <Link href={link.href}>{link.label}</Link>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );

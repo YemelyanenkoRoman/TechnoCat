@@ -15,6 +15,8 @@ module.exports = {
         'local-gray-b': '#F6F5F5',
         'local-gray-t': '#7F807E',
         'local-gray-act': '#F3F3F3',
+        'local-gray-act-2': '#E6E6E6',
+        'local-grey-act-t': '#515151',
       },
       // backgroundImage: {
       //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
