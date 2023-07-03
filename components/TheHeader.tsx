@@ -1,28 +1,14 @@
-// import Link from 'next/link';
-
-// const TheHeader = () => {
-//   return (
-//     <header className="">
-//       <nav className="font-poppins ">
-//         <Link href="/">О нас</Link>
-//         <Link href="/">Контакты</Link>
-//         <Link href="/">Направления</Link>
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export { TheHeader };
-
-import Link from 'next/link';
 import Image from 'next/image';
 import PhoneIcon from '../public/icons/phone-24-px.svg';
-
 import Directions from './Directions';
-const links = ['/', '/'];
-const linksNames = ['О нас', 'Контакты'];
+import Navigation from './Navigation';
 
-function TheHeader() {
+const NavItems = [
+  { label: 'О нас', href: '/' },
+  { label: 'Контакты', href: '/contacts' },
+];
+
+const TheHeader = () => {
   return (
     <header className="font-poppins text-local-gray-t text-base bg-local-gray-b  ">
       <div className="max-w-[1440px] mx-auto">
@@ -38,11 +24,7 @@ function TheHeader() {
               />
             </figure>
             <ul className="flex gap-4 ">
-              {linksNames.map((link, index) => (
-                <li key={link}>
-                  <Link href={link}>{linksNames[index]}</Link>
-                </li>
-              ))}
+              <Navigation navLinks={NavItems} />
               <Directions />
             </ul>
           </div>
@@ -57,6 +39,6 @@ function TheHeader() {
       </div>
     </header>
   );
-}
+};
 
 export { TheHeader };
