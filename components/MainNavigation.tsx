@@ -19,7 +19,7 @@ const MainNavigation = ({ navLinks }: Props) => {
         const isActive = pathname === link.href;
         return (
           <li key={link.label}>
-            <Link className={isActive ? 'text-local-grey-act-t' : ''} href={link.href}>
+            <Link className={isActive ? 'text-gray-700 hover:text-gray-700' : 'hover:text-gray-700'} href={link.href}>
               {link.label}
             </Link>
           </li>

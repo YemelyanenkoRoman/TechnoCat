@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 const NavItemsDirection = [
   { label: 'Программирование', href: '/' },
@@ -11,27 +11,22 @@ const NavItemsDirection = [
 ];
 
 const Directions = () => {
-  const [open, setOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuRef = useRef(null);
-  const directionRef = useRef(null);
+  const handleMouseOver = () => {
+    setIsMenuOpen(true);
+  };
 
-  window.addEventListener('click', (e) => {
-    if (e.target !== menuRef.current && e.target !== directionRef.current) {
-      setOpen(false);
-    }
-  });
+  const handleMouseOut = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <div onClick={() => setOpen(!open)} className="relative">
-      <div
-        ref={directionRef}
-        className={open ? 'text-local-grey-act-t absolute cursor-pointer z-10' : 'absolute cursor-pointer z-10'}
-        // className="absolute cursor-pointer z-10"
-      >
+    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="relative">
+      <div className={isMenuOpen ? 'text-gray-700 absolute cursor-pointer z-10' : 'absolute cursor-pointer z-10'}>
         Направления
       </div>
-      {open && (
+      {isMenuOpen && (
         <ul className="bg-local-gray-act-2 shadow-lg absolute left-[-12px] top-[-8px] rounded-md pt-[51px]">
           {NavItemsDirection.map((link) => (
             <li className="py-2 px-3 cursor-pointer rounded hover:bg-blue-100" key={link.label}>

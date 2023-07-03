@@ -36,7 +36,9 @@ const TheHeader = () => {
             <div className="flex">
               <PhoneIcon className="mr-2" /> Заказать звонок
             </div>
-            <div className="flex">+ 375 (29) 330-20-79</div>
+            <a className="flex hover:text-gray-700" href="tel:+375291477233">
+              + 375 (29) 330-20-79
+            </a>
           </div>
         </nav>
       </div>
