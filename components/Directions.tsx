@@ -3,14 +3,6 @@
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 
-const LinksNamesDirection = [
-  'Программирование',
-  'Робототехника',
-  'Английский язык',
-  'Подготовка к школе',
-  'Помощь первокласснику',
-];
-
 const NavItemsDirection = [
   { label: 'Программирование', href: '/' },
   { label: 'Робототехника', href: '/' },
