@@ -29,7 +29,7 @@ const Directions = () => {
       {isMenuOpen && (
         <ul className="bg-local-gray-act-2 shadow-lg absolute left-[-12px] top-[-8px] rounded-md pt-[51px]">
           {NavItemsDirection.map((link) => (
-            <li className="py-2 px-3 cursor-pointer rounded hover:bg-blue-100" key={link.label}>
+            <li className="py-2 px-3 cursor-pointer rounded hover:text-gray-700" key={link.label}>
               <Link href={link.href}>{link.label}</Link>
             </li>
           ))}
