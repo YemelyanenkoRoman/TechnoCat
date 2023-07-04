@@ -11,11 +11,18 @@ module.exports = {
         gilroy: ['var(--font-gilroy)'],
         poppins: ['var(--font-poppins)'],
       },
+      fontSize: {
+        sexteen: ['16px', '145%'],
+        eighteen: ['18px', '120%'],
+        fifty: ['50px', '120%'],
+      },
       colors: {
         'local-gray-b': '#F6F5F5',
         'local-gray-t': '#7F807E',
+        'local-gray-t-2': '#EBE7E4',
         'local-gray-act': '#F3F3F3',
         'local-gray-act-2': '#E6E6E6',
+        'local-gray-act-3': '#7F817E',
         'local-grey-act-t': '#515151',
       },
       // backgroundImage: {

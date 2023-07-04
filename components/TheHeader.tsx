@@ -11,7 +11,7 @@ const NavItems = [
 
 const TheHeader = () => {
   return (
-    <header className="font-poppins text-local-gray-t text-base bg-local-gray-b  ">
+    <header className="font-poppins text-local-gray-t text-sexteen font-normal bg-local-gray-b fixed top-0 left-0 w-full  z-50">
       <div className="max-w-[1440px] mx-auto">
         <nav className="flex justify-between items-center h-[138px] px-[60px]">
           <div className="flex items-center">
@@ -26,7 +26,7 @@ const TheHeader = () => {
                 />
               </Link>
             </nav>
-            <ul className="flex gap-4 ">
+            <ul className="flex gap-[46px] ">
               <Navigation navLinks={NavItems} />
               <Directions />
             </ul>
