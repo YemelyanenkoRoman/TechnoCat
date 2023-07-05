@@ -1,10 +1,35 @@
 import Button from '@/components/Button';
 import H1Svg from '../public/main-page-h1.svg';
+import InCenter1 from '../public/inCenter1.svg';
+import WhatFindCenter from '@/components/WhatFindCenter';
+
+const Finding = [
+  {
+    img: <InCenter1 />,
+    headingDiscription: 'Опытных педагогов',
+    textDiscription: 'Они помогут вашим детям раскрыть свой потенциал и талант',
+  },
+  {
+    img: <InCenter1 />,
+    headingDiscription: 'Опытных педагогов',
+    textDiscription: 'Они помогут вашим детям раскрыть свой потенциал и талант',
+  },
+  {
+    img: <InCenter1 />,
+    headingDiscription: 'Опытных педагогов',
+    textDiscription: 'Они помогут вашим детям раскрыть свой потенциал и талант',
+  },
+  {
+    img: <InCenter1 />,
+    headingDiscription: 'Опытных педагогов',
+    textDiscription: 'Они помогут вашим детям раскрыть свой потенциал и талант',
+  },
+];
 
 export default function Home() {
   return (
-    <main className="font-gilroy font-normal text-local-gray-t text-sexteen bg-local-gray-b pt-[138px]">
-      <section className="h-[calc(100vh-138px)]">
+    <main className="font-gilroy font-normal text-local-gray-t text-sexteen  pt-[138px]">
+      <section className="h-[calc(100vh-138px)] bg-local-gray-b">
         <div className="px-[120px] pt-[100px] pb-[160px] max-w-[1440px] mx-auto flex justify-between">
           <div className="max-w-[600px] max-h-[400px]">
             <h1 className="text-fifty font-normal">ТехноКот — место, где ваш ребенок реализует свои мечты и цели!</h1>
@@ -18,6 +43,11 @@ export default function Home() {
             <H1Svg />
           </div>
         </div>
+      </section>
+
+      <section className="m-auto max-w-[1096px] pt-[120px] pb-[180px]">
+        <h3 className="text-thirtyfour text-center">Что вы найдете в нашем центре?</h3>
+        <WhatFindCenter FindingInCenter={Finding} />
       </section>
     </main>
   );
