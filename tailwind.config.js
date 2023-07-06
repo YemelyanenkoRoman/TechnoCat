@@ -16,7 +16,7 @@ module.exports = {
         sexteen: ['16px', '145%'],
         eighteen: ['18px', '120%'],
         twenty: ['20px', '24px'],
-        thirtyfour: ['34px', '40,8px'],
+        thirtyfour: ['34px', '120%'],
         fifty: ['50px', '120%'],
       },
       colors: {

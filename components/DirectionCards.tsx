@@ -1,4 +1,7 @@
-import DirectionCard1 from '@/public/DirectionCard1.svg';
+import DirectionCard1 from '@/public/DirectionCardImg/DirectionCard1.svg';
+import DirectionCard2 from '@/public/DirectionCardImg/DirectionCard2.svg';
+import DirectionCard3 from '@/public/DirectionCardImg/DirectionCard3.svg';
+import DirectionCard4 from '@/public/DirectionCardImg/DirectionCard4.svg';
 import ButtonSecondary from './buttons/ButtonSecondary';
 
 interface DirectionCard {
@@ -20,24 +23,24 @@ const DirectionCard: DirectionCard[] = [
     quantity: '1 месяц',
   },
   {
-    img: <DirectionCard1 />,
-    title: 'Подготовка к школе',
+    img: <DirectionCard2 />,
+    title: 'Робототехника',
     age: 5,
     duration: 45,
     cost: 60,
     quantity: '1 месяц',
   },
   {
-    img: <DirectionCard1 />,
-    title: 'Подготовка к школе',
+    img: <DirectionCard3 />,
+    title: 'Английский язык',
     age: 5,
     duration: 45,
     cost: 60,
     quantity: '1 месяц',
   },
   {
-    img: <DirectionCard1 />,
-    title: 'Подготовка к школе',
+    img: <DirectionCard4 />,
+    title: 'Помощь первокласснику',
     age: 5,
     duration: 45,
     cost: 60,
@@ -67,11 +70,7 @@ const DirectionCards = () => {
                 <p>{item.quantity}</p>
               </div>
               <div className="pt-[30px]">
-                <ButtonSecondary
-                  width="251px"
-                  height="50px"
-                  title="Узнать подробнее"
-                />
+                <ButtonSecondary width="251px" height="50px" title="Узнать подробнее" />
               </div>
             </div>
           </div>
