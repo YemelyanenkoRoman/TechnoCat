@@ -41,7 +41,7 @@ export default function Home() {
               ребенку качественное образование и подарят незабываемые
               впечатления от увлекательных занятий.
             </h2>
-            <Button />
+            <Button width="185px" height="50px" title="Узнать больше" />
           </div>
           <div>
             <H1Svg />

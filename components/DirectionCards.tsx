@@ -67,7 +67,11 @@ const DirectionCards = () => {
                 <p>{item.quantity}</p>
               </div>
               <div className="pt-[30px]">
-                <ButtonSecondary />
+                <ButtonSecondary
+                  width="251px"
+                  height="50px"
+                  title="Узнать подробнее"
+                />
               </div>
             </div>
           </div>
