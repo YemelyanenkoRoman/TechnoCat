@@ -21,6 +21,7 @@ module.exports = {
       },
       colors: {
         'local-gray-b': '#F6F5F5',
+        'local-gray-b-2': '#F8F8F8',
         'local-gray-t': '#7F807E',
         'local-gray-t-2': '#EBE7E4',
         'local-gray-act': '#F3F3F3',
