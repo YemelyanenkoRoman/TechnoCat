@@ -1,4 +1,5 @@
 import DiscountImg from '../public/discount/discount.svg';
+import Form from './FormDiscount';
 
 interface Discount {
   img: JSX.Element;
@@ -28,7 +29,9 @@ const Discount = () => {
             Заполните форму и наши специалисты свяжутся с вами в течение рабочего дня.
           </p>
         </div>
-        <div className="border-4 border-indigo-600 w-[280px] h-[248px]">form</div>
+        <div className="border-4 border-indigo-600 w-[280px] h-[248px]">
+          <Form />
+        </div>
       </div>
     </div>
   );
