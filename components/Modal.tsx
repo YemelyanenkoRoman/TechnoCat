@@ -38,7 +38,7 @@ export default function Modal() {
               onClick={() => setIsOpen(false)}
               className="absolute top-0 right-0 cursor-pointer"
             >
-              <CrossIcon className="stroke-current text-red-500" />
+              <CrossIcon className="stroke-current hover:text-gray-700" />
             </div>
           </div>
         </div>
