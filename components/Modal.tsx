@@ -8,6 +8,12 @@ export default function Modal() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
+  function handleOverlayClick(event: React.MouseEvent<HTMLDivElement>) {
+    if (event.target === event.currentTarget) {
+      setIsOpen(false);
+    }
+  }
+
   return (
     <>
       <div
@@ -30,7 +36,10 @@ export default function Modal() {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+        <div
+          onClick={handleOverlayClick}
+          className="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
+        >
           <div className="rounded-lg w-[510px] h-[438px] relative z-10 bg-local-gray-b-2 shadow-lg">
             <div className="w-[390px] h-[313px] m-[60px] flex items-center justify-center flex-col">
               <h3 className="font-gilroy text-3xl flex">Заказ обратного звонка</h3>
