@@ -12,6 +12,7 @@ module.exports = {
         poppins: ['var(--font-poppins)'],
       },
       fontSize: {
+        twelve: ['12px', '16px'],
         fourteen: ['14px', '19,6px'],
         sexteen: ['16px', '145%'],
         eighteen: ['18px', '120%'],

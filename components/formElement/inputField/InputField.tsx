@@ -38,9 +38,7 @@ const InputField = (props: InputProps) => {
                   // trigger(props.name);
                 }}
               />
-              {fieldState && fieldState.error && (
-                <p className="absolute text-xs">{fieldState.error.message}</p>
-              )}
+              {fieldState && fieldState.error && <p className="absolute text-xs">{fieldState.error.message}</p>}
             </div>
           );
         }}

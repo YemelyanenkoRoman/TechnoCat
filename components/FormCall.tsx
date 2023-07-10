@@ -3,9 +3,8 @@ import { useForm, FormProvider } from 'react-hook-form';
 import InputField from './formElement/inputField/InputField';
 import Button from './buttons/Button';
 
-const MyForm = () => {
+const FormCall = () => {
   const methods = useForm<FormData>({ mode: 'onBlur' });
-
   const {
     control,
     handleSubmit,
@@ -19,7 +18,7 @@ const MyForm = () => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-between">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[15px]">
         <InputField
           width="280px"
           height="51px"
@@ -53,34 +52,13 @@ const MyForm = () => {
           control={control}
           name={'phone'}
           rules={{
-            required: 'Введите номер телефона в формате +375291111111',
+            required: 'Введите телефон в формате +375291111111',
             pattern: {
-              message: 'Введите номер телефона в формате +375291111111',
+              message: 'Введите телефон в формате +375291111111',
               value: /^\+375\s?(17|29|33|44)\s?\d{3}\d{2}\d{2}$/,
             },
           }}
           // label="Номер телефона"
-        />
-
-        <InputField
-          width="280px"
-          height="51px"
-          placeholder="Направление"
-          defaultValue=""
-          control={control}
-          name={'direction'}
-          rules={{
-            required: 'Поле обязательно',
-            minLength: {
-              message: 'Минимум два символа',
-              value: 2,
-            },
-            maxLength: {
-              message: 'Максимум 50 символов',
-              value: 50,
-            },
-          }}
-          // label="Выбранное направление"
         />
 
         <Button width={'280px'} height={'50'} title={'Записаться на занятие'} type={'submit'} />
@@ -89,4 +67,4 @@ const MyForm = () => {
   );
 };
 
-export default MyForm;
+export default FormCall;
