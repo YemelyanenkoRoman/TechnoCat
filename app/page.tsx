@@ -7,6 +7,7 @@ import InCenter4 from '../public/homePage/inOurCenter/inCenter4.svg';
 import WhatFindCenter from '@/components/WhatFindCenter';
 import DirectionCards from '@/components/DirectionCards';
 import Discount from '@/components/Discount';
+import Modal from '@/components/Modal';
 
 const Finding = [
   {

@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import PhoneIcon from '../public/icons/phone-24-px.svg';
+
 import Directions from './Directions';
 import Navigation from './MainNavigation';
 import Link from 'next/link';
+import Modal from './Modal';
 
 const NavItems = [
   { label: 'О нас', href: '/about' },
@@ -34,7 +35,7 @@ const TheHeader = () => {
 
           <div className="flex flex-col">
             <div className="flex">
-              <PhoneIcon className="mr-2" /> Заказать звонок
+              <Modal />
             </div>
             <a className="flex hover:text-gray-700" href="tel:+375291477233">
               + 375 (29) 330-20-79
