@@ -30,13 +30,18 @@ export default function Modal() {
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-          <div className="w-[510px] h-[438px] relative z-10 p-8 bg-local-gray-b-2 rounded shadow-lg">
-            <h2 className="text-lg font-semibold">Modal Title</h2>
-            <p className="mt-2">This is the modal content.</p>
+          <div className="rounded-lg w-[510px] h-[438px] relative z-10 bg-local-gray-b-2 shadow-lg">
+            <div className="w-[390px] h-[313px] m-[60px] flex items-center justify-center">
+              <h3 className="font-gilroy text-4xl">Заказ обратного звонка</h3>
+              <p className="mt-2">
+                Заполните форму и наши специалисты свяжутся с вами в течение
+                рабочего дня.
+              </p>
+            </div>
 
             <div
               onClick={() => setIsOpen(false)}
-              className="absolute top-0 right-0 cursor-pointer"
+              className="absolute top-5 right-5 cursor-pointer"
             >
               <CrossIcon className="stroke-current hover:text-gray-700" />
             </div>
