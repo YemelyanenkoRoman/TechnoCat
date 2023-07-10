@@ -1,6 +1,7 @@
 'use client';
 import { useForm, FormProvider } from 'react-hook-form';
 import InputField from './formElement/inputField/InputField';
+import Button from './buttons/Button';
 
 const MyForm = () => {
   const methods = useForm<FormData>({ mode: 'onBlur' });
@@ -16,8 +17,13 @@ const MyForm = () => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col justify-between"
+      >
         <InputField
+          width="280px"
+          height="51px"
           placeholder="Имя"
           defaultValue=""
           control={control}
@@ -37,34 +43,38 @@ const MyForm = () => {
               value: 20,
             },
           }}
-          label="Имя"
+          // label="Имя"
         />
 
         <InputField
-          placeholder="+375291477233"
-          defaultValue="+375"
+          width="280px"
+          height="51px"
+          placeholder="Телефон"
+          defaultValue=""
           control={control}
           name={'phone'}
           rules={{
-            required: 'Введите номер телефона',
-            minLength: {
-              message: 'Минимум 12 цифр',
-              value: 13,
-            },
-            maxLength: {
-              message: 'Максимум 12 цифр',
-              value: 15,
-            },
+            required: 'Введите номер телефона в формате +375291111111',
+            // minLength: {
+            //   message: 'Минимум 12 цифр',
+            //   value: 13,
+            // },
+            // maxLength: {
+            //   message: 'Максимум 12 цифр',
+            //   value: 15,
+            // },
             pattern: {
-              message: 'Введите свой номер телефона',
-              value: /^\+375\s?(\(17\)|\(29\)|\(33\)|\(44\))\s?\d{3}\d{2}\d{2}$/,
+              message: 'Введите номер телефона в формате +375291111111',
+              value: /^\+375\s?(17|29|33|44)\s?\d{3}\d{2}\d{2}$/,
             },
           }}
-          label="Номер телефона"
+          // label="Номер телефона"
         />
 
         <InputField
-          placeholder="Направлени"
+          width="280px"
+          height="51px"
+          placeholder="Направление"
           defaultValue=""
           control={control}
           name={'direction'}
@@ -75,10 +85,15 @@ const MyForm = () => {
               value: 2,
             },
           }}
-          label="Выбранное направление"
+          // label="Выбранное направление"
         />
 
-        <button type="submit">Submit</button>
+        <Button
+          width={'280px'}
+          height={'50'}
+          title={'Записаться на занятие'}
+          type={'submit'}
+        />
       </form>
     </FormProvider>
   );

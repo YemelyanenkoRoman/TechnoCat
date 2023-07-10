@@ -23,7 +23,8 @@ const Finding = [
   {
     img: <InCenter3 />,
     headingDiscription: 'Комфорт и знания',
-    textDiscription: 'Наш центр оснащен современным оборудование и качественными учебными материалами для занятий.',
+    textDiscription:
+      'Наш центр оснащен современным оборудование и качественными учебными материалами для занятий.',
   },
   {
     img: <InCenter4 />,
@@ -39,12 +40,20 @@ export default function Home() {
       <section className="h-[calc(100vh-138px)] bg-local-gray-b">
         <div className="px-[120px] pt-[100px] pb-[160px] max-w-[1440px] mx-auto flex justify-between">
           <div className="max-w-[600px] max-h-[400px]">
-            <h1 className="text-fifty font-normal">ТехноКот — место, где ваш ребенок реализует свои мечты и цели!</h1>
+            <h1 className="text-fifty font-normal">
+              ТехноКот — место, где ваш ребенок реализует свои мечты и цели!
+            </h1>
             <h2 className="text-sexteen font-poppins pt-10 pb-[60px]">
-              Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и подарят
-              незабываемые впечатления от увлекательных занятий.
+              Наши квалифицированные преподаватели помогут получить вашему
+              ребенку качественное образование и подарят незабываемые
+              впечатления от увлекательных занятий.
             </h2>
-            <Button width="185px" height="50px" title="Узнать больше" />
+            <Button
+              width="185px"
+              height="50px"
+              title="Узнать больше"
+              type="button"
+            />
           </div>
           <figure>
             <H1Svg />
@@ -53,12 +62,16 @@ export default function Home() {
       </section>
 
       <section className=" pt-[120px]">
-        <h3 className="text-thirtyfour text-center">Что вы найдете в нашем центре?</h3>
+        <h3 className="text-thirtyfour text-center">
+          Что вы найдете в нашем центре?
+        </h3>
         <WhatFindCenter FindingInCenter={Finding} />
       </section>
 
       <section className="m-auto max-w-[1320px] pt-[180px]">
-        <h3 className="text-thirtyfour text-center pb-[50px]">Направления, которые пользуются спросом</h3>
+        <h3 className="text-thirtyfour text-center pb-[50px]">
+          Направления, которые пользуются спросом
+        </h3>
         <div>
           <DirectionCards />
         </div>

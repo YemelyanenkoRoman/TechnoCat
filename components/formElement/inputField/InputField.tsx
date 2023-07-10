@@ -8,13 +8,16 @@ type InputProps = {
   rules?: Object;
   defaultValue?: string;
   placeholder?: string;
+
+  width: string;
+  height: string;
 };
 
 const InputField = (props: InputProps) => {
-  const { trigger } = useFormContext();
+  // const { trigger } = useFormContext();
   return (
     <>
-      <div>{props.label}</div>
+      {/* <div>{props.label}</div> */}
       <Controller
         name={props.name}
         control={props.control}
@@ -23,6 +26,8 @@ const InputField = (props: InputProps) => {
           return (
             <div>
               <Input
+                width={props.width}
+                height={props.height}
                 placeholder={props.placeholder}
                 value={field.value}
                 onChange={(e) => {
@@ -33,7 +38,9 @@ const InputField = (props: InputProps) => {
                   // trigger(props.name);
                 }}
               />
-              {fieldState && fieldState.error && <p>{fieldState.error.message}</p>}
+              {fieldState && fieldState.error && (
+                <p className="absolute text-xs">{fieldState.error.message}</p>
+              )}
             </div>
           );
         }}

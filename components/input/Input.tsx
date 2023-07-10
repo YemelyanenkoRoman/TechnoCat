@@ -3,10 +3,20 @@ type InputProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: () => void;
   placeholder?: string;
+
+  width: string;
+  height: string;
 };
 
 const Input = (props: InputProps) => (
-  <input value={props.value} onChange={props.onChange} onBlur={props.onBlur} placeholder={props.placeholder} />
+  <input
+    style={{ width: props.width, height: props.height }}
+    className="border-2 border-local-gray-t rounded-lg font-poppins text-sexteen pl-5"
+    value={props.value}
+    onChange={props.onChange}
+    onBlur={props.onBlur}
+    placeholder={props.placeholder}
+  />
 );
 
 export default Input;
