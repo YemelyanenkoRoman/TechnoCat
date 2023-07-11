@@ -1,5 +1,8 @@
-import { Controller } from 'react-hook-form';
-import Input from '../../input/Input';
+import { Control, Controller } from 'react-hook-form';
+import 'react-phone-number-input/style.css';
+import { formatPhoneNumberIntl } from 'react-phone-number-input';
+
+import InputPhone from '@/components/input/InputPhone';
 
 type InputProps = {
   control: any;
@@ -13,7 +16,7 @@ type InputProps = {
   height: string;
 };
 
-const InputField = (props: InputProps) => {
+const InputPhoneField = (props: InputProps) => {
   // const { trigger } = useFormContext();
   return (
     <>
@@ -25,18 +28,18 @@ const InputField = (props: InputProps) => {
         render={({ field, fieldState }) => {
           return (
             <div>
-              <Input
+              <InputPhone
                 width={props.width}
                 height={props.height}
-                placeholder={props.placeholder}
                 value={field.value}
-                onChange={(e) => {
-                  field.onChange(e.target.value);
+                country="BY"
+                onChange={(value) => {
+                  field.onChange(formatPhoneNumberIntl(value));
                 }}
                 onBlur={() => {
                   field.onBlur();
-                  // trigger(props.name);
                 }}
+                placeholder={props.placeholder}
               />
               {fieldState && fieldState.error && <p className="absolute text-xs">{fieldState.error.message}</p>}
             </div>
@@ -48,4 +51,4 @@ const InputField = (props: InputProps) => {
   );
 };
 
-export default InputField;
+export default InputPhoneField;
