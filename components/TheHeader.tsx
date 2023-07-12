@@ -1,11 +1,11 @@
-import Image from 'next/image';
+import LogoMax from '../public/logo/technocat-logo-max 1.svg';
 
 import Directions from './Directions';
 import Navigation from './MainNavigation';
 import Link from 'next/link';
 import Modal from './Modal';
 
-const NavItems = [
+export const NavItems = [
   { label: 'О нас', href: '/about' },
   { label: 'Контакты', href: '/contacts' },
 ];
@@ -16,17 +16,11 @@ const TheHeader = () => {
       <div className="max-w-[1440px] mx-auto">
         <nav className="flex justify-between items-center h-[138px] px-[60px]">
           <div className="flex items-center">
-            <nav className="mr-[201px]">
+            <div className="mr-[201px]">
               <Link href="/">
-                <Image
-                  priority={true}
-                  src="/technocat-logo.png"
-                  width={134}
-                  height={47}
-                  alt="Логотип образовательного центра Техно Кот"
-                />
+                <LogoMax />
               </Link>
-            </nav>
+            </div>
             <ul className="flex gap-[46px] ">
               <Navigation navLinks={NavItems} />
               <Directions />
