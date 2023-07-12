@@ -1,15 +1,16 @@
 import { v4 as uuidv4 } from 'uuid';
-import { NavItems } from './TheHeader';
-import Navigation from '../components/MainNavigation';
+import { NavItems } from '../TheHeader';
+import Navigation from '../MainNavigation';
 import Link from 'next/link';
 
-import LogoMin from '../public/logo/technocat-logo-min.svg';
-import AcademicCap from '../public/icons/academic-cap-24-px.svg';
-import Book from '../public/icons/book-24-px.svg';
-import Location from '../public/icons/location-pin-24-px.svg';
-import Time from '../public/icons/time-24-px.svg';
-import Instagram from '../public/icons/instagram-16-px.svg';
-import FooterNav from './footer/FooterNavigation';
+import LogoMin from '@/public/logo/technocat-logo-min.svg';
+import AcademicCap from '@/public/icons/academic-cap-24-px.svg';
+import Book from '@/public/icons/book-24-px.svg';
+import Location from '@/public/icons/location-pin-24-px.svg';
+import Time from '@/public/icons/time-24-px.svg';
+import Instagram from '@/public/icons/instagram-16-px.svg';
+import FooterNav from './FooterNavigation';
+import FooterNavBlock from './FooterNavBlock';
 
 export interface NavFooter {
   label: string;
@@ -39,25 +40,8 @@ const TheFooter = () => {
               </ul>
             </div>
             <div className="flex gap-14">
-              <div className=" flex flex-col">
-                <div className="flex flex-row">
-                  <AcademicCap />
-                  <h2 className="ml-[10px] font-gilroy text-twenty">Мы научим</h2>
-                </div>
-                <ul className="mt-5 flex gap-2 flex-col">
-                  <FooterNav startIndex={0} endIndex={3} />
-                </ul>
-              </div>
-
-              <div className="flex flex-col">
-                <div className="flex flex-row">
-                  <Book />
-                  <h2 className="ml-[10px] font-gilroy text-twenty">Мы поможем</h2>
-                </div>
-                <ul className="mt-5 flex gap-2 flex-col">
-                  <FooterNav startIndex={3} endIndex={5} />
-                </ul>
-              </div>
+              <FooterNavBlock iconSvg={<AcademicCap />} />
+              <FooterNavBlock iconSvg={<Book />} />
             </div>
           </div>
           <div className="flex gap-14">

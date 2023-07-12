@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { NavFooterDirection } from '../TheFooter';
+import { NavFooterDirection } from './TheFooter';
 import { v4 as uuidv4 } from 'uuid';
 
 type FooterProps = {

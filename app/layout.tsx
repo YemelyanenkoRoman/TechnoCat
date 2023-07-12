@@ -1,5 +1,5 @@
 import { TheHeader } from '@/components/TheHeader';
-import { TheFooter } from '@/components/TheFooter';
+import { TheFooter } from '@/components/footer/TheFooter';
 import './globals.css';
 import { gilroy, poppins } from './fonts/fonts';
 
