@@ -9,8 +9,14 @@ import Book from '../public/icons/book-24-px.svg';
 import Location from '../public/icons/location-pin-24-px.svg';
 import Time from '../public/icons/time-24-px.svg';
 import Instagram from '../public/icons/instagram-16-px.svg';
+import FooterNav from './footer/FooterNavigation';
 
-const NavFooterDirection = [
+export interface NavFooter {
+  label: string;
+  href: string;
+}
+
+export const NavFooterDirection: NavFooter[] = [
   { label: 'Программированию', href: '/' },
   { label: 'Робототехнике', href: '/' },
   { label: 'Английскому языку', href: '/' },
@@ -39,7 +45,7 @@ const TheFooter = () => {
                   <h2 className="ml-[10px] font-gilroy text-twenty">Мы научим</h2>
                 </div>
                 <ul className="mt-5 flex gap-2 flex-col">
-                  {NavFooterDirection.slice(0, 3).map((link) => {
+                  {/* {NavFooterDirection.slice(0, 3).map((link) => {
                     return (
                       <li key={uuidv4()} className="flex ">
                         <Link className="hover:text-gray-700 flex " href={link.href}>
@@ -47,7 +53,8 @@ const TheFooter = () => {
                         </Link>
                       </li>
                     );
-                  })}
+                  })} */}
+                  <FooterNav startIndex={0} endIndex={3} />
                 </ul>
               </div>
 
@@ -57,7 +64,7 @@ const TheFooter = () => {
                   <h2 className="ml-[10px] font-gilroy text-twenty">Мы поможем</h2>
                 </div>
                 <ul className="mt-5 flex gap-2 flex-col">
-                  {NavFooterDirection.slice(3, 5).map((link) => {
+                  {/* {NavFooterDirection.slice(3, 5).map((link) => {
                     return (
                       <li key={uuidv4()} className="flex ">
                         <Link className="hover:text-gray-700 flex " href={link.href}>
@@ -65,7 +72,8 @@ const TheFooter = () => {
                         </Link>
                       </li>
                     );
-                  })}
+                  })} */}
+                  <FooterNav startIndex={3} endIndex={5} />
                 </ul>
               </div>
             </div>

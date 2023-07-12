@@ -70,7 +70,7 @@ const DirectionCards = () => {
                 <p>{item.quantity}</p>
               </div>
               <div className="pt-[30px]">
-                <ButtonSecondary width="251px" height="50px" title="Узнать подробнее" />
+                <ButtonSecondary type={'button'} width="251px" height="50px" title="Узнать подробнее" />
               </div>
             </div>
           </div>
