@@ -16,8 +16,6 @@ const InputPhone = (props: InputPhoneProps) => (
     style={{ width: props.width, height: props.height }}
     className="border-2 border-local-gray-t rounded-lg font-poppins text-sexteen pl-5"
     value={props.value}
-    // numberFormat="+3 dd ddd ddd dd"
-    // defaultCountry="BY"
     country={props.country}
     onChange={props.onChange}
     onBlur={props.onBlur}

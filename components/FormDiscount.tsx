@@ -46,23 +46,6 @@ const MyForm = () => {
           // label="Имя"
         />
 
-        {/* <InputField
-          width="280px"
-          height="51px"
-          placeholder="Телефон"
-          defaultValue=""
-          control={control}
-          name={'phone'}
-          rules={{
-            required: 'Введите номер телефона в формате +375291111111',
-            pattern: {
-              message: 'Введите номер телефона в формате +375291111111',
-              value: /^\+375\s?(17|29|33|44)\s?\d{3}\d{2}\d{2}$/,
-            },
-          }}
-          // label="Номер телефона"
-        /> */}
-
         <InputPhoneField
           width="280px"
           height="51px"
@@ -70,10 +53,10 @@ const MyForm = () => {
           defaultValue=""
           name={'newphone'}
           rules={{
-            required: 'Введите номер телефона в формате +375291111111',
+            required: 'Введите номер телефона',
             pattern: {
-              message: 'Введите номер телефона в формате +375291111111',
-              value: /^\+375\s?(17|29|33|44)\s?\d{3}\d{2}\d{2}$/,
+              message: 'Проверьте правильность введенного номера',
+              value: /^[+]375\s(17|25|29|33|44)\s\d{3}\s\d{2}\s\d{2}$/,
             },
           }}
           control={control}

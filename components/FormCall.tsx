@@ -2,6 +2,7 @@
 import { useForm, FormProvider } from 'react-hook-form';
 import InputField from './formElement/inputField/InputField';
 import Button from './buttons/Button';
+import InputPhoneField from './formElement/inputField/InputPhoneField';
 
 const FormCall = () => {
   const methods = useForm<FormData>({ mode: 'onBlur' });
@@ -44,7 +45,7 @@ const FormCall = () => {
           // label="Имя"
         />
 
-        <InputField
+        {/* <InputField
           width="280px"
           height="51px"
           placeholder="Телефон"
@@ -59,6 +60,22 @@ const FormCall = () => {
             },
           }}
           // label="Номер телефона"
+        /> */}
+
+        <InputPhoneField
+          width="280px"
+          height="51px"
+          placeholder="Телефон"
+          defaultValue=""
+          name={'newphone'}
+          rules={{
+            required: 'Введите номер телефона в формате +375291111111',
+            pattern: {
+              message: 'Введите номер телефона в формате +375291111111',
+              value: /^\+375\s?(17|29|33|44)\s?\d{3}\d{2}\d{2}$/,
+            },
+          }}
+          control={control}
         />
 
         <Button width={'280px'} height={'50'} title={'Записаться на занятие'} type={'submit'} />
