@@ -1,38 +1,10 @@
 import Button from '@/components/buttons/Button';
 import H1Svg from '../public/homePage/main-page-h1.svg';
-import InCenter1 from '../public/homePage/inOurCenter/inCenter1.svg';
-import InCenter2 from '../public/homePage/inOurCenter/inCenter2.svg';
-import InCenter3 from '../public/homePage/inOurCenter/inCenter3.svg';
-import InCenter4 from '../public/homePage/inOurCenter/inCenter4.svg';
+
 import WhatFindCenter from '@/components/WhatFindCenter';
 import DirectionCards from '@/components/DirectionCards';
 import Discount from '@/components/Discount';
-import Modal from '@/components/Modal';
-
-const Finding = [
-  {
-    img: <InCenter1 />,
-    headingDiscription: 'Опытных педагогов',
-    textDiscription: 'Они помогут вашим детям раскрыть свой потенциал и талант',
-  },
-  {
-    img: <InCenter2 />,
-    headingDiscription: 'Индивидуальный подходв',
-    textDiscription:
-      'Поддержка, внимание и индивидуальный подход к каждому ребёнку - основополагающие ценности для наших педагогов.',
-  },
-  {
-    img: <InCenter3 />,
-    headingDiscription: 'Комфорт и знания',
-    textDiscription: 'Наш центр оснащен современным оборудование и качественными учебными материалами для занятий.',
-  },
-  {
-    img: <InCenter4 />,
-    headingDiscription: 'Участие в соревнованиях',
-    textDiscription:
-      'Участие в различных соревнованиях, олимпиадах и конкурсах, а также экскурсиях расширят знания и кругозор ребёнка.',
-  },
-];
+import OftenQuestions from '@/components/OftenQuestions';
 
 export default function Home() {
   return (
@@ -54,15 +26,20 @@ export default function Home() {
       </section>
 
       <section className=" pt-[120px]">
-        <h3 className="text-thirtyfour text-center">Что вы найдете в нашем центре?</h3>
-        <WhatFindCenter FindingInCenter={Finding} />
+        <h2 className="text-forty text-center">Что вы найдете в нашем центре?</h2>
+        <WhatFindCenter />
       </section>
 
       <section className="m-auto max-w-[1320px] pt-[180px]">
-        <h3 className="text-thirtyfour text-center pb-[50px]">Направления, которые пользуются спросом</h3>
+        <h2 className="text-forty text-center pb-[50px]">Направления, которые пользуются спросом</h2>
         <div>
           <DirectionCards />
         </div>
+      </section>
+
+      <section className="m-auto max-w-[1140px] pt-[180px]">
+        <h2 className="text-forty text-center pb-[50px]">Часто задаваемые вопросы</h2>
+        <OftenQuestions />
       </section>
 
       <section className="pt-[180px] mb-[120px]">
