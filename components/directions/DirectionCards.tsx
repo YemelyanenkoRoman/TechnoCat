@@ -2,7 +2,7 @@ import DirectionCard1 from '@/public/DirectionCardImg/DirectionCard1.svg';
 import DirectionCard2 from '@/public/DirectionCardImg/DirectionCard2.svg';
 import DirectionCard3 from '@/public/DirectionCardImg/DirectionCard3.svg';
 import DirectionCard4 from '@/public/DirectionCardImg/DirectionCard4.svg';
-import ButtonSecondary from './buttons/ButtonSecondary';
+import ButtonSecondary from '../buttons/ButtonSecondary';
 
 interface DirectionCard {
   img: JSX.Element;

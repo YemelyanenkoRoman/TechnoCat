@@ -1,11 +1,10 @@
 'use client';
-
-import { NavItemsDirection } from '@/components/Directions';
+import { DirectionsData } from '@/components/directions/DirectionsData';
 
 const Directions = ({ params }: { params: { directions: string } }) => {
   console.log(params.directions);
 
-  const data = NavItemsDirection.find((item) => item.id === params.directions);
+  const data = DirectionsData.find((item) => item.id === params.directions);
 
   return (
     <>
@@ -24,7 +23,3 @@ const Directions = ({ params }: { params: { directions: string } }) => {
 };
 
 export default Directions;
-
-// export default function Page({ params }: { params: { slug: string } }) {
-//     return <div>My Post: {params.slug}</div>
-//   }

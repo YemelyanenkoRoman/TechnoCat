@@ -2,7 +2,7 @@ import Button from '@/components/buttons/Button';
 import H1Svg from '../public/homePage/main-page-h1.svg';
 
 import WhatFindCenter from '@/components/WhatFindCenter';
-import DirectionCards from '@/components/DirectionCards';
+import DirectionCards from '@/components/directions/DirectionCards';
 import Discount from '@/components/Discount';
 import OftenQuestions from '@/components/OftenQuestions';
 

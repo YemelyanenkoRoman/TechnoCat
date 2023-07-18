@@ -1,6 +1,6 @@
 import LogoMax from '../public/logo/technocat-logo-max 1.svg';
 
-import Directions from './Directions';
+import Directions from './directions/Directions';
 import Navigation from './MainNavigation';
 import Link from 'next/link';
 import Modal from './Modal';
