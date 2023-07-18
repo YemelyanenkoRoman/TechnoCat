@@ -1,4 +1,5 @@
 'use client';
+import { Breadcrumbs, breadcrumbItems } from '@/components/Breadcrumbs';
 import { DirectionsData } from '@/components/directions/DirectionsData';
 
 const Directions = ({ params }: { params: { directions: string } }) => {
@@ -9,6 +10,9 @@ const Directions = ({ params }: { params: { directions: string } }) => {
   return (
     <>
       <div className="mt-[300px]">
+        <div>
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
         {data ? (
           <div>
             <h1>User: {data.name}</h1>
