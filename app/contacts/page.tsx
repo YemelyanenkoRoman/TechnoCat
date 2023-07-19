@@ -7,7 +7,7 @@ import Modal from '@/components/Modal';
 const Contacts = () => {
   return (
     <div className="font-gilroy font-normal text-local-gray-t text-sexteen  mt-[107px] mx-[60px] h-[calc(100vh-107px)]">
-      <section className="pt-10 mb-[30px] font-poppins">
+      <section>
         <Breadcrumbs items={breadcrumbItems} />
       </section>
       <h1 className="flex justify-center text-forty">Контакты</h1>

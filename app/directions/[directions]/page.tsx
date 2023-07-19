@@ -1,11 +1,11 @@
 'use client';
 import { Breadcrumbs, breadcrumbItems } from '@/components/Breadcrumbs';
-import { DirectionsData } from '@/components/directions/DirectionsData';
+import { DirectionsContent } from '@/components/directions/DirectionsContent';
 
 const Directions = ({ params }: { params: { directions: string } }) => {
   console.log(params.directions);
 
-  const data = DirectionsData.find((item) => item.id === params.directions);
+  const data = DirectionsContent.find((item) => item.id === params.directions);
 
   return (
     <>

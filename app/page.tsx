@@ -9,8 +9,8 @@ import OftenQuestions from '@/components/OftenQuestions';
 export default function Home() {
   return (
     <main className="font-gilroy font-normal text-local-gray-t text-sexteen  pt-[107px]">
-      <section className="h-[calc(100vh-107px)] bg-local-gray-b">
-        <div className="px-[120px] pt-[100px] pb-[160px] max-w-[1440px] mx-auto flex justify-between">
+      <section className="h-[calc(100vh-107px)] bg-local-gray-b flex">
+        <div className="px-[120px] pt-[100px] pb-[160px] max-w-[1440px] mx-auto flex justify-between items-center">
           <div className="max-w-[600px] max-h-[400px]">
             <h1 className="text-fifty font-normal">ТехноКот — место, где ваш ребенок реализует свои мечты и цели!</h1>
             <h2 className="text-sexteen font-poppins pt-10 pb-[60px]">

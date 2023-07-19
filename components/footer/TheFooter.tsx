@@ -9,21 +9,7 @@ import Book from '@/public/icons/book-24-px.svg';
 import Location from '@/public/icons/location-pin-24-px.svg';
 import Time from '@/public/icons/time-24-px.svg';
 import Instagram from '@/public/icons/instagram-16-px.svg';
-import FooterNav from './FooterNavigation';
 import FooterNavBlock from './FooterNavBlock';
-
-export interface NavFooter {
-  label: string;
-  href: string;
-}
-
-export const NavFooterDirection: NavFooter[] = [
-  { label: 'Программированию', href: '/' },
-  { label: 'Робототехнике', href: '/' },
-  { label: 'Английскому языку', href: '/' },
-  { label: 'Подготовим к школе', href: '/' },
-  { label: 'Поможем первокласснику', href: '/' },
-];
 
 const TheFooter = () => {
   return (

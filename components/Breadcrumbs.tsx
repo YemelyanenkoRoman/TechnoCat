@@ -31,20 +31,22 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   const filteredItems = items.filter((item) => pathname.startsWith(item.href));
 
   return (
-    <nav className="text-gray-500 text-sm">
-      <ol className="flex items-center space-x-2">
-        {filteredItems.map((item, index) => {
-          const isLastItem = index === filteredItems.length - 1;
-          const isCurrentPage = item.href === pathname;
+    <div className="pt-10 mb-[30px] font-poppins">
+      <nav className="text-gray-500 text-sm">
+        <ol className="flex items-center space-x-2">
+          {filteredItems.map((item, index) => {
+            const isLastItem = index === filteredItems.length - 1;
+            const isCurrentPage = item.href === pathname;
 
-          return (
-            <li key={item.href}>
-              {isLastItem || isCurrentPage ? <span>{item.label}</span> : <Link href={item.href}>{item.label}</Link>}
-              {!isLastItem && <span>/</span>}
-            </li>
-          );
-        })}
-      </ol>
-    </nav>
+            return (
+              <li key={item.href}>
+                {isLastItem || isCurrentPage ? <span>{item.label}</span> : <Link href={item.href}>{item.label}</Link>}
+                {!isLastItem && <span>/</span>}
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
+    </div>
   );
 };
