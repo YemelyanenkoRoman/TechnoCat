@@ -7,21 +7,21 @@ export const gilroy = localFont({
       weight: '400',
       style: 'normal',
     },
-    {
-      path: './Gilroy-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
+    // {
+    //   path: './Gilroy-Bold.woff2',
+    //   weight: '700',
+    //   style: 'normal',
+    // },
     {
       path: './Gilroy-Light.woff2',
       weight: '300',
       style: 'normal',
     },
-    {
-      path: './Gilroy-Medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
+    // {
+    //   path: './Gilroy-Medium.woff2',
+    //   weight: '500',
+    //   style: 'normal',
+    // },
   ],
   display: 'swap',
   variable: '--font-gilroy',

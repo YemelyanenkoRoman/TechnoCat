@@ -13,7 +13,7 @@ module.exports = {
       },
       fontSize: {
         twelve: ['12px', '16px'],
-        fourteen: ['14px', '19,6px'],
+        fourteen: ['14px', '140%'],
         sexteen: ['16px', '145%'],
         eighteen: ['18px', '120%'],
         twenty: ['20px', '24px'],
