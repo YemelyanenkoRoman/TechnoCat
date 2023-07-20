@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { DirectionsNav } from './DirectionsNav';
+import { v4 as uuidv4 } from 'uuid';
 
 type DirectionsNav = {
   link: string;
@@ -27,7 +28,7 @@ const Directions = () => {
       {isMenuOpen && (
         <ul className="bg-local-gray-act-2 shadow-lg absolute left-[-12px] top-[-8px] rounded-md pt-[51px]">
           {DirectionsNav.map((item) => (
-            <li className="py-2 px-3 cursor-pointer rounded hover:text-gray-700" key={item.label}>
+            <li className="py-2 px-3 cursor-pointer rounded hover:text-gray-700" key={uuidv4()}>
               <Link href={`/directions/${item.link}`}>{item.label}</Link>
             </li>
           ))}

@@ -3,6 +3,7 @@ import DirectionCard2 from '@/public/DirectionCardImg/DirectionCard2.svg';
 import DirectionCard3 from '@/public/DirectionCardImg/DirectionCard3.svg';
 import DirectionCard4 from '@/public/DirectionCardImg/DirectionCard4.svg';
 import ButtonSecondary from '../buttons/ButtonSecondary';
+import { v4 as uuidv4 } from 'uuid';
 
 interface DirectionCard {
   img: JSX.Element;
@@ -53,21 +54,25 @@ const DirectionCards = () => {
     <div className="flex flex-row justify-center gap-[24px]">
       {DirectionCard.map((item) => {
         return (
-          <div className="w-[312px] h-[434px] rounded-lg bg-local-gray-act flex flex-col p-[30px]">
+          <div key={uuidv4()} className="w-[312px] h-[434px] rounded-lg bg-local-gray-act flex flex-col p-[30px]">
             {item.img}
             <div className="max-w-[252px] max-h-[133px] pt-[15px] flex flex-col">
-              <h4 className="text-twenty">{item.title}</h4>
+              <h4 key={uuidv4()} className="text-twenty">
+                {item.title}
+              </h4>
               <div className="flex flex-row justify-between text-fourteen pt-[25px]">
                 <p>Возраст</p>
-                <p>от {item.age} лет</p>
+                <p key={uuidv4()}>от {item.age} лет</p>
               </div>
               <div className="flex flex-row justify-between text-fourteen">
                 <p>Длительность</p>
-                <p>{item.duration} мин</p>
+                <p key={uuidv4()}>{item.duration} мин</p>
               </div>
               <div className="flex flex-row text-fourteen justify-between pt-[20px]">
-                <p className="text-twenty">{item.cost} BYN</p>
-                <p>{item.quantity}</p>
+                <p key={uuidv4()} className="text-twenty">
+                  {item.cost} BYN
+                </p>
+                <p key={uuidv4()}>{item.quantity}</p>
               </div>
               <div className="pt-[30px]">
                 <ButtonSecondary type={'button'} width="251px" height="50px" title="Узнать подробнее" />
