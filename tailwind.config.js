@@ -18,6 +18,7 @@ module.exports = {
         eighteen: ['18px', '120%'],
         twenty: ['20px', '24px'],
         thirtyfour: ['34px', '120%'],
+        twentyfive: ['25px', '130%'],
         forty: ['40px', '120%'],
         fifty: ['50px', '120%'],
       },
