@@ -10,11 +10,13 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`${gilroy.variable} ${poppins.variable}`}>
-      <body className="relative overflow-x-hidden">
+    <html lang="ru" className={`${gilroy.variable} ${poppins.variable} `}>
+      <body className="relative overflow-x-hidden flex flex-col min-h-screen">
         <TheHeader />
-        {children}
-        <TheFooter />
+        <main className="flex-grow">{children}</main>
+        <span className="flex-none">
+          <TheFooter />
+        </span>
       </body>
     </html>
   );
