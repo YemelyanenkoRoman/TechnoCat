@@ -5,11 +5,11 @@ export const breadcrumbItems = [
   { href: '/about', label: 'О нас' },
   { href: '/contacts', label: 'Контакты' },
   { href: '/about/test', label: 'тест' },
-  { href: '/directions/programming', label: 'программирование' },
-  { href: '/directions/robotics', label: 'робототехника' },
-  { href: '/directions/english', label: 'английский' },
-  { href: '/directions/preparingforschool', label: 'подготовка к школе' },
-  { href: '/directions/firstgradestudent', label: 'помощь первокласснику' },
+  { href: '/directions/programming', label: 'Программирование' },
+  { href: '/directions/robotics', label: 'Робототехника' },
+  { href: '/directions/english', label: 'Английский язык' },
+  { href: '/directions/preparingforschool', label: 'Подготовка к школе' },
+  { href: '/directions/firstgradestudent', label: 'Помощь первокласснику' },
 ];
 
 import Link from 'next/link';
