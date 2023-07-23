@@ -3,6 +3,32 @@ import HumanReady from '@/public/aboutPage/human-ready.svg';
 import Innovations from '@/public/aboutPage/innovations.svg';
 import ActiveStudent1 from '@/public/aboutPage/ActiveStudent1.svg';
 import ActiveStudent2 from '@/public/aboutPage/ActiveStudent2.svg';
+import Slider from '@/components/Slider';
+
+interface Images {
+  src: any;
+  alt: string;
+}
+
+export const Images: Images[] = [
+  { src: '/aboutPage/Slider1.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider2.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider3.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
+];
 
 const About = () => {
   return (
@@ -149,6 +175,10 @@ const About = () => {
           <h3 className=" max-w-[424px] h-[72px]">
             Мы — это дружная и сплоченная команда педагогов и организаторов, которые искренне любят свое дело
           </h3>
+        </section>
+
+        <section>
+          <Slider />
         </section>
       </div>
     </div>
