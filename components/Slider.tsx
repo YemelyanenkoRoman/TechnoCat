@@ -31,15 +31,15 @@ const Slider = () => {
 
   useEffect(() => {
     if (activeIndex < visibleRange[0] || activeIndex > visibleRange[1]) {
-      setVisibleRange([activeIndex, activeIndex + 4]);
+      setVisibleRange([activeIndex, activeIndex + 3]);
     }
   }, [activeIndex]);
 
   return (
-    <div className="flex flex-col max-w-[1096px]">
+    <div className="flex flex-col max-w-[810px] h-auto">
       <div className="relative">
         <div {...handlers}>
-          <img src={Images[activeIndex].src} alt={`Image ${activeIndex}`} className="mt-4 max-w-full h-auto" />
+          <img src={Images[activeIndex].src} alt={`Image ${activeIndex}`} className="mt-4 max-w-[810px] h-[400px]" />
         </div>
         <button className=" transform -translate-y-full absolute top-1/2 left-8" onClick={handlePrevious}>
           <ArrowLeft />
@@ -55,7 +55,7 @@ const Slider = () => {
             key={thumbnail.id}
             src={thumbnail.src}
             alt={`Image ${thumbnail.id}`}
-            className={`h-[180px] w-[160px] mr-6 cursor-pointer flex-shrink-0 ${
+            className={`h-[80px] w-[162px] mr-6 cursor-pointer flex-shrink-0 ${
               thumbnail.id === activeIndex ? 'border-2 border-blue-500' : ''
             }`}
             onClick={() => handleThumbnailClick(thumbnail.id)}
