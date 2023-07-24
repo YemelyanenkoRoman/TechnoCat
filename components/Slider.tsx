@@ -1,7 +1,8 @@
 'use client';
 
+import { useSwipeable } from 'react-swipeable';
 import { Images } from '@/app/about/page';
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import ArrowRiht from '@/public/icons/arrow-right.svg';
 import ArrowLeft from '@/public/icons/arrow-left.svg';
 
@@ -20,11 +21,17 @@ const Slider = () => {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? Images.length - 1 : prevIndex - 1));
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: handleNext,
+    onSwipedRight: handlePrevious,
+  });
+
   return (
     <div className="flex flex-col max-w-[1096px]">
       <div className="relative">
-        <img src={Images[activeIndex].src} alt={`Image ${activeIndex}`} className="mt-4 max-w-full h-auto" />
-
+        <div {...handlers}>
+          <img src={Images[activeIndex].src} alt={`Image ${activeIndex}`} className="mt-4 max-w-full h-auto" />
+        </div>
         <button className=" transform -translate-y-full absolute top-1/2 left-8" onClick={handlePrevious}>
           <ArrowLeft />
         </button>
@@ -32,6 +39,7 @@ const Slider = () => {
           <ArrowRiht />
         </button>
       </div>
+
       <div className="flex justify-center items-center w-full overflow-hidden mt-6">
         {Images.map((image, index) => (
           <img
