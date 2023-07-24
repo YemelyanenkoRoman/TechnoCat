@@ -2,12 +2,15 @@
 
 import { useSwipeable } from 'react-swipeable';
 import { Images } from '@/app/about/page';
-import { SetStateAction, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ArrowRiht from '@/public/icons/arrow-right.svg';
 import ArrowLeft from '@/public/icons/arrow-left.svg';
 
 const Slider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleRange, setVisibleRange] = useState([0, 3]);
+
+  const [thumbnails, setThumbnails] = useState(Images.map((image, index) => ({ id: index, src: image.src })));
 
   const handleThumbnailClick = (index: number) => {
     setActiveIndex(index);
@@ -26,6 +29,12 @@ const Slider = () => {
     onSwipedRight: handlePrevious,
   });
 
+  useEffect(() => {
+    if (activeIndex < visibleRange[0] || activeIndex > visibleRange[1]) {
+      setVisibleRange([activeIndex, activeIndex + 4]);
+    }
+  }, [activeIndex]);
+
   return (
     <div className="flex flex-col max-w-[1096px]">
       <div className="relative">
@@ -41,15 +50,15 @@ const Slider = () => {
       </div>
 
       <div className="flex justify-center items-center w-full overflow-hidden mt-6">
-        {Images.map((image, index) => (
+        {thumbnails.slice(visibleRange[0], visibleRange[1] + 1).map((thumbnail) => (
           <img
-            key={index}
-            src={image.src}
-            alt={`Image ${index}`}
+            key={thumbnail.id}
+            src={thumbnail.src}
+            alt={`Image ${thumbnail.id}`}
             className={`h-[180px] w-[160px] mr-6 cursor-pointer flex-shrink-0 ${
-              index === activeIndex ? 'border-2 border-blue-500' : ''
+              thumbnail.id === activeIndex ? 'border-2 border-blue-500' : ''
             }`}
-            onClick={() => handleThumbnailClick(index)}
+            onClick={() => handleThumbnailClick(thumbnail.id)}
           />
         ))}
       </div>
