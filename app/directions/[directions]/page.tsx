@@ -10,7 +10,7 @@ import Check from '@/public/icons/check-16-px.svg';
 import DirectionCards from '@/components/directions/DirectionCards';
 
 const Directions = ({ params }: { params: { directions: string } }) => {
-  console.log(params.directions);
+  console.log(params.directions, 'page Direction');
 
   const data = DirectionsContent.find((item) => item.id === params.directions);
 

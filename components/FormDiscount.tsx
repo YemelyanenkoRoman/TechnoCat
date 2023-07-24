@@ -14,7 +14,7 @@ const MyForm = () => {
   } = methods;
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
+    console.log(data, 'FormDiscount.tsx');
     methods.reset();
   };
 

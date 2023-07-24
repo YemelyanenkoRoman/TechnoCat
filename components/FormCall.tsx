@@ -13,7 +13,7 @@ const FormCall = () => {
   } = methods;
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
+    console.log(data, 'FormCall.tsx');
     methods.reset();
   };
 
