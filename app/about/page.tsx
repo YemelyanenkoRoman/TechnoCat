@@ -170,7 +170,7 @@ const About = () => {
           </h3>
         </section>
 
-        <section>
+        <section className="mt-[70px] mb-[120px] mx-[60px] flex flex-col items-center">
           <Slider />
         </section>
       </div>
