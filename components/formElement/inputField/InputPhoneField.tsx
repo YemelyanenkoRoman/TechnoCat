@@ -4,8 +4,8 @@ import { formatPhoneNumberIntl } from 'react-phone-number-input';
 
 import InputPhone from '@/components/input/InputPhone';
 
-import Mistake from '@/public/icons/formMistake.svg';
 import { useState } from 'react';
+import { Mistake } from './Mistake';
 
 type InputProps = {
   control: any;
@@ -43,21 +43,8 @@ const InputPhoneField = (props: InputProps) => {
           return (
             // ерор
             <div className="flex items-center">
-              {fieldState && fieldState.error && (
-                <div
-                  className="absolute left-[80px]"
-                  onMouseEnter={handleMistakeMouseEnter}
-                  onMouseLeave={handleMistakeMouseLeave}
-                >
-                  {/* Этой хуйнёй мы render или не render компонент в зависимости от состояния */}
-                  {isMistakeHoverd && (
-                    <div className="absolute top-[40px] bg-local-gray-b-2 shadow-lg w-[280px] rounded-lg font-poppins text-twelve p-2">
-                      <p>{fieldState.error.message}</p>
-                    </div>
-                  )}
-                  <Mistake />
-                </div>
-              )}
+              {fieldState.error && <Mistake error={fieldState.error} />}
+
               <InputPhone
                 width={props.width}
                 height={props.height}

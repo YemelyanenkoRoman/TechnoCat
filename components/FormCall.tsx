@@ -68,6 +68,7 @@ const FormCall = () => {
           <CheckboxField control={control} name="checkBox" height="18px" width="18px" />
           <p className="ml-[10px] font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
         </div>
+        <div>{!!Object.keys(errors).length && 'ошибка'}</div>
       </form>
     </FormProvider>
   );
