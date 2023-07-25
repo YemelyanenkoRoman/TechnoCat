@@ -3,6 +3,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import InputField from './formElement/inputField/InputField';
 import Button from './buttons/Button';
 import InputPhoneField from './formElement/inputField/InputPhoneField';
+import { CheckboxField } from './formElement/checkboxField/CheckboxField';
 
 const FormCall = () => {
   const methods = useForm<FormData>({ mode: 'onBlur' });
@@ -16,7 +17,7 @@ const FormCall = () => {
     console.log(data, 'FormCall.tsx');
     methods.reset();
   };
-
+  console.log(errors);
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[15px]">
@@ -45,23 +46,6 @@ const FormCall = () => {
           // label="Имя"
         />
 
-        {/* <InputField
-          width="280px"
-          height="51px"
-          placeholder="Телефон"
-          defaultValue=""
-          control={control}
-          name={'phone'}
-          rules={{
-            required: 'Введите телефон в формате +375291111111',
-            pattern: {
-              message: 'Введите телефон в формате +375291111111',
-              value: /^\+375\s?(17|29|33|44)\s?\d{3}\d{2}\d{2}$/,
-            },
-          }}
-          // label="Номер телефона"
-        /> */}
-
         <InputPhoneField
           width="280px"
           height="51px"
@@ -72,13 +56,18 @@ const FormCall = () => {
             required: 'Введите номер телефона в формате +375291111111',
             pattern: {
               message: 'Введите номер телефона в формате +375291111111',
-              value: /^\+375\s?(17|29|33|44)\s?\d{3}\d{2}\d{2}$/,
+              value: '/^[+]375s(17|25|29|33|44)sd{3}sd{2}sd{2}$/',
             },
           }}
           control={control}
         />
 
         <Button width={'280px'} height={'50'} title={'Записаться на занятие'} type={'submit'} />
+
+        <div className="flex max-w-[280px] h-[32px]">
+          <CheckboxField control={control} name="checkBox" height="18px" width="18px" />
+          <p className="ml-[10px] font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
+        </div>
       </form>
     </FormProvider>
   );

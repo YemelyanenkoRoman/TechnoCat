@@ -4,6 +4,9 @@ import { formatPhoneNumberIntl } from 'react-phone-number-input';
 
 import InputPhone from '@/components/input/InputPhone';
 
+import Mistake from '@/public/icons/formMistake.svg';
+import { useState } from 'react';
+
 type InputProps = {
   control: any;
   name: string;
@@ -18,6 +21,17 @@ type InputProps = {
 
 const InputPhoneField = (props: InputProps) => {
   // const { trigger } = useFormContext();
+
+  const [isMistakeHoverd, setIsMistakeHovered] = useState(false);
+
+  const handleMistakeMouseEnter = () => {
+    setIsMistakeHovered(true);
+  };
+
+  const handleMistakeMouseLeave = () => {
+    setIsMistakeHovered(false);
+  };
+
   return (
     <>
       {/* <div>{props.label}</div> */}
@@ -27,7 +41,23 @@ const InputPhoneField = (props: InputProps) => {
         defaultValue={props.defaultValue}
         render={({ field, fieldState }) => {
           return (
-            <div>
+            // ерор
+            <div className="flex items-center">
+              {fieldState && fieldState.error && (
+                <div
+                  className="absolute left-[80px]"
+                  onMouseEnter={handleMistakeMouseEnter}
+                  onMouseLeave={handleMistakeMouseLeave}
+                >
+                  {/* Этой хуйнёй мы render или не render компонент в зависимости от состояния */}
+                  {isMistakeHoverd && (
+                    <div className="absolute top-[40px] bg-local-gray-b-2 shadow-lg w-[280px] rounded-lg font-poppins text-twelve p-2">
+                      <p>{fieldState.error.message}</p>
+                    </div>
+                  )}
+                  <Mistake />
+                </div>
+              )}
               <InputPhone
                 width={props.width}
                 height={props.height}
@@ -41,7 +71,6 @@ const InputPhoneField = (props: InputProps) => {
                 }}
                 placeholder={props.placeholder}
               />
-              {fieldState && fieldState.error && <p className="absolute text-xs">{fieldState.error.message}</p>}
             </div>
           );
         }}
