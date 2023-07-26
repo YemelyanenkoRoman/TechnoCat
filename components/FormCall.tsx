@@ -4,6 +4,7 @@ import InputField from './formElement/inputField/InputField';
 import Button from './buttons/Button';
 import InputPhoneField from './formElement/inputField/InputPhoneField';
 import { CheckboxField } from './formElement/checkboxField/CheckboxField';
+import MistakeIcon from '@/public/icons/formMistake.svg';
 
 const FormCall = () => {
   const methods = useForm<FormData>({ mode: 'onBlur' });
@@ -43,7 +44,6 @@ const FormCall = () => {
               value: 20,
             },
           }}
-          // label="Имя"
         />
 
         <InputPhoneField
@@ -64,11 +64,24 @@ const FormCall = () => {
 
         <Button width={'280px'} height={'50'} title={'Записаться на занятие'} type={'submit'} />
 
-        <div className="flex max-w-[280px] h-[32px]">
-          <CheckboxField control={control} name="checkBox" height="18px" width="18px" />
-          <p className="ml-[10px] font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
+        <div className="flex max-w-[280px] h-[32px] ">
+          <div className="mr-[10px]">
+            <CheckboxField control={control} name="checkBox" height="24px" width="24px" />
+          </div>
+
+          <p className="font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
         </div>
-        <div>{!!Object.keys(errors).length && 'ошибка'}</div>
+        <div className="absolute top-[240px] flex items-center">
+          {!!Object.keys(errors).length && (
+            <div className="max-w-[282px] text-twelve flex">
+              <div className="mr-[10px]">
+                <MistakeIcon stroke="#36568B" />
+              </div>
+
+              <p>Пожалуйста, проверьте введенные данные</p>
+            </div>
+          )}
+        </div>
       </form>
     </FormProvider>
   );

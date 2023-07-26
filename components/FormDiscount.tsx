@@ -3,6 +3,8 @@ import { useForm, FormProvider } from 'react-hook-form';
 import InputField from './formElement/inputField/InputField';
 import Button from './buttons/Button';
 import InputPhoneField from './formElement/inputField/InputPhoneField';
+import { CheckboxField } from './formElement/checkboxField/CheckboxField';
+import MistakeIcon from '@/public/icons/formMistake.svg';
 
 const MyForm = () => {
   const methods = useForm<FormData>({ mode: 'onBlur' });
@@ -43,7 +45,6 @@ const MyForm = () => {
               value: 20,
             },
           }}
-          // label="Имя"
         />
 
         <InputPhoneField
@@ -80,10 +81,27 @@ const MyForm = () => {
               value: 50,
             },
           }}
-          // label="Выбранное направление"
         />
 
         <Button width={'280px'} height={'50'} title={'Записаться на занятие'} type={'submit'} />
+        <div className="flex max-w-[280px] h-[32px]">
+          <div className="mr-[10px]">
+            <CheckboxField control={control} name="checkBox" height="24px" width="24px" />
+          </div>
+
+          <p className=" font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
+        </div>
+        <div className="absolute top-[352px] flex items-center">
+          {!!Object.keys(errors).length && (
+            <div className="max-w-[282px] text-twelve flex">
+              <div className="mr-[10px]">
+                <MistakeIcon stroke="#36568B" />
+              </div>
+
+              <p>Пожалуйста, проверьте введенные данные</p>
+            </div>
+          )}
+        </div>
       </form>
     </FormProvider>
   );

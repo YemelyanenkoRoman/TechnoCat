@@ -1,5 +1,6 @@
 import { Controller } from 'react-hook-form';
 import Input from '../../input/Input';
+import { Mistake } from './Mistake';
 
 type InputProps = {
   control: any;
@@ -17,14 +18,15 @@ const InputField = (props: InputProps) => {
   // const { trigger } = useFormContext();
   return (
     <>
-      {/* <div>{props.label}</div> */}
       <Controller
         name={props.name}
         control={props.control}
         defaultValue={props.defaultValue}
         render={({ field, fieldState }) => {
           return (
-            <div>
+            <div className="flex items-center">
+              {fieldState.error && <Mistake error={fieldState.error} />}
+
               <Input
                 width={props.width}
                 height={props.height}
@@ -35,10 +37,8 @@ const InputField = (props: InputProps) => {
                 }}
                 onBlur={() => {
                   field.onBlur();
-                  // trigger(props.name);
                 }}
               />
-              {fieldState && fieldState.error && <p className="absolute text-xs">{fieldState.error.message}</p>}
             </div>
           );
         }}

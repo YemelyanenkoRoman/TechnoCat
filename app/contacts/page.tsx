@@ -30,7 +30,7 @@ const Contacts = () => {
                   <Instagram />
                   <p className="ml-2">Instagram</p>
                 </div>
-                <p className="font-poppins text-sm">@techno_cat_gomel</p>
+                <p className="font-poppins text-fourteen">@techno_cat_gomel</p>
               </div>
             </section>
             <section className="w-[573px] h-[182px]  rounded-lg bg-local-gray-b p-5">

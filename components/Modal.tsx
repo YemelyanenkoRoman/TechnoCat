@@ -40,13 +40,15 @@ export default function Modal() {
           onClick={handleOverlayClick}
           className="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
         >
-          <div className="rounded-lg w-[510px] h-[438px] relative z-10 bg-local-gray-b-2 shadow-lg">
-            <div className="w-[390px] h-[313px] m-[60px] flex items-center justify-center flex-col">
-              <h3 className="font-gilroy text-3xl flex">Заказ обратного звонка</h3>
-              <p className="font-poppins text-fourteen mt-[15px]">
-                Заполните форму и наши специалисты свяжутся с вами в течение рабочего дня.
-              </p>
-              <div className="flex mt-10">
+          <div className="rounded-lg w-[510px] h-[500px] relative z-10 bg-local-gray-b-2 shadow-lg">
+            <div className="m-[60px] flex items-center justify-center flex-col">
+              <div className="w-[346px] flex flex-col ">
+                <h3 className="font-gilroy text-3xl flex">Заказ обратного звонка</h3>
+                <p className="font-poppins text-fourteen mt-[15px]  text-center">
+                  Заполните форму и наши специалисты свяжутся с вами в течение рабочего дня.
+                </p>
+              </div>
+              <div className="flex mt-10 relative">
                 <FormCall />
               </div>
             </div>

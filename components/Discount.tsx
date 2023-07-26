@@ -38,9 +38,10 @@ export const discounts: Discount[] = [
 const Discount = () => {
   return (
     <div className="m-auto max-w-[1141px] bg-local-gray-act rounded-lg">
-      <div className="p-[35px] flex justify-between">
+      <div className="p-[45px] flex justify-between">
         <Carousel />
-        <div className="flex justify-center w-[280px] h-[248px]">
+
+        <div className="flex justify-center max-w-[312px] h-[342px] relative">
           <Form />
         </div>
       </div>

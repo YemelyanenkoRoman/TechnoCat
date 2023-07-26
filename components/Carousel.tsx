@@ -36,7 +36,7 @@ export default function Carousel() {
         >
           <div className="static flex justify-between">
             <figure className="text-thirtyfour">{discount.img}</figure>
-            <div className=" w-[448px] ml-[30px] flex flex-col justify-center items-center">
+            <div className=" w-[343px] ml-[30px] flex flex-col justify-center items-center">
               <h3 className="text-thirtyfour">{discount.title}</h3>
               <p className="font-poppins text-sexteen pt-[25px]">{discount.textOne}</p>
               <p className="font-poppins text-sexteen pt-[15px]">{discount.textTwo}</p>
@@ -47,7 +47,8 @@ export default function Carousel() {
       <div
         className="flex justify-center space-x-2 absolute bottom-0 left-0 right-0 mb-4 z-50"
         style={{
-          right: '-190px',
+          right: '-295px',
+          top: '355px',
         }}
       >
         {discounts.map((_, index) => (

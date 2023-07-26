@@ -22,16 +22,6 @@ type InputProps = {
 const InputPhoneField = (props: InputProps) => {
   // const { trigger } = useFormContext();
 
-  const [isMistakeHoverd, setIsMistakeHovered] = useState(false);
-
-  const handleMistakeMouseEnter = () => {
-    setIsMistakeHovered(true);
-  };
-
-  const handleMistakeMouseLeave = () => {
-    setIsMistakeHovered(false);
-  };
-
   return (
     <>
       {/* <div>{props.label}</div> */}
@@ -41,7 +31,6 @@ const InputPhoneField = (props: InputProps) => {
         defaultValue={props.defaultValue}
         render={({ field, fieldState }) => {
           return (
-            // ерор
             <div className="flex items-center">
               {fieldState.error && <Mistake error={fieldState.error} />}
 
