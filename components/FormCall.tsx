@@ -71,9 +71,9 @@ const FormCall = () => {
 
           <p className="font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
         </div>
-        <div className="absolute top-[240px] flex items-center">
+        <div className="absolute top-[240px] flex">
           {!!Object.keys(errors).length && (
-            <div className="max-w-[282px] text-twelve flex">
+            <div className="max-w-[282px] text-twelve flex items-center">
               <div className="mr-[10px]">
                 <MistakeIcon stroke="#36568B" />
               </div>
