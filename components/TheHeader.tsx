@@ -18,8 +18,8 @@ const TheHeader = () => {
   const color = useColor();
   return (
     <header
-      style={{ background: `${color}` }}
-      className="font-poppins text-local-gray-t text-sexteen font-normal  fixed top-0 left-0 w-full  z-50"
+      // style={{ background: `${color.bgColor}`, color: `${color.textColor}` }}
+      className={`${color.textColor} ${color.bgColor} font-poppins text-sexteen font-normal  fixed top-0 left-0 w-full  z-50`}
     >
       <div className="max-w-[1440px] mx-auto">
         <nav className="flex justify-between items-center h-[107px] px-[60px]">

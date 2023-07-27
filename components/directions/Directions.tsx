@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { DirectionsNav } from './DirectionsNav';
 import { v4 as uuidv4 } from 'uuid';
+import { useColor } from '../ColorNavigation';
 
 type DirectionsNav = {
   link: string;
@@ -10,6 +11,7 @@ type DirectionsNav = {
 };
 
 const Directions = () => {
+  const color = useColor();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMouseOver = () => {
@@ -22,13 +24,13 @@ const Directions = () => {
 
   return (
     <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="relative">
-      <div className={isMenuOpen ? 'text-gray-700 absolute cursor-pointer z-10' : 'absolute cursor-pointer z-10'}>
+      <div className={isMenuOpen ? `${color.textColor} absolute cursor-pointer z-10` : 'absolute cursor-pointer z-10'}>
         Направления
       </div>
       {isMenuOpen && (
         <ul className="bg-local-gray-act-2 shadow-lg absolute left-[-12px] top-[-8px] rounded-md pt-[51px]">
           {DirectionsNav.map((item) => (
-            <li className="py-2 px-3 cursor-pointer rounded hover:text-gray-700" key={uuidv4()}>
+            <li className={`py-2 px-3 cursor-pointer rounded ${color.hoverColor}`} key={uuidv4()}>
               <Link href={`/directions/${item.link}`}>{item.label}</Link>
             </li>
           ))}

@@ -1,23 +1,40 @@
 'use client';
-
 import { usePathname } from 'next/navigation';
 
-export const colorNavObj = {
-  '/': '#36568B',
-  '/about': '#36568B',
-  '/contacts': '#36568B',
-  '/directions/programming': '#E2CBFF',
-  '/directions/robotics': '#E2CBFF',
-  '/directions/english': '#E2CBFF',
-  '/directions/preparingforschool': '#E2CBFF',
-  '/directions/firstgradestudent': '#E2CBFF',
+interface colorNavObj {
+  [key: string]: {
+    bgColor: string;
+    textColor: string;
+    hoverColor: string;
+  };
+}
+
+export const colorNavObj: colorNavObj = {
+  '/': { bgColor: 'bg-[#36568B]', textColor: 'text-[#EFF6FF]', hoverColor: 'hover:text-[#724DA1]' },
+  '/about': { bgColor: 'bg-[#36568B]', textColor: 'text-[#EFF6FF]', hoverColor: 'hover:text-[#724DA1]' },
+  '/contacts': { bgColor: 'bg-[#36568B]', textColor: 'text-[#EFF6FF]', hoverColor: 'hover:text-[#724DA1]' },
+  '/directions/programming': {
+    bgColor: 'bg-[#E2CBFF]',
+    textColor: 'text-[#9783B0]',
+    hoverColor: 'hover:text-[#724DA1]',
+  },
+  '/directions/robotics': { bgColor: 'bg-[#E2CBFF]', textColor: 'text-[#9783B0]', hoverColor: 'hover:text-[#724DA1]' },
+  '/directions/english': { bgColor: 'bg-[#E2CBFF]', textColor: 'text-[#9783B0]', hoverColor: 'hover:text-[#724DA1]' },
+  '/directions/preparingforschool': {
+    bgColor: 'bg-[#E2CBFF]',
+    textColor: 'text-[#9783B0]',
+    hoverColor: 'hover:text-[#724DA1]',
+  },
+  '/directions/firstgradestudent': {
+    bgColor: 'bg-[#E2CBFF]',
+    textColor: 'text-[#9783B0]',
+    hoverColor: 'hover:text-[#724DA1]',
+  },
 };
 
 export const useColor = () => {
   const pathname = usePathname();
-  console.log(pathname, '!!!');
-
-  const color = colorNavObj[pathname as keyof typeof colorNavObj] || '#000000'; // Приведение типа
+  const color = colorNavObj[pathname];
 
   return color;
 };

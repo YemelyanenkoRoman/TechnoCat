@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useColor } from './ColorNavigation';
 
 type NavLink = {
   label: string;
@@ -12,6 +13,7 @@ type Props = {
 };
 
 const MainNavigation = ({ navLinks }: Props) => {
+  const color = useColor();
   const pathname = usePathname();
   return (
     <>
@@ -19,7 +21,7 @@ const MainNavigation = ({ navLinks }: Props) => {
         const isActive = pathname === link.href;
         return (
           <li key={link.label}>
-            <Link className={isActive ? 'text-gray-700 hover:text-gray-700' : 'hover:text-gray-700'} href={link.href}>
+            <Link className={isActive ? `font-bold ${color.hoverColor}` : `${color.hoverColor}`} href={link.href}>
               {link.label}
             </Link>
           </li>
