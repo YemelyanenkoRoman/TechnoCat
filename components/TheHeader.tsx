@@ -1,9 +1,13 @@
+'use client';
+
 import LogoMax from '../public/logo/technocat-logo-max 1.svg';
+import Image from 'next/image';
 
 import Directions from './directions/Directions';
 import Navigation from './MainNavigation';
 import Link from 'next/link';
 import Modal from './Modal';
+import { useColor } from './ColorNavigation';
 
 export const NavItems = [
   { label: 'О нас', href: '/about' },
@@ -11,14 +15,25 @@ export const NavItems = [
 ];
 
 const TheHeader = () => {
+  const color = useColor();
   return (
-    <header className="font-poppins text-local-gray-t text-sexteen font-normal bg-local-gray-b fixed top-0 left-0 w-full  z-50">
+    <header
+      style={{ background: `${color}` }}
+      className="font-poppins text-local-gray-t text-sexteen font-normal  fixed top-0 left-0 w-full  z-50"
+    >
       <div className="max-w-[1440px] mx-auto">
         <nav className="flex justify-between items-center h-[107px] px-[60px]">
           <div className="flex items-center">
             <div className="mr-[201px]">
               <Link href="/">
-                <LogoMax />
+                {/* Импорт лого 2 варианта */}
+                {/* <LogoMax /> */}
+                <Image
+                  src="/logo/technocat-logo-max 1.svg"
+                  alt="Главный логотип образовательного центра ТехноКот"
+                  width={135}
+                  height={47}
+                />
               </Link>
             </div>
             <ul className="flex gap-[46px] ">
@@ -27,14 +42,6 @@ const TheHeader = () => {
             </ul>
           </div>
           <Modal />
-          {/* <div className="flex flex-col"> */}
-          {/* <div className="flex"> */}
-          {/* <Modal /> */}
-          {/* </div> */}
-          {/* <a className="flex hover:text-gray-700" href="tel:+375291477233">
-              + 375 (29) 330-20-79
-            </a> */}
-          {/* </div> */}
         </nav>
       </div>
     </header>

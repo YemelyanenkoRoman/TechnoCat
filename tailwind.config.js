@@ -23,6 +23,7 @@ module.exports = {
         fifty: ['50px', '120%'],
       },
       colors: {
+        'white-color': '#EFF6FF',
         'local-gray-b': '#F6F5F5',
         'local-gray-b-2': '#F8F8F8',
         'local-gray-t': '#7F807E',

@@ -1,3 +1,5 @@
+'use client';
+
 import { v4 as uuidv4 } from 'uuid';
 import { NavItems } from '../TheHeader';
 import Navigation from '../MainNavigation';
@@ -10,10 +12,12 @@ import Location from '@/public/icons/location-pin-24-px.svg';
 import Time from '@/public/icons/time-24-px.svg';
 import Instagram from '@/public/icons/instagram-16-px.svg';
 import FooterNavBlock from './FooterNavBlock';
+import { useColor } from '../ColorNavigation';
 
 const TheFooter = () => {
+  const color = useColor();
   return (
-    <footer className="font-poppins text-local-gray-t text-sexteen font-normal bg-local-gray-b">
+    <footer style={{ background: `${color}` }} className="font-poppins text-local-gray-t text-sexteen font-normal">
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-row justify-between items-center h-[209px] px-[60px]">
           <div className="flex">

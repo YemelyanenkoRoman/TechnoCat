@@ -27,9 +27,10 @@ export default function Modal() {
         onMouseLeave={() => setIsHovered(false)}
       >
         <PhoneIcon
+          stroke="#EFF6FF"
           className="mr-2"
           style={{
-            color: isHovered ? '#4a5568' : 'white',
+            color: isHovered ? '#EFF6FF' : 'rgba(0,0,0, 0)',
           }}
         />
         <p>Заказать звонок</p>
