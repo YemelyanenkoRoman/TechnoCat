@@ -26,8 +26,8 @@ const TheFooter = () => {
               </ul>
             </div>
             <div className="flex gap-14">
-              <FooterNavBlock iconSvg={<AcademicCap />} />
-              <FooterNavBlock iconSvg={<Book />} />
+              <FooterNavBlock iconSvg={<AcademicCap />} title={'Мы научим'} startIndex={0} endIndex={3} />
+              <FooterNavBlock iconSvg={<Book />} title={'Мы поможем'} startIndex={3} endIndex={5} />
             </div>
           </div>
           <div className="flex gap-14">
