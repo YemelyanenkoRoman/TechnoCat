@@ -4,9 +4,12 @@ import { useState } from 'react';
 import PhoneIcon from '../public/icons/phone-24-px.svg';
 import CrossIcon from '../public/icons/cross-12-px.svg';
 import FormCall from './FormCall';
+import { useColor } from './ColorNavigation';
+
 export default function Modal() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const color = useColor();
 
   function handleOverlayClick(event: React.MouseEvent<HTMLDivElement>) {
     if (event.target === event.currentTarget) {
@@ -19,7 +22,7 @@ export default function Modal() {
       <div
         className="flex cursor-pointer "
         style={{
-          color: isHovered ? '#4a5568' : '',
+          color: isHovered ? `${color.svgHover}` : '',
           cursor: 'pointer',
         }}
         onClick={() => setIsOpen(true)}
@@ -27,10 +30,10 @@ export default function Modal() {
         onMouseLeave={() => setIsHovered(false)}
       >
         <PhoneIcon
-          stroke="#EFF6FF"
+          stroke={color.svgStroke}
           className="mr-2"
           style={{
-            color: isHovered ? '#EFF6FF' : 'rgba(0,0,0, 0)',
+            color: isHovered ? `${color.svgHover}` : 'rgba(0,0,0, 0)',
           }}
         />
         <p>Заказать звонок</p>

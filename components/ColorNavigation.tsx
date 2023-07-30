@@ -8,6 +8,8 @@ interface colorNavObj {
     hoverColor: string;
     directColor: string;
     activeColor?: string;
+    svgStroke: string;
+    svgHover: string;
   };
 }
 
@@ -17,18 +19,27 @@ export const colorNavObj: colorNavObj = {
     textColor: 'text-text-lightblue',
     hoverColor: 'hover:text-lightblue ',
     directColor: 'bg-d-blue',
+    activeColor: 'text-text-lightblue',
+    svgStroke: '#EFF6FF',
+    svgHover: '#EFF6FF',
   },
   '/about': {
     bgColor: 'bg-fill-blue',
     textColor: 'text-text-lightblue',
     hoverColor: 'hover:text-lightblue ',
     directColor: 'bg-d-blue',
+    activeColor: 'text-text-lightblue',
+    svgStroke: '#EFF6FF',
+    svgHover: '#EFF6FF',
   },
   '/contacts': {
     bgColor: 'bg-fill-blue',
     textColor: 'text-text-lightblue',
     hoverColor: 'hover:text-lightblue',
     directColor: 'bg-d-blue',
+    activeColor: 'text-text-lightblue',
+    svgStroke: '#EFF6FF',
+    svgHover: '#EFF6FF',
   },
   '/directions/programming': {
     bgColor: 'bg-fill-violet',
@@ -36,6 +47,8 @@ export const colorNavObj: colorNavObj = {
     hoverColor: 'hover:text-hover-violet',
     activeColor: 'text-hover-violet',
     directColor: 'bg-d-violet',
+    svgStroke: '#9783B0',
+    svgHover: '#724DA1',
   },
   '/directions/robotics': {
     bgColor: 'bg-fill-cyan',
@@ -43,6 +56,8 @@ export const colorNavObj: colorNavObj = {
     hoverColor: 'hover:text-hover-cyan',
     activeColor: 'text-hover-cyan',
     directColor: 'bg-d-cyan',
+    svgStroke: '#89898A',
+    svgHover: '#36568B',
   },
   '/directions/english': {
     bgColor: 'bg-fill-yelow',
@@ -50,6 +65,8 @@ export const colorNavObj: colorNavObj = {
     hoverColor: 'hover:text-hover-yellow',
     activeColor: 'text-hover-yellow',
     directColor: 'bg-d-yellow',
+    svgStroke: '#B0A36A',
+    svgHover: '#C3A411',
   },
   '/directions/preparingforschool': {
     bgColor: 'bg-fill-pink',
@@ -57,6 +74,8 @@ export const colorNavObj: colorNavObj = {
     hoverColor: 'hover:text-hover-brown',
     activeColor: 'text-hover-brown',
     directColor: 'bg-d-brown',
+    svgStroke: '#B18882',
+    svgHover: '#99564C',
   },
   '/directions/firstgradestudent': {
     bgColor: 'bg-fill-green',
@@ -64,6 +83,8 @@ export const colorNavObj: colorNavObj = {
     hoverColor: 'hover:text-hover-green',
     activeColor: 'text-hover-green',
     directColor: 'bg-d-green',
+    svgStroke: '#89AD87',
+    svgHover: '#349B46',
   },
 };
 
