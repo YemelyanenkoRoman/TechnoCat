@@ -21,7 +21,14 @@ const MainNavigation = ({ navLinks }: Props) => {
         const isActive = pathname === link.href;
         return (
           <li key={link.label}>
-            <Link className={isActive ? `font-bold ${color.hoverColor}` : `${color.hoverColor}`} href={link.href}>
+            <Link
+              className={
+                isActive
+                  ? `opacity-50 ${color.textColor}`
+                  : ` ease-linear duration-100 hover:opacity-50  ${color.hoverColor} `
+              }
+              href={link.href}
+            >
               {link.label}
             </Link>
           </li>

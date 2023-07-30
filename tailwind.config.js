@@ -23,7 +23,40 @@ module.exports = {
         fifty: ['50px', '120%'],
       },
       colors: {
-        'white-color': '#EFF6FF',
+        // main
+        'fill-blue': '#36568B',
+        'text-lightblue': '#EFF6FF',
+        'd-blue': ' #4B76BC',
+        // preparationschool
+        'fill-pink': '#FFD8D2',
+        'text-brown': '#B18882',
+        'hover-brown': '#99564C',
+        'd-brown': '#FFE9E6',
+        // english
+        'fill-yelow': '#FCF1BE',
+        'text-yellow': '#B0A36A',
+        'hover-yellow': '#C3A411',
+        'd-yellow': '#FFF9DE',
+        // robotics
+        'fill-cyan': '#D8E9FF',
+        'tetx-cyan': '#89898A',
+        'hover-cyan': '#36568B',
+        'd-cyan': '#EBF4FF',
+        // firstgradestudent
+        'fill-green': '#DAFFD8',
+        'text-green': '#89AD87',
+        'hover-green': '#349B46',
+        'd-green': '#EBFEEA',
+        // programming
+        'fill-violet': '#E2CBFF',
+        'tetx-violet': '#9783B0',
+        'hover-violet': '#724DA1',
+        'd-violet': '#ECDDFF',
+
+        'fill-medium': '#9CA4B1',
+        'text-light': '#B2B2B2',
+        'blue-dark': '#3D4A56',
+
         'local-gray-b': '#F6F5F5',
         'local-gray-b-2': '#F8F8F8',
         'local-gray-t': '#7F807E',
