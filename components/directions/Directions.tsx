@@ -26,7 +26,7 @@ const Directions = () => {
   const pathname = usePathname();
 
   return (
-    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="relative">
+    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="relative ">
       <div className={isMenuOpen ? `${color.textColor} absolute cursor-pointer z-10` : 'absolute cursor-pointer z-10'}>
         Направления
       </div>
@@ -37,7 +37,11 @@ const Directions = () => {
             return (
               <li className={`py-2 px-3 cursor-pointer rounded ${color.hoverColor}`} key={uuidv4()}>
                 <Link
-                  className={isActive ? `${color.activeColor}` : `${color.hoverColor}`}
+                  className={
+                    isActive
+                      ? `opacity-80 ${color.activeColor}`
+                      : `ease-linear duration-100 hover:opacity-80 ${color.hoverColor}`
+                  }
                   href={`/directions/${item.link}`}
                 >
                   {item.label}
