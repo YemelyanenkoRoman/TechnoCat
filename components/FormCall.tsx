@@ -75,10 +75,10 @@ const FormCall = () => {
           {!!Object.keys(errors).length && (
             <div className="max-w-[282px] text-twelve flex items-center">
               <div className="mr-[10px]">
-                <MistakeIcon stroke="#36568B" />
+                <MistakeIcon stroke="#E0474E" />
               </div>
 
-              <p>Пожалуйста, проверьте введенные данные</p>
+              <p className="font-poppins text-twelve text-red-mistake">Пожалуйста, проверьте введенные данные</p>
             </div>
           )}
         </div>

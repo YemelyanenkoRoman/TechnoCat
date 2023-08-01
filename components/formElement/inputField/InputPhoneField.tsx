@@ -1,3 +1,5 @@
+'use client';
+
 import { Control, Controller } from 'react-hook-form';
 import 'react-phone-number-input/style.css';
 import InputPhone from '@/components/input/InputPhone';
@@ -5,6 +7,7 @@ import InputPhone from '@/components/input/InputPhone';
 import Input from '../../input/Input';
 import { Mistake } from './Mistake';
 import PhoneInput from '@/components/input/InputPhone';
+import { useColor } from '@/components/ColorNavigation';
 
 type InputProps = {
   control: any;
@@ -20,6 +23,8 @@ type InputProps = {
 
 const InputPhoneField = (props: InputProps) => {
   // const { trigger } = useFormContext();
+
+  const color = useColor();
   return (
     <>
       <Controller
@@ -27,11 +32,14 @@ const InputPhoneField = (props: InputProps) => {
         control={props.control}
         defaultValue={props.defaultValue}
         render={({ field, fieldState }) => {
+          console.log(fieldState.error, 'соси хуй');
+
           return (
             <div className="flex items-center">
               {fieldState.error && <Mistake error={fieldState.error} />}
 
               <PhoneInput
+                borderColor={fieldState.error ? '#E0474E' : `${color.svgHover}`}
                 width={props.width}
                 height={props.height}
                 placeholder={props.placeholder}
