@@ -1,26 +1,25 @@
-// import PhoneInput from 'react-phone-number-input';
-import PhoneInput from 'react-phone-number-input/input';
+import React from 'react';
+import InputMask from 'react-input-mask';
+
 type InputPhoneProps = {
   value: string;
-  onChange: (value: string) => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: () => void;
   placeholder?: string;
-  country: any;
 
   width: string;
   height: string;
 };
 
-const InputPhone = (props: InputPhoneProps) => (
-  <PhoneInput
-    style={{ width: props.width, height: props.height }}
+const PhoneInput = ({ value, onChange, onBlur, placeholder, width, height }: InputPhoneProps) => (
+  <InputMask
+    mask="+375 (99) 999-99-99"
+    value={value}
+    onChange={onChange}
+    onBlur={onBlur}
+    placeholder={placeholder}
+    style={{ width, height }}
     className="border-2 border-local-gray-t rounded-lg font-poppins text-sexteen pl-5"
-    value={props.value}
-    country={props.country}
-    onChange={props.onChange}
-    onBlur={props.onBlur}
-    placeholder={props.placeholder}
-  />
+  ></InputMask>
 );
-
-export default InputPhone;
+export default PhoneInput;

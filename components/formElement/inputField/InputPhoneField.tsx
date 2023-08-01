@@ -1,11 +1,10 @@
 import { Control, Controller } from 'react-hook-form';
 import 'react-phone-number-input/style.css';
-import { formatPhoneNumberIntl } from 'react-phone-number-input';
-
 import InputPhone from '@/components/input/InputPhone';
 
-import { useState } from 'react';
+import Input from '../../input/Input';
 import { Mistake } from './Mistake';
+import PhoneInput from '@/components/input/InputPhone';
 
 type InputProps = {
   control: any;
@@ -21,10 +20,8 @@ type InputProps = {
 
 const InputPhoneField = (props: InputProps) => {
   // const { trigger } = useFormContext();
-
   return (
     <>
-      {/* <div>{props.label}</div> */}
       <Controller
         name={props.name}
         control={props.control}
@@ -34,18 +31,17 @@ const InputPhoneField = (props: InputProps) => {
             <div className="flex items-center">
               {fieldState.error && <Mistake error={fieldState.error} />}
 
-              <InputPhone
+              <PhoneInput
                 width={props.width}
                 height={props.height}
+                placeholder={props.placeholder}
                 value={field.value}
-                country="BY"
-                onChange={(value) => {
-                  field.onChange(formatPhoneNumberIntl(value));
+                onChange={(e) => {
+                  field.onChange(e.target.value);
                 }}
                 onBlur={() => {
                   field.onBlur();
                 }}
-                placeholder={props.placeholder}
               />
             </div>
           );
