@@ -52,12 +52,12 @@ const MyForm = () => {
           height="51px"
           placeholder="Телефон"
           defaultValue=""
-          name={'newphone'}
+          name={'Phone'}
           rules={{
-            required: 'Введите номер телефона',
+            required: 'Пожалуйста, заполните это поле',
             pattern: {
-              message: 'Проверьте правильность введенного номера',
-              value: /^[+]375\s(17|25|29|33|44)\s\d{3}\s\d{2}\s\d{2}$/,
+              message: 'Пржалуйста, проверьте правильность указанного номера телефона',
+              value: /^\+375 \((29|44|25|33)\) \d{3}-\d{2}-\d{2}$/,
             },
           }}
           control={control}
@@ -71,7 +71,11 @@ const MyForm = () => {
           control={control}
           name={'direction'}
           rules={{
-            required: 'Поле обязательно',
+            required: 'Пожалуйста, заполните это поле',
+            pattern: {
+              message: 'Используйте только буквы',
+              value: /^[A-Za-zА-Яа-я]+$/,
+            },
             minLength: {
               message: 'Минимум два символа',
               value: 2,
