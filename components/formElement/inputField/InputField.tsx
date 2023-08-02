@@ -1,6 +1,7 @@
 import { Controller } from 'react-hook-form';
 import Input from '../../input/Input';
 import { Mistake } from './Mistake';
+import { useColor } from '@/components/ColorNavigation';
 
 type InputProps = {
   control: any;
@@ -15,6 +16,7 @@ type InputProps = {
 };
 
 const InputField = (props: InputProps) => {
+  const color = useColor();
   // const { trigger } = useFormContext();
   return (
     <>
@@ -28,6 +30,7 @@ const InputField = (props: InputProps) => {
               {fieldState.error && <Mistake error={fieldState.error} />}
 
               <Input
+                borderColor={fieldState.error ? '#E0474E' : `${color.svgHover}`}
                 width={props.width}
                 height={props.height}
                 placeholder={props.placeholder}

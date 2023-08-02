@@ -5,8 +5,10 @@ import Button from './buttons/Button';
 import InputPhoneField from './formElement/inputField/InputPhoneField';
 import { CheckboxField } from './formElement/checkboxField/CheckboxField';
 import MistakeIcon from '@/public/icons/formMistake.svg';
+import { useColor } from './ColorNavigation';
 
 const FormCall = () => {
+  const color = useColor();
   const methods = useForm<FormData>({ mode: 'onBlur' });
   const {
     control,
@@ -62,7 +64,13 @@ const FormCall = () => {
           control={control}
         />
 
-        <Button width={'280px'} height={'50'} title={'Записаться на занятие'} type={'submit'} />
+        <Button
+          width={'280px'}
+          height={'50'}
+          title={'Записаться на занятие'}
+          type={'submit'}
+          backgroundColor={color.bgColor}
+        />
 
         <div className="flex max-w-[280px] h-[32px] ">
           <div className="mr-[10px]">

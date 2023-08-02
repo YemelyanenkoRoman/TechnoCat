@@ -10,12 +10,14 @@ interface colorNavObj {
     activeColor?: string;
     svgStroke: string;
     svgHover: string;
+    bgModal: string;
   };
 }
 
 export const colorNavObj: colorNavObj = {
   '/': {
     bgColor: 'bg-fill-blue',
+    bgModal: 'bg-d-cyan',
     textColor: 'text-text-lightblue',
     hoverColor: 'hover:text-lightblue ',
     directColor: 'bg-d-blue',
@@ -25,6 +27,7 @@ export const colorNavObj: colorNavObj = {
   },
   '/about': {
     bgColor: 'bg-fill-blue',
+    bgModal: 'bg-d-cyan',
     textColor: 'text-text-lightblue',
     hoverColor: 'hover:text-lightblue ',
     directColor: 'bg-d-blue',
@@ -34,6 +37,7 @@ export const colorNavObj: colorNavObj = {
   },
   '/contacts': {
     bgColor: 'bg-fill-blue',
+    bgModal: 'bg-d-cyan',
     textColor: 'text-text-lightblue',
     hoverColor: 'hover:text-lightblue',
     directColor: 'bg-d-blue',
@@ -43,6 +47,7 @@ export const colorNavObj: colorNavObj = {
   },
   '/directions/programming': {
     bgColor: 'bg-fill-violet',
+    bgModal: 'bg-fill-violet',
     textColor: 'text-tetx-violet',
     hoverColor: 'hover:text-hover-violet',
     activeColor: 'text-hover-violet',
@@ -52,6 +57,7 @@ export const colorNavObj: colorNavObj = {
   },
   '/directions/robotics': {
     bgColor: 'bg-fill-cyan',
+    bgModal: 'bg-fill-cyan',
     textColor: 'text-tetx-cyan',
     hoverColor: 'hover:text-hover-cyan',
     activeColor: 'text-hover-cyan',
@@ -61,6 +67,7 @@ export const colorNavObj: colorNavObj = {
   },
   '/directions/english': {
     bgColor: 'bg-fill-yelow',
+    bgModal: 'bg-fill-yelow',
     textColor: 'text-text-yellow',
     hoverColor: 'hover:text-hover-yellow',
     activeColor: 'text-hover-yellow',
@@ -70,6 +77,7 @@ export const colorNavObj: colorNavObj = {
   },
   '/directions/preparingforschool': {
     bgColor: 'bg-fill-pink',
+    bgModal: 'bg-fill-pink',
     textColor: 'text-text-brown',
     hoverColor: 'hover:text-hover-brown',
     activeColor: 'text-hover-brown',
@@ -79,6 +87,7 @@ export const colorNavObj: colorNavObj = {
   },
   '/directions/firstgradestudent': {
     bgColor: 'bg-fill-green',
+    bgModal: 'bg-fill-green',
     textColor: 'text-text-green',
     hoverColor: 'hover:text-hover-green',
     activeColor: 'text-hover-green',

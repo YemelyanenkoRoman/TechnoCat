@@ -1,6 +1,7 @@
 export type PropsButton = {
-  width: any;
-  height: any;
+  width: string;
+  height: string;
+  backgroundColor: string;
   title: string;
   type: any;
 };
