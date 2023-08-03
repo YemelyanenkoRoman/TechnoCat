@@ -1,5 +1,8 @@
+'use client';
+
 import { Control, Controller } from 'react-hook-form';
 import { Checkbox } from '@/components/checkbox/Checkbox';
+import { useColor } from '@/components/ColorNavigation';
 
 interface CheckboxProps {
   control: Control<any>;
@@ -10,6 +13,8 @@ interface CheckboxProps {
 }
 
 export const CheckboxField = (props: CheckboxProps) => {
+  const color = useColor();
+
   return (
     <Controller
       control={props.control}
@@ -17,6 +22,7 @@ export const CheckboxField = (props: CheckboxProps) => {
       rules={{ validate: (value) => (value ? true : '<p>!!!</p>') }}
       render={({ field }) => (
         <Checkbox
+          borderColor={color.formBorder}
           width={props.width}
           height={props.height}
           checked={field.value || false}

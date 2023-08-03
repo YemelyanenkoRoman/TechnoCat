@@ -69,7 +69,9 @@ const FormCall = () => {
           height={'50'}
           title={'Записаться на занятие'}
           type={'submit'}
-          backgroundColor={color.bgColor}
+          backgroundColor={color.bgButton}
+          focus={color.formBorderActive}
+          bgHover={color.bgButtonActive}
         />
 
         <div className="flex max-w-[280px] h-[32px] ">

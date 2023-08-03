@@ -10,17 +10,18 @@ type InputPhoneProps = {
   width: string;
   height: string;
   borderColor: string;
+  focus: string;
 };
 
-const PhoneInput = ({ value, onChange, onBlur, placeholder, width, height, borderColor }: InputPhoneProps) => (
+const PhoneInput = ({ value, onChange, onBlur, placeholder, width, height, focus, borderColor }: InputPhoneProps) => (
   <InputMask
     mask="+375 (99) 999-99-99"
     value={value}
     onChange={onChange}
     onBlur={onBlur}
     placeholder={placeholder}
-    style={{ width, height, borderColor }}
-    className="border-2  rounded-lg font-poppins text-sexteen pl-5"
+    style={{ width, height }}
+    className={`border-2 rounded-lg font-poppins text-sexteen pl-5 focus:outline-none  ${focus} ${borderColor}`}
   ></InputMask>
 );
 export default PhoneInput;

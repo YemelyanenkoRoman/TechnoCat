@@ -53,7 +53,9 @@ export default function Modal() {
             className={`
             
             ${
-              pathname === '/' || pathname === '/about' || pathname === '/contacs' ? 'bg-[#EBF4FF]' : `${color.bgColor}`
+              pathname === '/' || pathname === '/about' || pathname === '/contacts'
+                ? 'bg-[#EBF4FF]'
+                : `${color.bgColor}`
             }
             
             ${

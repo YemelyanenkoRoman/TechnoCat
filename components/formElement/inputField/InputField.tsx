@@ -30,7 +30,8 @@ const InputField = (props: InputProps) => {
               {fieldState.error && <Mistake error={fieldState.error} />}
 
               <Input
-                borderColor={fieldState.error ? '#E0474E' : `${color.svgHover}`}
+                focus={color.formBorderActive}
+                borderColor={fieldState.error ? 'border-[#E0474E]' : `${color.formBorder}`}
                 width={props.width}
                 height={props.height}
                 placeholder={props.placeholder}

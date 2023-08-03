@@ -32,26 +32,31 @@ module.exports = {
         'text-brown': '#B18882',
         'hover-brown': '#99564C',
         'd-brown': '#FFE9E6',
+        'button-brown': '#D67768',
         // english
         'fill-yelow': '#FCF1BE',
         'text-yellow': '#B0A36A',
         'hover-yellow': '#C3A411',
         'd-yellow': '#FFF9DE',
+        'button-yellow': '#DFC139',
         // robotics
         'fill-cyan': '#D8E9FF',
         'tetx-cyan': '#89898A',
         'hover-cyan': '#36568B',
         'd-cyan': '#EBF4FF',
+
         // firstgradestudent
         'fill-green': '#DAFFD8',
         'text-green': '#89AD87',
         'hover-green': '#349B46',
         'd-green': '#EBFEEA',
+        'button-green': '#4ECE65',
         // programming
         'fill-violet': '#E2CBFF',
         'tetx-violet': '#9783B0',
         'hover-violet': '#724DA1',
         'd-violet': '#ECDDFF',
+        'button-violet': '#8F5DCE',
 
         'fill-medium': '#9CA4B1',
         'text-light': '#B2B2B2',
@@ -67,10 +72,6 @@ module.exports = {
         'local-gray-act-3': '#7F817E',
         'local-grey-act-t': '#515151',
       },
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
     },
   },
   plugins: [],

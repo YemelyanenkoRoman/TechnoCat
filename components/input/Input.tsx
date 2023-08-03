@@ -1,4 +1,5 @@
 type InputProps = {
+  focus: string;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: () => void;
@@ -11,8 +12,11 @@ type InputProps = {
 
 const Input = (props: InputProps) => (
   <input
-    style={{ width: props.width, height: props.height, borderColor: props.borderColor }}
-    className="border-2 border-local-gray-t rounded-lg font-poppins text-sexteen pl-5"
+    // borderColor: props.borderColor
+    style={{ width: props.width, height: props.height }}
+    className={`border-2 rounded-lg font-poppins text-sexteen pl-5 focus:outline-none  ${props.focus} ${props.borderColor}`}
+    // className={`border-2 rounded-lg font-poppins text-sexteen pl-5 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-100 ${props.borderColor}`}
+
     value={props.value}
     onChange={props.onChange}
     onBlur={props.onBlur}
