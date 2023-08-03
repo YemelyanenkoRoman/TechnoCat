@@ -21,7 +21,7 @@ const PhoneInput = ({ value, onChange, onBlur, placeholder, width, height, focus
     onBlur={onBlur}
     placeholder={placeholder}
     style={{ width, height }}
-    className={`border-2 rounded-lg font-poppins text-sexteen pl-5 focus:outline-none  ${focus} ${borderColor}`}
+    className={`border-2 rounded-lg font-poppins text-sexteen pl-5 focus:outline-none focus:ring-0 ${focus} ${borderColor}`}
   ></InputMask>
 );
 export default PhoneInput;

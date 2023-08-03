@@ -119,7 +119,7 @@ export const colorNavObj: colorNavObj = {
     directColor: 'bg-d-green',
     svgStroke: '#89AD87',
     svgHover: '#349B46',
-    formBorder: 'brder-button-green',
+    formBorder: 'border-button-green',
     formBorderActive: 'focus:border-hover-green',
   },
 };

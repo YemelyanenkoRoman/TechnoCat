@@ -87,7 +87,15 @@ const MyForm = () => {
           }}
         />
 
-        <Button width={'280px'} height={'50'} title={'Записаться на занятие'} type={'submit'} />
+        <Button
+          width={'280px'}
+          height={'50'}
+          title={'Записаться на занятие'}
+          type={'submit'}
+          backgroundColor={''}
+          bgHover={''}
+          focus={''}
+        />
         <div className="flex max-w-[280px] h-[32px]">
           <div className="mr-[10px]">
             <CheckboxField control={control} name="checkBox" height="24px" width="24px" />
