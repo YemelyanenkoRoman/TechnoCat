@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { DirectionsNav } from '../directions/DirectionsNav';
 import { v4 as uuidv4 } from 'uuid';
 import { useColor } from '../ColorNavigation';
+import { usePathname } from 'next/navigation';
 
 type FooterProps = {
   startIndex: number;
@@ -33,17 +34,31 @@ const FooterNavigation: NavigationItem[] = DirectionsNav.map((item) => {
 
 const FooterNav = (props: FooterProps) => {
   const color = useColor();
+  const pathname = usePathname();
   const slicedNavigation = FooterNavigation.slice(props.startIndex, props.endIndex);
 
   return (
     <>
-      {slicedNavigation.map(({ label, href }) => (
-        <li key={uuidv4()} className="flex">
-          <Link className={`${color.hoverColor} flex`} href={href}>
-            {label}
-          </Link>
-        </li>
-      ))}
+      {slicedNavigation.map(({ label, href }) => {
+        const isActive = pathname === href;
+        return (
+          <li key={uuidv4()} className="flex">
+            <Link
+              // className={
+              //   isActive
+              //     ? `opacity-50 ${color.textColor} font-poppins text-sexteen font-normal`
+              //     : ` ease-linear duration-100 hover:opacity-80  ${color.hoverColor} font-poppins text-sexteen font-normal`
+              // }
+
+              className={`
+  ${isActive ? `opacity-80 ${color.activeColor}` : `ease-linear duration-100 hover:opacity-80 ${color.hoverColor}`}`}
+              href={href}
+            >
+              {label}
+            </Link>
+          </li>
+        );
+      })}
     </>
   );
 };
