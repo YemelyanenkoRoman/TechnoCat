@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { v4 as uuidv4 } from 'uuid';
 import { NavItems } from '../TheHeader';
 import Navigation from '../MainNavigation';
@@ -17,27 +19,42 @@ import { useColor } from '../ColorNavigation';
 const TheFooter = () => {
   const color = useColor();
   return (
-    <footer style={{ background: `${color}` }} className="font-poppins text-local-gray-t text-sexteen font-normal">
+    <footer className={`${color.textColor} ${color.bgColor} font-poppins text-sexteen font-normal`}>
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-row justify-between items-center h-[209px] px-[60px]">
           <div className="flex">
             <div className="max-w-[100px] max-h-[109px] flex flex-col mr-[125px]">
               <Link href="/">
-                <LogoMin />
+                <Image
+                  src="/logo/technocat-logo-min.svg"
+                  alt="Логотип образовательного центра ТехноКот"
+                  width={100}
+                  height={35}
+                />
               </Link>
               <ul className="mt-5 flex gap-2 flex-col">
                 <Navigation navLinks={NavItems} />
               </ul>
             </div>
             <div className="flex gap-14">
-              <FooterNavBlock iconSvg={<AcademicCap />} title={'Мы научим'} startIndex={0} endIndex={3} />
-              <FooterNavBlock iconSvg={<Book />} title={'Мы поможем'} startIndex={3} endIndex={5} />
+              <FooterNavBlock
+                iconSvg={<AcademicCap stroke={color.svgStroke} />}
+                title={'Мы научим'}
+                startIndex={0}
+                endIndex={3}
+              />
+              <FooterNavBlock
+                iconSvg={<Book stroke={color.svgStroke} />}
+                title={'Мы поможем'}
+                startIndex={3}
+                endIndex={5}
+              />
             </div>
           </div>
           <div className="flex gap-14">
             <div className="flex flex-col max-w-[175px] ">
               <div className="flex flex-row">
-                <Location />
+                <Location stroke={color.svgStroke} />
                 <h2 className="ml-[10px] font-gilroy text-twenty">Мы находимся</h2>
               </div>
               <Link className="mt-5" href="/">
@@ -46,14 +63,14 @@ const TheFooter = () => {
             </div>
             <div className="flex flex-col max-w-[185px]">
               <div className="flex flex-row">
-                <Time />
+                <Time stroke={color.svgStroke} d="M12 7.5V12L15.75 14.25" />
                 <h2 className="ml-[10px] font-gilroy text-twenty">Мы на связи</h2>
               </div>
               <div className="mt-5 flex flex-col gap-2">
                 <p>ежедневно: 9:00-20:30</p>
                 <p>+ 375 (29) 330-20-79</p>
                 <Link className="flex" href="/">
-                  <Instagram /> <p className="ml-[6px]">Instagram</p>
+                  <Instagram stroke={color.svgStroke} /> <p className="ml-[6px]">Instagram</p>
                 </Link>
               </div>
             </div>

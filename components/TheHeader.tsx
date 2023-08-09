@@ -18,7 +18,6 @@ const TheHeader = () => {
   const color = useColor();
   return (
     <header
-      // style={{ background: `${color.bgColor}`, color: `${color.textColor}` }}
       className={`${color.textColor} ${color.bgColor} font-poppins text-sexteen font-normal  fixed top-0 left-0 w-full  z-50`}
     >
       <div className="max-w-[1440px] mx-auto">
@@ -26,8 +25,6 @@ const TheHeader = () => {
           <div className="flex items-center">
             <div className="mr-[201px]">
               <Link href="/">
-                {/* Импорт лого 2 варианта */}
-                {/* <LogoMax /> */}
                 <Image
                   src="/logo/technocat-logo-max 1.svg"
                   alt="Главный логотип образовательного центра ТехноКот"
