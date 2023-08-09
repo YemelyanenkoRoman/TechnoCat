@@ -7,7 +7,6 @@ import { NavItems } from '../TheHeader';
 import Navigation from '../MainNavigation';
 import Link from 'next/link';
 
-import LogoMin from '@/public/logo/technocat-logo-min.svg';
 import AcademicCap from '@/public/icons/academic-cap-24-px.svg';
 import Book from '@/public/icons/book-24-px.svg';
 import Location from '@/public/icons/location-pin-24-px.svg';

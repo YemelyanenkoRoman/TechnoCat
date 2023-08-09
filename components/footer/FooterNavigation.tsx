@@ -11,20 +11,20 @@ type FooterProps = {
 };
 
 const linkLabels: { [key: string]: string } = {
-  programming: 'Программированию',
-  robotics: 'Робототехнике',
-  english: 'Английскому языку',
-  preparingforschool: 'Подготовим к школе',
-  firstgradestudent: 'Поможем первокласснику',
+  '/directions/programming': 'Программированию',
+  '/directions/robotics': 'Робототехнике',
+  '/directions/english': 'Английскому языку',
+  '/directions/preparingforschool': 'Подготовим к школе',
+  '/directions/firstgradestudent': 'Поможем первокласснику',
 };
 
 type NavigationItem = {
-  link: string;
   label: string;
+  href: string;
 };
 
 const FooterNavigation: NavigationItem[] = DirectionsNav.map((item) => {
-  const label = linkLabels[item.link];
+  const label = linkLabels[item.href];
   return {
     ...item,
     label: label ? label : item.label,
@@ -37,9 +37,9 @@ const FooterNav = (props: FooterProps) => {
 
   return (
     <>
-      {slicedNavigation.map(({ link, label }) => (
+      {slicedNavigation.map(({ label, href }) => (
         <li key={uuidv4()} className="flex">
-          <Link className={`${color.hoverColor} flex`} href={link}>
+          <Link className={`${color.hoverColor} flex`} href={href}>
             {label}
           </Link>
         </li>

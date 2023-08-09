@@ -7,7 +7,7 @@ import { useColor } from '../ColorNavigation';
 import { usePathname } from 'next/navigation';
 
 type DirectionsNav = {
-  link: string;
+  href: string;
   label: string;
 };
 
@@ -33,7 +33,7 @@ const Directions = () => {
       {isMenuOpen && (
         <ul className={`${color.directColor} shadow-lg absolute left-[-12px] top-[-8px] rounded-md pt-[51px]`}>
           {DirectionsNav.map((item) => {
-            const isActive = pathname === `/directions/${item.link}`;
+            const isActive = pathname === `${item.href}`;
             return (
               <li className={`py-2 px-3 cursor-pointer rounded ${color.hoverColor}`} key={uuidv4()}>
                 <Link
@@ -42,7 +42,7 @@ const Directions = () => {
                       ? `opacity-80 ${color.activeColor}`
                       : `ease-linear duration-100 hover:opacity-80 ${color.hoverColor}`
                   }
-                  href={`/directions/${item.link}`}
+                  href={`${item.href}`}
                 >
                   {item.label}
                 </Link>
