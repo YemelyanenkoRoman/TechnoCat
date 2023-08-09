@@ -1,6 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { DirectionsNav } from '../directions/DirectionsNav';
 import { v4 as uuidv4 } from 'uuid';
+import { useColor } from '../ColorNavigation';
 
 type FooterProps = {
   startIndex: number;
@@ -29,13 +32,14 @@ const FooterNavigation: NavigationItem[] = DirectionsNav.map((item) => {
 });
 
 const FooterNav = (props: FooterProps) => {
+  const color = useColor();
   const slicedNavigation = FooterNavigation.slice(props.startIndex, props.endIndex);
 
   return (
     <>
       {slicedNavigation.map(({ link, label }) => (
         <li key={uuidv4()} className="flex">
-          <Link className="hover:text-gray-700 flex" href={link}>
+          <Link className={`${color.hoverColor} flex`} href={link}>
             {label}
           </Link>
         </li>

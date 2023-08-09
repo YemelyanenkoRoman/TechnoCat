@@ -17,7 +17,15 @@ export default function Home() {
               Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и подарят
               незабываемые впечатления от увлекательных занятий.
             </h2>
-            <Button width="185px" height="50px" title="Узнать больше" type="button" />
+            <Button
+              width="185px"
+              height="50px"
+              title="Узнать больше"
+              type="button"
+              backgroundColor={''}
+              bgHover={''}
+              focus={''}
+            />
           </div>
           <figure>
             <H1Svg />

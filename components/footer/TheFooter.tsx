@@ -63,7 +63,7 @@ const TheFooter = () => {
             </div>
             <div className="flex flex-col max-w-[185px]">
               <div className="flex flex-row">
-                <Time stroke={color.svgStroke} d="M12 7.5V12L15.75 14.25" />
+                <Time stroke={color.svgStroke} />
                 <h2 className="ml-[10px] font-gilroy text-twenty">Мы на связи</h2>
               </div>
               <div className="mt-5 flex flex-col gap-2">
