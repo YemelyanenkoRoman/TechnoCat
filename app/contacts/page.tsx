@@ -1,8 +1,8 @@
 import { Breadcrumbs, breadcrumbItems } from '@/components/Breadcrumbs';
-import Map from '@/public/map.svg';
 import Instagram from '@/public/icons/instagram-16-px.svg';
 import Phone from '@/public/icons/phone-24-px.svg';
 import Modal from '@/components/Modal';
+import { Map } from '@/components';
 
 const Contacts = () => {
   return (

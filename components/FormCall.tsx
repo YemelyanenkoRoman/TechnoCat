@@ -7,20 +7,35 @@ import { CheckboxField } from './formElement/checkboxField/CheckboxField';
 import MistakeIcon from '@/public/icons/formMistake.svg';
 import { useColor } from './ColorNavigation';
 
+interface FormValues {
+  name: string;
+  phone: string;
+}
+
 const FormCall = () => {
   const color = useColor();
-  const methods = useForm<FormData>({ mode: 'onBlur' });
+  const methods = useForm<FormValues>({ mode: 'onBlur' });
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = methods;
 
-  const onSubmit = (data: FormData) => {
-    console.log(data, 'FormCall.tsx');
+  const onSubmit = async (data: FormValues) => {
+    const response = await fetch('/api/request-call', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: data.name,
+        phone: data.phone,
+      }),
+    });
+
+    const restData = await response.json();
+
+    console.log(response, restData, 'RESP');
     methods.reset();
   };
-  console.log(errors);
+
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[15px]">
@@ -53,7 +68,7 @@ const FormCall = () => {
           height="51px"
           placeholder="Телефон"
           defaultValue=""
-          name={'Phone'}
+          name={'phone'}
           rules={{
             required: 'Пожалуйста, заполните это поле',
             pattern: {
