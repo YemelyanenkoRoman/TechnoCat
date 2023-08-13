@@ -44,12 +44,6 @@ const FooterNav = (props: FooterProps) => {
         return (
           <li key={uuidv4()} className="flex">
             <Link
-              // className={
-              //   isActive
-              //     ? `opacity-50 ${color.textColor} font-poppins text-sexteen font-normal`
-              //     : ` ease-linear duration-100 hover:opacity-80  ${color.hoverColor} font-poppins text-sexteen font-normal`
-              // }
-
               className={`
   ${isActive ? `opacity-80 ${color.activeColor}` : `ease-linear duration-100 hover:opacity-80 ${color.hoverColor}`}`}
               href={href}

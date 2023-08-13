@@ -5,6 +5,7 @@ import WhatFindCenter from '@/components/WhatFindCenter';
 import DirectionCards from '@/components/directions/DirectionCards';
 import Discount from '@/components/Discount';
 import OftenQuestions from '@/components/OftenQuestions';
+import Loader from '@/components/loader/Loader';
 
 export default function Home() {
   return (
@@ -52,6 +53,10 @@ export default function Home() {
 
       <section className="pt-[180px] mb-[120px]">
         <Discount />
+      </section>
+
+      <section>
+        <Loader />
       </section>
     </main>
   );
