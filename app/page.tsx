@@ -54,10 +54,6 @@ export default function Home() {
       <section className="pt-[180px] mb-[120px]">
         <Discount />
       </section>
-
-      <section>
-        <Loader />
-      </section>
     </main>
   );
 }
