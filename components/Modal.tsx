@@ -80,9 +80,9 @@ export default function Modal() {
               <></>
             )}
             {isSent ? (
-              <div className="m-[60px] flex items-center justify-center flex-col">
+              <div className="m-[60px] flex items-center  flex-col">
                 <div className="w-[346px] flex flex-col ">
-                  <h3 className="font-gilroy text-3xl flex content-center">Спасибо</h3>
+                  <h3 className="font-gilroy text-3xl flex content-center justify-center">Спасибо</h3>
                   <p className="font-poppins text-fourteen mt-[15px]  text-center">
                     Мы свяжемся с вами в ближайшее время
                   </p>
