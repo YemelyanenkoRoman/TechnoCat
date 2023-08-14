@@ -6,6 +6,7 @@ export type PropsButton = {
   type: any;
   bgHover: string;
   focus: string;
+  textColor?: string;
 };
 
 const ButtonSecondary = (props: PropsButton) => {
@@ -13,7 +14,7 @@ const ButtonSecondary = (props: PropsButton) => {
     <button
       type={props.type}
       style={{ width: props.width, height: props.height }}
-      className=" flex items-center content-center cursor-pointer justify-center px-[30px] py-[14px] font-gilroy text-eighteen border-[2px] border-local-gray-t text-[#FFFFFF] rounded-lg"
+      className={`${props.backgroundColor} ${props.bgHover} ${props.textColor} ${props.focus} flex items-center content-center cursor-pointer justify-center px-[30px] py-[14px] font-gilroy text-eighteen border-[2px]  text-[#FFFFFF] hover:bg-[rgba(255,255,255,0.3)] rounded-lg`}
     >
       {props.title}
     </button>
