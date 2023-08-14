@@ -14,10 +14,16 @@ interface FormValues {
   phone: string;
 }
 
-const FormCall = () => {
-  const [errorMassage, setErrorMessage] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSent, setIsSent] = useState(false);
+type FormCallProps = {
+  setIsLoading: (value: boolean) => void;
+  setIsSent: (value: boolean) => void;
+  setErrorMessage: (value: string) => void;
+};
+
+const FormCall = (props: FormCallProps) => {
+  // const [errorMassage, setErrorMessage] = useState('');
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [isSent, setIsSent] = useState(false);
 
   const color = useColor();
   const methods = useForm<FormValues>({ mode: 'onBlur' });
@@ -28,7 +34,7 @@ const FormCall = () => {
   } = methods;
 
   const onSubmit = async (data: FormValues) => {
-    setIsLoading(true);
+    props.setIsLoading(true);
 
     try {
       const response = await fetch('/api/request-call', {
@@ -38,98 +44,97 @@ const FormCall = () => {
           phone: data.phone,
         }),
       });
-      setIsSent(true);
+      props.setIsSent(true);
 
       const restData = await response.json();
       console.log(response, restData, 'RESP');
       methods.reset();
     } catch (error) {
-      console.log(error);
-      setErrorMessage('error');
+      props.setErrorMessage;
     }
-    setIsLoading(false);
+    props.setIsLoading(false);
   };
 
   return (
     <>
-      {errorMassage ? <h1>{errorMassage}</h1> : <></>}
+      {/* {errorMassage ? <h1>{errorMassage}</h1> : <></>}
       {isLoading ? <Loader /> : <></>}
       {isSent ? (
         <p>Данные успешно отправлены!</p>
-      ) : (
-        <FormProvider {...methods}>
-          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[15px]">
-            <InputField
-              width="280px"
-              height="51px"
-              placeholder="Имя"
-              defaultValue=""
-              control={control}
-              name={'name'}
-              rules={{
-                required: 'Введите ваше имя',
-                pattern: {
-                  message: 'Используйте только буквы',
-                  value: /^[A-Za-zА-Яа-я]+$/,
-                },
-                minLength: {
-                  message: 'Минимум 2 символа',
-                  value: 2,
-                },
-                maxLength: {
-                  message: 'Максимум 20 символов',
-                  value: 20,
-                },
-              }}
-            />
+      ) : ( */}
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[15px]">
+          <InputField
+            width="280px"
+            height="51px"
+            placeholder="Имя"
+            defaultValue=""
+            control={control}
+            name={'name'}
+            rules={{
+              required: 'Введите ваше имя',
+              pattern: {
+                message: 'Используйте только буквы',
+                value: /^[A-Za-zА-Яа-я]+$/,
+              },
+              minLength: {
+                message: 'Минимум 2 символа',
+                value: 2,
+              },
+              maxLength: {
+                message: 'Максимум 20 символов',
+                value: 20,
+              },
+            }}
+          />
 
-            <InputPhoneField
-              width="280px"
-              height="51px"
-              placeholder="Телефон"
-              defaultValue=""
-              name={'phone'}
-              rules={{
-                required: 'Пожалуйста, заполните это поле',
-                pattern: {
-                  message: 'Пржалуйста, проверьте правильность указанного номера телефона',
-                  value: /^\+375 \((29|44|25|33)\) \d{3}-\d{2}-\d{2}$/,
-                },
-              }}
-              control={control}
-            />
+          <InputPhoneField
+            width="280px"
+            height="51px"
+            placeholder="Телефон"
+            defaultValue=""
+            name={'phone'}
+            rules={{
+              required: 'Пожалуйста, заполните это поле',
+              pattern: {
+                message: 'Пржалуйста, проверьте правильность указанного номера телефона',
+                value: /^\+375 \((29|44|25|33)\) \d{3}-\d{2}-\d{2}$/,
+              },
+            }}
+            control={control}
+          />
 
-            <Button
-              width={'280px'}
-              height={'50'}
-              title={'Записаться на занятие'}
-              type={'submit'}
-              backgroundColor={color.bgButton}
-              focus={color.formBorderActive}
-              bgHover={color.bgButtonActive}
-            />
+          <Button
+            width={'280px'}
+            height={'50'}
+            title={'Записаться на занятие'}
+            type={'submit'}
+            backgroundColor={color.bgButton}
+            focus={color.formBorderActive}
+            bgHover={color.bgButtonActive}
+          />
 
-            <div className="flex max-w-[280px] h-[32px] ">
-              <div className="mr-[10px]">
-                <CheckboxField control={control} name="checkBox" height="24px" width="24px" />
-              </div>
-
-              <p className="font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
+          <div className="flex max-w-[280px] h-[32px] ">
+            <div className="mr-[10px]">
+              <CheckboxField control={control} name="checkBox" height="24px" width="24px" />
             </div>
-            <div className="absolute top-[240px] flex">
-              {!!Object.keys(errors).length && (
-                <div className="max-w-[282px] text-twelve flex items-center">
-                  <div className="mr-[10px]">
-                    <MistakeIcon stroke="#E0474E" />
-                  </div>
 
-                  <p className="font-poppins text-twelve text-red-mistake">Пожалуйста, проверьте введенные данные</p>
+            <p className="font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
+          </div>
+          <div className="absolute top-[240px] flex">
+            {!!Object.keys(errors).length && (
+              <div className="max-w-[282px] text-twelve flex items-center">
+                <div className="mr-[10px]">
+                  <MistakeIcon stroke="#E0474E" />
                 </div>
-              )}
-            </div>
-          </form>
-        </FormProvider>
-      )}
+
+                <p className="font-poppins text-twelve text-red-mistake">Пожалуйста, проверьте введенные данные</p>
+              </div>
+            )}
+          </div>
+        </form>
+      </FormProvider>
+      {/* )} */}
     </>
   );
 };
