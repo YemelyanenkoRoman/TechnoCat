@@ -45,9 +45,9 @@ function OftenQuestions() {
             <div onClick={() => openText(index)} className="flex items-center">
               <div className="mr-[30px]">{isOpen[index] ? <CircleMinus /> : <CirclePlus />}</div>
 
-              <h3 className="text-3xl">{question.title}</h3>
+              <h3 className={`${isOpen[index] ? 'text-[#4B76BC]' : ''} text-3xl`}>{question.title}</h3>
             </div>
-            <div className="ml-[101px] mt-3 text-eighteen">
+            <div className="ml-[101px] mt-3 text-eighteen text-[#4B76BC]">
               <p className={isOpen[index] ? 'block' : 'hidden'}>{question.description}</p>
             </div>
           </div>

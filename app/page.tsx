@@ -17,18 +17,17 @@ export default function Home() {
               Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и подарят
               незабываемые впечатления от увлекательных занятий.
             </h2>
-            <div className="text-fill-blue">
-              <Button
-                width="185px"
-                height="50px"
-                title="Узнать больше"
-                type="button"
-                backgroundColor="bg-text-lightblue"
-                bgHover={''}
-                focus={''}
-                textColor="text-fill-blue"
-              />
-            </div>
+
+            <Button
+              width="185px"
+              height="50px"
+              title="Узнать больше"
+              type="button"
+              backgroundColor="bg-text-lightblue"
+              bgHover={'hover:bg-d-blue'}
+              focus={'hover:text-text-lightblue'}
+              textColor="text-fill-blue"
+            />
           </div>
           <Image
             src="/homePage/main-page-h1.svg"

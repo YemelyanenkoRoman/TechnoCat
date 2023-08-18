@@ -5,8 +5,10 @@ import Button from './buttons/Button';
 import InputPhoneField from './formElement/inputField/InputPhoneField';
 import { CheckboxField } from './formElement/checkboxField/CheckboxField';
 import MistakeIcon from '@/public/icons/formMistake.svg';
+import { useColor } from './ColorNavigation';
 
 const MyForm = () => {
+  const color = useColor();
   const methods = useForm<FormData>({ mode: 'onBlur' });
 
   const {
@@ -92,10 +94,12 @@ const MyForm = () => {
           height={'50'}
           title={'Записаться на занятие'}
           type={'submit'}
-          backgroundColor={''}
-          bgHover={''}
-          focus={''}
+          backgroundColor={color.bgButton}
+          focus={color.formBorderActive}
+          bgHover={color.bgButtonActive}
+          textColor={color.buttonTextColor}
         />
+
         <div className="flex max-w-[280px] h-[32px]">
           <div className="mr-[10px]">
             <CheckboxField control={control} name="checkBox" height="24px" width="24px" />

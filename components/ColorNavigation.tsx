@@ -14,6 +14,7 @@ interface colorNavObj {
     bgButton: string;
     formBorder: string;
     formBorderActive: string;
+    buttonTextColor: string;
   };
 }
 
@@ -30,6 +31,7 @@ export const colorNavObj: colorNavObj = {
     svgHover: '#EFF6FF',
     formBorder: 'border-d-blue',
     formBorderActive: 'focus:border-fill-blue',
+    buttonTextColor: 'text-[#EFF6FF]',
   },
   '/about': {
     bgColor: 'bg-fill-blue',
@@ -43,6 +45,7 @@ export const colorNavObj: colorNavObj = {
     svgHover: '#EFF6FF',
     formBorder: 'border-d-blue',
     formBorderActive: 'focus:border-fill-blue',
+    buttonTextColor: 'text-[#EFF6FF]',
   },
   '/contacts': {
     bgColor: 'bg-fill-blue',
@@ -56,6 +59,7 @@ export const colorNavObj: colorNavObj = {
     svgHover: '#EFF6FF',
     formBorder: 'border-d-blue',
     formBorderActive: 'focus:border-fill-blue',
+    buttonTextColor: 'text-[#EFF6FF]',
   },
   '/directions/programming': {
     bgColor: 'bg-fill-violet',
@@ -69,6 +73,7 @@ export const colorNavObj: colorNavObj = {
     svgHover: '#724DA1',
     formBorder: 'border-button-violet',
     formBorderActive: 'focus:border-hover-violet',
+    buttonTextColor: 'text-[#EFF6FF]',
   },
   '/directions/robotics': {
     bgColor: 'bg-fill-cyan',
@@ -82,6 +87,7 @@ export const colorNavObj: colorNavObj = {
     svgHover: '#36568B',
     formBorder: 'border-d-blue',
     formBorderActive: 'focus:border-fill-blue',
+    buttonTextColor: 'text-[#EFF6FF]',
   },
   '/directions/english': {
     bgColor: 'bg-fill-yelow',
@@ -95,6 +101,7 @@ export const colorNavObj: colorNavObj = {
     svgHover: '#C3A411',
     formBorder: 'border-button-yellow',
     formBorderActive: 'focus:border-hover-yellow',
+    buttonTextColor: 'text-[#EFF6FF]',
   },
   '/directions/preparingforschool': {
     bgColor: 'bg-fill-pink',
@@ -108,6 +115,7 @@ export const colorNavObj: colorNavObj = {
     svgHover: '#99564C',
     formBorder: 'border-button-brown',
     formBorderActive: 'focus:border-hover-brown',
+    buttonTextColor: 'text-[#EFF6FF]',
   },
   '/directions/firstgradestudent': {
     bgColor: 'bg-fill-green',
@@ -121,6 +129,7 @@ export const colorNavObj: colorNavObj = {
     svgHover: '#349B46',
     formBorder: 'border-button-green',
     formBorderActive: 'focus:border-hover-green',
+    buttonTextColor: 'text-[#EFF6FF]',
   },
 };
 

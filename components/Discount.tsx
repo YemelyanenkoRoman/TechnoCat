@@ -3,6 +3,7 @@ import DiscountImg2 from '../public/discount/discount2.svg';
 import DiscountImg3 from '../public/discount/discount3.svg';
 import Carousel from './Carousel';
 import Form from './FormDiscount';
+import Image from 'next/image';
 
 export interface Discount {
   img: JSX.Element;
@@ -13,6 +14,7 @@ export interface Discount {
 
 export const discounts: Discount[] = [
   {
+    // img: <Image src="/discount/discount.svg" alt="Грамотный человек" width={362} height={338} />,
     img: <DiscountImg />,
     title: 'Учитесь больше — платите меньше!',
     textOne:
@@ -37,7 +39,7 @@ export const discounts: Discount[] = [
 
 const Discount = () => {
   return (
-    <div className="m-auto max-w-[1141px] h-[462px] bg-local-gray-act rounded-lg">
+    <div className="m-auto max-w-[1141px] h-[462px] bg-[#D8E9FF] rounded-lg">
       <div className="p-[45px] flex justify-between">
         <Carousel />
 

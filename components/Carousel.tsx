@@ -34,8 +34,15 @@ export default function Carousel() {
           }}
           className="absolute inset-0 flex"
         >
-          <div className="static flex justify-between">
-            <figure className="text-thirtyfour">{discount.img}</figure>
+          <div className=" flex justify-between">
+            {/* <div className="text-thirtyfour">{discount.img}</div> */}
+
+            <div className={`relative bg-[#E2F9FE] w-[336px] h-[308px] rounded-lg`}>
+              <div className="flex justify-center">
+                <div className="absolute bottom-0">{discount.img}</div>
+              </div>
+            </div>
+
             <div className=" w-[343px] ml-[30px] flex flex-col justify-center items-center">
               <h3 className="text-thirtyfour">{discount.title}</h3>
               <p className="font-poppins text-sexteen pt-[25px]">{discount.textOne}</p>

@@ -112,6 +112,7 @@ const FormCall = (props: FormCallProps) => {
             backgroundColor={color.bgButton}
             focus={color.formBorderActive}
             bgHover={color.bgButtonActive}
+            textColor={color.buttonTextColor}
           />
 
           <div className="flex max-w-[280px] h-[32px] ">
