@@ -32,7 +32,7 @@ const InputPhoneField = (props: InputProps) => {
         control={props.control}
         defaultValue={props.defaultValue}
         render={({ field, fieldState }) => {
-          console.log(fieldState.error, 'star wars');
+          // console.log(fieldState.error, 'star wars');
 
           return (
             <div className="flex items-center">

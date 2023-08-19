@@ -68,7 +68,7 @@ export default function Carousel() {
             style={{
               width: 8,
               height: 8,
-              backgroundColor: currentSlide === index ? '#718096' : '#cbd5e0',
+              backgroundColor: currentSlide === index ? '#7ED6ED' : '#36568B',
               borderRadius: '50%',
             }}
           />
