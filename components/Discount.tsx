@@ -46,6 +46,14 @@ const Discount = () => {
   const [isSent, setIsSent] = useState(false);
   const [errorMassage, setErrorMessage] = useState('');
 
+  useEffect(() => {
+    if (isSent) {
+      setTimeout(() => {
+        setIsSent(false);
+      }, 5000);
+    }
+  }, [isSent]);
+
   return (
     <div className="m-auto max-w-[1141px] h-[462px] bg-[#D8E9FF] rounded-lg">
       <div className="p-[45px] flex justify-between">

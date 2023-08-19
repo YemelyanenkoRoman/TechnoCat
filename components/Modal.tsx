@@ -22,6 +22,15 @@ export default function Modal() {
 
   console.log(usePathname());
 
+  useEffect(() => {
+    if (isSent) {
+      setTimeout(() => {
+        setIsOpen(false);
+        setIsSent(false);
+      }, 5000);
+    }
+  }, [isSent]);
+
   function handleOverlayClick(event: React.MouseEvent<HTMLDivElement>) {
     if (event.target === event.currentTarget) {
       setIsOpen(false);
@@ -73,7 +82,7 @@ export default function Modal() {
           >
             {errorMassage ? <h1>{errorMassage}</h1> : <></>}
             {isLoading ? (
-              <div className="z-10 absolute flex items-center justify-center w-[510px] h-[500px] bg-white bg-opacity-50 ">
+              <div className="z-10 absolute flex items-center justify-center w-[510px] h-[500px] bg-white bg-opacity-50 rounded-lg">
                 <Loader />
               </div>
             ) : (
