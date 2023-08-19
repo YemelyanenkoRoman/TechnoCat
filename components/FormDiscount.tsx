@@ -7,9 +7,22 @@ import { CheckboxField } from './formElement/checkboxField/CheckboxField';
 import MistakeIcon from '@/public/icons/formMistake.svg';
 import { useColor } from './ColorNavigation';
 
-const MyForm = () => {
+interface FormValues {
+  name: string;
+  phone: string;
+  direction: string;
+}
+
+type MyFormProps = {
+  styleTop: string;
+  setIsLoading: (value: boolean) => void;
+  setIsSent: (value: boolean) => void;
+  setErrorMessage: (value: string) => void;
+};
+
+const MyForm = (props: MyFormProps) => {
   const color = useColor();
-  const methods = useForm<FormData>({ mode: 'onBlur' });
+  const methods = useForm<FormValues>({ mode: 'onBlur' });
 
   const {
     control,
@@ -17,9 +30,27 @@ const MyForm = () => {
     formState: { errors },
   } = methods;
 
-  const onSubmit = (data: FormData) => {
-    console.log(data, 'FormDiscount.tsx');
-    methods.reset();
+  const onSubmit = async (data: FormValues) => {
+    props.setIsLoading(true);
+
+    try {
+      const response = await fetch('/api/request-call', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: data.name,
+          phone: data.phone,
+          direction: data.direction,
+        }),
+      });
+      props.setIsSent(true);
+
+      const restData = await response.json();
+      console.log(response, restData, 'RESP');
+      methods.reset();
+    } catch (error) {
+      props.setErrorMessage;
+    }
+    props.setIsLoading(false);
   };
 
   return (
@@ -54,7 +85,7 @@ const MyForm = () => {
           height="51px"
           placeholder="Телефон"
           defaultValue=""
-          name={'Phone'}
+          name={'phone'}
           rules={{
             required: 'Пожалуйста, заполните это поле',
             pattern: {
@@ -107,7 +138,7 @@ const MyForm = () => {
 
           <p className=" font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
         </div>
-        <div className="absolute top-[352px] flex">
+        <div className={`${props.styleTop} absolute flex`}>
           {!!Object.keys(errors).length && (
             <div className="max-w-[282px] text-twelve flex items-center">
               <div className="mr-[10px]">

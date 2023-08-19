@@ -1,9 +1,13 @@
+'use client';
+import { useEffect, useState } from 'react';
 import DiscountImg from '../public/discount/discount.svg';
 import DiscountImg2 from '../public/discount/discount2.svg';
 import DiscountImg3 from '../public/discount/discount3.svg';
 import Carousel from './Carousel';
+import FormDiscount from './FormDiscount';
 import Form from './FormDiscount';
 import Image from 'next/image';
+import Loader from './loader/Loader';
 
 export interface Discount {
   img: JSX.Element;
@@ -38,13 +42,49 @@ export const discounts: Discount[] = [
 ];
 
 const Discount = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [errorMassage, setErrorMessage] = useState('');
+
   return (
     <div className="m-auto max-w-[1141px] h-[462px] bg-[#D8E9FF] rounded-lg">
       <div className="p-[45px] flex justify-between">
         <Carousel />
 
         <div className="flex justify-center max-w-[312px] h-[342px] relative">
-          <Form />
+          {errorMassage ? <h1>{errorMassage}</h1> : <></>}
+          {isLoading ? (
+            <div className="z-10 absolute flex items-center justify-center w-[280px] h-[342px] bg-white bg-opacity-50 rounded-lg">
+              <Loader />
+            </div>
+          ) : (
+            <></>
+          )}
+          {isSent ? (
+            <div className=" flex items-center  flex-col">
+              <div className="w-[280px] flex flex-col ">
+                <h3 className="font-gilroy text-3xl flex content-center justify-center">Спасибо</h3>
+                <p className="font-poppins text-fourteen mt-[15px]  text-center">
+                  Мы свяжемся с вами в ближайшее время
+                </p>
+              </div>
+              <div className="flex mt-15px">
+                <Image
+                  src="/formImg/Magician.svg"
+                  alt="Изображение девушка волшебник достаёт зайчика из шляпы."
+                  width={260}
+                  height={260}
+                />
+              </div>
+            </div>
+          ) : (
+            <FormDiscount
+              styleTop="top-[360px]"
+              setIsLoading={setIsLoading}
+              setIsSent={setIsSent}
+              setErrorMessage={setErrorMessage}
+            />
+          )}
         </div>
       </div>
     </div>

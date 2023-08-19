@@ -9,6 +9,7 @@ import Button from '@/components/buttons/Button';
 import Check from '@/public/icons/check-16-px.svg';
 import DirectionCards from '@/components/directions/DirectionCards';
 import { useColor } from '@/components/ColorNavigation';
+import ModalWithDirection from '@/components/ModalWithDirection';
 
 const Directions = ({ params }: { params: { directions: string } }) => {
   console.log(params.directions, 'page Direction');
@@ -72,16 +73,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
 
                     <div className="flex flex-row justify-between content-between items-center">
                       <div className="flex">
-                        <Button
-                          title={'Записаться'}
-                          type={undefined}
-                          width={'159'}
-                          height={'50'}
-                          backgroundColor={color.bgButton}
-                          bgHover={color.bgButtonActive}
-                          focus={color.bgButtonActive}
-                          textColor={color.buttonTextColor}
-                        />
+                        <ModalWithDirection />
                       </div>
                       <p className="max-w-[285px] max-h-[40px] font-gilroy font-light text-fourteen flex">
                         {data.block1.discount}
