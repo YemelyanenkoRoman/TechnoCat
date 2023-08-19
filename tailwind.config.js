@@ -62,6 +62,7 @@ module.exports = {
         'text-light': '#B2B2B2',
         'blue-dark': '#3D4A56',
         'red-mistake': '#E0474E',
+        'gray-text': '#89898A',
 
         'local-gray-b': '#F6F5F5',
         'local-gray-b-2': '#F8F8F8',

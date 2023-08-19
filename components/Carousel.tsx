@@ -52,7 +52,7 @@ export default function Carousel() {
         </div>
       ))}
       <div
-        className="flex justify-center space-x-2 absolute bottom-0 left-0 right-0 mb-4 z-50"
+        className="flex justify-center space-x-5 absolute bottom-0 left-0 right-0 mb-4 z-50"
         style={{
           right: '-295px',
           top: '355px',
