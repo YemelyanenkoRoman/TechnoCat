@@ -1,15 +1,29 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import PhoneIcon from '../public/icons/phone-24-px.svg';
-import CrossIcon from '../public/icons/cross-12-px.svg';
-import FormCall from './FormCall';
-import { useColor } from './ColorNavigation';
-import { usePathname } from 'next/navigation';
-import Loader from './loader/Loader';
-import Image from 'next/image';
+import { useState, useEffect } from "react";
+import PhoneIcon from "../public/icons/phone-24-px.svg";
+import CrossIcon from "../public/icons/cross-12-px.svg";
+import FormCall from "./FormCall";
+import { useColor } from "./ColorNavigation";
+import { usePathname } from "next/navigation";
+import Loader from "./loader/Loader";
+import Image from "next/image";
 
-export default function Modal() {
+interface ModalProps {
+  svgHover: string;
+  svgStroke: string;
+  bgColor: string;
+  hoverColor: string;
+  textColor: string;
+}
+
+export default function Modal({
+  svgHover,
+  svgStroke,
+  bgColor,
+  hoverColor,
+  textColor,
+}: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -17,10 +31,7 @@ export default function Modal() {
   const [isSent, setIsSent] = useState(false);
   const [errorMassage, setErrorMessage] = useState(false);
 
-  const color = useColor();
   const pathname = usePathname();
-
-  console.log(usePathname());
 
   useEffect(() => {
     if (isSent) {
@@ -45,18 +56,18 @@ export default function Modal() {
       <div
         className="flex cursor-pointer "
         style={{
-          color: isHovered ? `${color.svgHover}` : '',
-          cursor: 'pointer',
+          color: isHovered ? `${svgHover}` : "",
+          cursor: "pointer",
         }}
         onClick={() => setIsOpen(true)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <PhoneIcon
-          stroke={color.svgStroke}
+          stroke={svgStroke}
           className="mr-2"
           style={{
-            color: isHovered ? `${color.svgHover}` : 'rgba(0,0,0, 0)',
+            color: isHovered ? `${svgHover}` : "rgba(0,0,0, 0)",
           }}
         />
         <p>Заказать звонок</p>
@@ -71,15 +82,19 @@ export default function Modal() {
             className={`
             
             ${
-              pathname === '/' || pathname === '/about' || pathname === '/contacts'
-                ? 'bg-[#EBF4FF]'
-                : `${color.bgColor}`
+              pathname === "/" ||
+              pathname === "/about" ||
+              pathname === "/contacts"
+                ? "bg-[#EBF4FF]"
+                : `${bgColor}`
             }
             
             ${
-              pathname === '/' || pathname === '/about' || pathname === '/contacts'
-                ? 'text-[#36568B]'
-                : `${color.textColor}`
+              pathname === "/" ||
+              pathname === "/about" ||
+              pathname === "/contacts"
+                ? "text-[#36568B]"
+                : `${textColor}`
             } rounded-lg w-[510px] h-[500px] relative z-10 shadow-lg`}
           >
             {errorMassage ? (
@@ -88,8 +103,12 @@ export default function Modal() {
                   onClick={() => setErrorMessage(false)}
                   className="flex flex-col items-center justify-center cursor-pointer"
                 >
-                  <h2 className="font-gilroy text-3xl flex mb-4">Ошибка отправки формы</h2>
-                  <p className="font-gilroy text-3xl flex mb-4 ">отправить ещё раз</p>
+                  <h2 className="font-gilroy text-3xl flex mb-4">
+                    Ошибка отправки формы
+                  </h2>
+                  <p className="font-gilroy text-3xl flex mb-4 ">
+                    отправить ещё раз
+                  </p>
                 </div>
               </div>
             ) : (
@@ -107,7 +126,9 @@ export default function Modal() {
             {isSent ? (
               <div className="m-[60px] flex items-center  flex-col">
                 <div className="w-[346px] flex flex-col ">
-                  <h3 className="font-gilroy text-3xl flex content-center justify-center">Спасибо</h3>
+                  <h3 className="font-gilroy text-3xl flex content-center justify-center">
+                    Спасибо
+                  </h3>
                   <p className="font-poppins text-fourteen mt-[15px]  text-center">
                     Мы свяжемся с вами в ближайшее время
                   </p>
@@ -124,13 +145,20 @@ export default function Modal() {
             ) : (
               <div className="m-[60px] flex items-center justify-center flex-col">
                 <div className="w-[346px] flex flex-col ">
-                  <h3 className="font-gilroy text-3xl flex">Заказ обратного звонка</h3>
+                  <h3 className="font-gilroy text-3xl flex">
+                    Заказ обратного звонка
+                  </h3>
                   <p className="font-poppins text-fourteen mt-[15px]  text-center">
-                    Заполните форму и наши специалисты свяжутся с вами в течение рабочего дня.
+                    Заполните форму и наши специалисты свяжутся с вами в течение
+                    рабочего дня.
                   </p>
                 </div>
                 <div className="flex mt-10 relative">
-                  <FormCall setIsLoading={setIsLoading} setIsSent={setIsSent} setErrorMessage={setErrorMessage} />
+                  <FormCall
+                    setIsLoading={setIsLoading}
+                    setIsSent={setIsSent}
+                    setErrorMessage={setErrorMessage}
+                  />
                 </div>
               </div>
             )}
@@ -142,7 +170,7 @@ export default function Modal() {
               }}
               className="absolute top-5 right-5 cursor-pointer z-50"
             >
-              <CrossIcon className={`stroke-current ${color.hoverColor}`} />
+              <CrossIcon className={`stroke-current ${hoverColor}`} />
             </div>
           </div>
         </div>
