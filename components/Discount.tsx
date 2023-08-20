@@ -44,15 +44,21 @@ export const discounts: Discount[] = [
 const Discount = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSent, setIsSent] = useState(false);
-  const [errorMassage, setErrorMessage] = useState('');
+  const [errorMassage, setErrorMessage] = useState(false);
 
   useEffect(() => {
     if (isSent) {
       setTimeout(() => {
         setIsSent(false);
-      }, 5000);
+        setErrorMessage(false);
+      }, 3000);
     }
   }, [isSent]);
+
+  function handleOverlayClick(event: React.MouseEvent<HTMLDivElement>) {
+    setIsSent(false);
+    setErrorMessage(false);
+  }
 
   return (
     <div className="m-auto max-w-[1141px] h-[462px] bg-[#D8E9FF] rounded-lg">
@@ -60,7 +66,20 @@ const Discount = () => {
         <Carousel />
 
         <div className="flex justify-center max-w-[312px] h-[342px] relative">
-          {errorMassage ? <h1>{errorMassage}</h1> : <></>}
+          {errorMassage ? (
+            <div className="z-10 absolute flex items-center justify-center w-[280px] h-[342px] bg-white bg-opacity-50 rounded-lg">
+              <div
+                onClick={() => setErrorMessage(false)}
+                className="flex flex-col items-center justify-center cursor-pointer"
+              >
+                <h2 className="font-gilroy text-xl flex mb-4">Ошибка отправки формы</h2>
+                <p className="font-gilroy text-xl flex mb-4 ">отправить ещё раз</p>
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
+
           {isLoading ? (
             <div className="z-10 absolute flex items-center justify-center w-[280px] h-[342px] bg-white bg-opacity-50 rounded-lg">
               <Loader />

@@ -17,7 +17,7 @@ interface FormValues {
 type FormCallProps = {
   setIsLoading: (value: boolean) => void;
   setIsSent: (value: boolean) => void;
-  setErrorMessage: (value: string) => void;
+  setErrorMessage: (value: boolean) => void;
 };
 
 const FormCall = (props: FormCallProps) => {
@@ -50,7 +50,7 @@ const FormCall = (props: FormCallProps) => {
       console.log(response, restData, 'RESP');
       methods.reset();
     } catch (error) {
-      props.setErrorMessage;
+      props.setErrorMessage(true);
     }
     props.setIsLoading(false);
   };

@@ -20,7 +20,9 @@ const Contacts = () => {
                   <p className="text-twenty">Адрес:</p>
                   <p className="pt-[15px] text-sexteen">246003, г. Гомель, ул. Кирова, д. 55, каб. 318</p>
                 </div>
-                <Map />
+                <div className="w-[320px] h-[240px]">
+                  <Map />
+                </div>
               </div>
               <div className="w-[194px] h-[190px] ml-[26px]">
                 <h2 className="text-twenty">Время работы:</h2>

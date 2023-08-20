@@ -15,7 +15,7 @@ export default function Modal() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isSent, setIsSent] = useState(false);
-  const [errorMassage, setErrorMessage] = useState('');
+  const [errorMassage, setErrorMessage] = useState(false);
 
   const color = useColor();
   const pathname = usePathname();
@@ -27,7 +27,8 @@ export default function Modal() {
       setTimeout(() => {
         setIsOpen(false);
         setIsSent(false);
-      }, 5000);
+        setErrorMessage(false);
+      }, 3000);
     }
   }, [isSent]);
 
@@ -35,6 +36,7 @@ export default function Modal() {
     if (event.target === event.currentTarget) {
       setIsOpen(false);
       setIsSent(false);
+      setErrorMessage(false);
     }
   }
 
@@ -80,7 +82,20 @@ export default function Modal() {
                 : `${color.textColor}`
             } rounded-lg w-[510px] h-[500px] relative z-10 shadow-lg`}
           >
-            {errorMassage ? <h1>{errorMassage}</h1> : <></>}
+            {errorMassage ? (
+              <div className="z-10 absolute flex items-center justify-center w-[510px] h-[500px] bg-white bg-opacity-50 rounded-lg">
+                <div
+                  onClick={() => setErrorMessage(false)}
+                  className="flex flex-col items-center justify-center cursor-pointer"
+                >
+                  <h2 className="font-gilroy text-3xl flex mb-4">Ошибка отправки формы</h2>
+                  <p className="font-gilroy text-3xl flex mb-4 ">отправить ещё раз</p>
+                </div>
+              </div>
+            ) : (
+              <></>
+            )}
+
             {isLoading ? (
               <div className="z-10 absolute flex items-center justify-center w-[510px] h-[500px] bg-white bg-opacity-50 rounded-lg">
                 <Loader />
@@ -88,6 +103,7 @@ export default function Modal() {
             ) : (
               <></>
             )}
+
             {isSent ? (
               <div className="m-[60px] flex items-center  flex-col">
                 <div className="w-[346px] flex flex-col ">
@@ -122,8 +138,9 @@ export default function Modal() {
               onClick={() => {
                 setIsOpen(false);
                 setIsSent(false);
+                setErrorMessage(false);
               }}
-              className="absolute top-5 right-5 cursor-pointer"
+              className="absolute top-5 right-5 cursor-pointer z-50"
             >
               <CrossIcon className={`stroke-current ${color.hoverColor}`} />
             </div>

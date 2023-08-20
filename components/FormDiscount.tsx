@@ -17,7 +17,7 @@ type MyFormProps = {
   styleTop: string;
   setIsLoading: (value: boolean) => void;
   setIsSent: (value: boolean) => void;
-  setErrorMessage: (value: string) => void;
+  setErrorMessage: (value: boolean) => void;
 };
 
 const MyForm = (props: MyFormProps) => {
@@ -48,7 +48,7 @@ const MyForm = (props: MyFormProps) => {
       console.log(response, restData, 'RESP');
       methods.reset();
     } catch (error) {
-      props.setErrorMessage;
+      props.setErrorMessage(true);
     }
     props.setIsLoading(false);
   };
