@@ -1,21 +1,22 @@
-'use client';
+"use client";
 
-import LogoMax from '../public/logo/technocat-logo-max 1.svg';
-import Image from 'next/image';
+import LogoMax from "../public/logo/technocat-logo-max 1.svg";
+import Image from "next/image";
 
-import Directions from './directions/Directions';
-import Navigation from './MainNavigation';
-import Link from 'next/link';
-import Modal from './Modal';
-import { useColor } from './ColorNavigation';
+import Directions from "./directions/Directions";
+import Navigation from "./MainNavigation";
+import Link from "next/link";
+import Modal from "./Modal";
+import { useColor } from "./ColorNavigation";
 
 export const NavItems = [
-  { label: 'О нас', href: '/about' },
-  { label: 'Контакты', href: '/contacts' },
+  { label: "О нас", href: "/about" },
+  { label: "Контакты", href: "/contacts" },
 ];
 
 const TheHeader = () => {
   const color = useColor();
+
   return (
     <header
       className={`${color.textColor} ${color.bgColor} font-poppins text-sexteen font-normal  fixed top-0 left-0 w-full  z-50`}
@@ -38,7 +39,13 @@ const TheHeader = () => {
               <Directions />
             </ul>
           </div>
-          <Modal />
+          <Modal
+            textColor={color.textColor}
+            svgHover={color.svgHover}
+            svgStroke={color.svgStroke}
+            bgColor={color.bgColor}
+            hoverColor={color.hoverColor}
+          />
         </nav>
       </div>
     </header>

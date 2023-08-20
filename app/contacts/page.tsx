@@ -1,8 +1,8 @@
-import { Breadcrumbs, breadcrumbItems } from '@/components/Breadcrumbs';
-import Instagram from '@/public/icons/instagram-16-px.svg';
-import Phone from '@/public/icons/phone-24-px.svg';
-import Modal from '@/components/Modal';
-import { Map } from '@/components';
+import { Breadcrumbs, breadcrumbItems } from "@/components/Breadcrumbs";
+import Instagram from "@/public/icons/instagram-16-px.svg";
+import Phone from "@/public/icons/phone-24-px.svg";
+import Modal from "@/components/Modal";
+import { Map } from "@/components";
 
 const Contacts = () => {
   return (
@@ -18,7 +18,9 @@ const Contacts = () => {
               <div>
                 <div className="w-[424px] pb-[22px]">
                   <p className="text-twenty">Адрес:</p>
-                  <p className="pt-[15px] text-sexteen">246003, г. Гомель, ул. Кирова, д. 55, каб. 318</p>
+                  <p className="pt-[15px] text-sexteen">
+                    246003, г. Гомель, ул. Кирова, д. 55, каб. 318
+                  </p>
                 </div>
                 <div className="w-[320px] h-[240px]">
                   <Map />
@@ -39,8 +41,11 @@ const Contacts = () => {
               <h2 className="text-2xl">У вас остались вопросы? </h2>
               <div className="flex mt-[30px]">
                 <div>
+                  {/* TODO: Pass colors  */}
                   <Modal />
-                  <p className="w-[216px] mt-[10px]">Мы свяжемся с вами в течение рабочего дня</p>
+                  <p className="w-[216px] mt-[10px]">
+                    Мы свяжемся с вами в течение рабочего дня
+                  </p>
                 </div>
                 <p className="mx-10">или</p>
                 <div>
