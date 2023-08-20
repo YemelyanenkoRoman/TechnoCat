@@ -9,7 +9,11 @@ import { usePathname } from 'next/navigation';
 import Loader from './loader/Loader';
 import Image from 'next/image';
 
-export default function Modal() {
+type ModalProps = {
+  stroke?: string;
+};
+
+export default function Modal(props: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -53,7 +57,7 @@ export default function Modal() {
         onMouseLeave={() => setIsHovered(false)}
       >
         <PhoneIcon
-          stroke={color.svgStroke}
+          stroke={props.stroke || color.svgStroke}
           className="mr-2"
           style={{
             color: isHovered ? `${color.svgHover}` : 'rgba(0,0,0, 0)',
