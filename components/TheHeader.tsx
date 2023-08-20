@@ -16,6 +16,7 @@ export const NavItems = [
 
 const TheHeader = () => {
   const color = useColor();
+
   return (
     <header
       className={`${color.textColor} ${color.bgColor} font-poppins text-sexteen font-normal  fixed top-0 left-0 w-full  z-50`}
@@ -38,7 +39,13 @@ const TheHeader = () => {
               <Directions />
             </ul>
           </div>
-          <Modal />
+          <Modal
+            textColor={color.textColor}
+            svgHover={color.svgHover}
+            svgStroke={color.svgStroke}
+            bgColor={color.bgColor}
+            hoverColor={color.hoverColor}
+          />
         </nav>
       </div>
     </header>

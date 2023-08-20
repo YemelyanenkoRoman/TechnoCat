@@ -9,11 +9,15 @@ import { usePathname } from 'next/navigation';
 import Loader from './loader/Loader';
 import Image from 'next/image';
 
-type ModalProps = {
-  stroke?: string;
-};
+interface ModalProps {
+  svgHover: string;
+  svgStroke: string;
+  bgColor: string;
+  hoverColor: string;
+  textColor: string;
+}
 
-export default function Modal(props: ModalProps) {
+export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textColor }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -21,10 +25,7 @@ export default function Modal(props: ModalProps) {
   const [isSent, setIsSent] = useState(false);
   const [errorMassage, setErrorMessage] = useState(false);
 
-  const color = useColor();
   const pathname = usePathname();
-
-  console.log(usePathname());
 
   useEffect(() => {
     if (isSent) {
@@ -49,7 +50,7 @@ export default function Modal(props: ModalProps) {
       <div
         className="flex cursor-pointer "
         style={{
-          color: isHovered ? `${color.svgHover}` : '',
+          color: isHovered ? `${svgHover}` : '',
           cursor: 'pointer',
         }}
         onClick={() => setIsOpen(true)}
@@ -57,10 +58,10 @@ export default function Modal(props: ModalProps) {
         onMouseLeave={() => setIsHovered(false)}
       >
         <PhoneIcon
-          stroke={props.stroke || color.svgStroke}
+          stroke={svgStroke}
           className="mr-2"
           style={{
-            color: isHovered ? `${color.svgHover}` : 'rgba(0,0,0, 0)',
+            color: isHovered ? `${svgHover}` : 'rgba(0,0,0, 0)',
           }}
         />
         <p>Заказать звонок</p>
@@ -74,16 +75,10 @@ export default function Modal(props: ModalProps) {
           <div
             className={`
             
-            ${
-              pathname === '/' || pathname === '/about' || pathname === '/contacts'
-                ? 'bg-[#EBF4FF]'
-                : `${color.bgColor}`
-            }
+            ${pathname === '/' || pathname === '/about' || pathname === '/contacts' ? 'bg-[#EBF4FF]' : `${bgColor}`}
             
             ${
-              pathname === '/' || pathname === '/about' || pathname === '/contacts'
-                ? 'text-[#36568B]'
-                : `${color.textColor}`
+              pathname === '/' || pathname === '/about' || pathname === '/contacts' ? 'text-[#36568B]' : `${textColor}`
             } rounded-lg w-[510px] h-[500px] relative z-10 shadow-lg`}
           >
             {errorMassage ? (
@@ -146,7 +141,7 @@ export default function Modal(props: ModalProps) {
               }}
               className="absolute top-5 right-5 cursor-pointer z-50"
             >
-              <CrossIcon className={`stroke-current ${color.hoverColor}`} />
+              <CrossIcon className={`stroke-current ${hoverColor}`} />
             </div>
           </div>
         </div>

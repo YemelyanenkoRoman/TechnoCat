@@ -39,7 +39,11 @@ const Contacts = () => {
               <h2 className="text-2xl text-blue-dark">У вас остались вопросы? </h2>
               <div className="flex mt-[30px]">
                 <div>
-                  <Modal stroke="#36568B" />
+                  {/* TODO: Pass colors  */}
+                  <div className="text-[#36568B]">
+                    <Modal svgHover={'#4B76BC'} svgStroke={'#36568B'} bgColor={''} hoverColor={''} textColor={''} />
+                  </div>
+
                   <p className="w-[216px] mt-[10px]">Мы свяжемся с вами в течение рабочего дня</p>
                 </div>
                 <p className="mx-10">или</p>
