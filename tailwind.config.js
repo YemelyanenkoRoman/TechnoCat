@@ -59,10 +59,10 @@ module.exports = {
         'button-violet': '#8F5DCE',
 
         'fill-medium': '#9CA4B1',
-        'text-light': '#B2B2B2',
         'blue-dark': '#3D4A56',
         'red-mistake': '#E0474E',
         'gray-text': '#89898A',
+        'gray-text-light': '#B2B2B2',
 
         'local-gray-b': '#F6F5F5',
         'local-gray-b-2': '#F8F8F8',

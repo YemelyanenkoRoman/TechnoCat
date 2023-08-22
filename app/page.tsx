@@ -5,6 +5,7 @@ import WhatFindCenter from '@/components/WhatFindCenter';
 import DirectionCards from '@/components/directions/DirectionCards';
 import Discount from '@/components/Discount';
 import OftenQuestions from '@/components/OftenQuestions';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -17,18 +18,20 @@ export default function Home() {
               Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и подарят
               незабываемые впечатления от увлекательных занятий.
             </h2>
-
-            <Button
-              width="185px"
-              height="50px"
-              title="Узнать больше"
-              type="button"
-              backgroundColor="bg-text-lightblue"
-              bgHover={'hover:bg-d-blue'}
-              focus={'hover:text-text-lightblue'}
-              textColor="text-fill-blue"
-            />
+            <Link href={'/about'}>
+              <Button
+                width="185px"
+                height="50px"
+                title="Узнать больше"
+                type="button"
+                backgroundColor="bg-text-lightblue"
+                bgHover={'hover:bg-d-blue'}
+                focus={'hover:text-text-lightblue'}
+                textColor="text-fill-blue"
+              />
+            </Link>
           </div>
+
           <Image
             src="/homePage/main-page-h1.svg"
             alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."

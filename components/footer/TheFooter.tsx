@@ -56,7 +56,7 @@ const TheFooter = () => {
                 <Location stroke={color.svgStroke} />
                 <h2 className="ml-[10px] font-gilroy text-twenty">Мы находимся</h2>
               </div>
-              <Link className="mt-5" href="/">
+              <Link className="mt-5" href="/contacts">
                 г. Гомель, ул. Кирова, д. 55, каб. 318
               </Link>
             </div>
@@ -68,7 +68,7 @@ const TheFooter = () => {
               <div className="mt-5 flex flex-col gap-2">
                 <p>ежедневно: 9:00-20:30</p>
                 <p>+ 375 (29) 330-20-79</p>
-                <Link className="flex" href="/">
+                <Link className="flex" href="https://instagram.com/techno_cat_gomel?igshid=MzRlODBiNWFlZA==">
                   <Instagram stroke={color.svgStroke} /> <p className="ml-[6px]">Instagram</p>
                 </Link>
               </div>

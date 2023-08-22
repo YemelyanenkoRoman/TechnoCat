@@ -5,8 +5,11 @@ import DirectionCard4 from '@/public/DirectionCardImg/DirectionCard4.svg';
 import ButtonSecondary from '../buttons/ButtonSecondary';
 import { v4 as uuidv4 } from 'uuid';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface DirectionCard {
+  id: string;
+
   img: JSX.Element;
   title: string;
   age: number;
@@ -24,6 +27,8 @@ interface DirectionCard {
 
 const DirectionCard: DirectionCard[] = [
   {
+    id: 'preparingforschool',
+
     img: (
       <Image
         src="/DirectionCardImg/DirectionCard1.svg"
@@ -47,6 +52,7 @@ const DirectionCard: DirectionCard[] = [
     quantity: '1 месяц',
   },
   {
+    id: 'robotics',
     img: (
       <Image
         src="/DirectionCardImg/DirectionCard2.svg"
@@ -70,6 +76,7 @@ const DirectionCard: DirectionCard[] = [
     quantity: '1 месяц',
   },
   {
+    id: 'english',
     img: (
       <Image
         src="/DirectionCardImg/DirectionCard3.svg"
@@ -93,6 +100,7 @@ const DirectionCard: DirectionCard[] = [
     quantity: '1 месяц',
   },
   {
+    id: 'firstgradestudent',
     img: (
       <Image
         src="/DirectionCardImg/DirectionCard4.svg"
@@ -150,16 +158,18 @@ const DirectionCards = () => {
                 <p key={uuidv4()}>{item.quantity}</p>
               </div>
               <div className="pt-[30px]">
-                <ButtonSecondary
-                  type={'button'}
-                  width="251px"
-                  height="50px"
-                  title="Узнать подробнее"
-                  backgroundColor={item.buttonBorder}
-                  bgHover={item.buttonBorderHover}
-                  focus={item.buttonBorderActive}
-                  textColor={item.colorText}
-                />
+                <Link href={`/directions/${item.id}`}>
+                  <ButtonSecondary
+                    type={'button'}
+                    width="251px"
+                    height="50px"
+                    title="Узнать подробнее"
+                    backgroundColor={item.buttonBorder}
+                    bgHover={item.buttonBorderHover}
+                    focus={item.buttonBorderActive}
+                    textColor={item.colorText}
+                  />
+                </Link>
               </div>
             </div>
           </div>

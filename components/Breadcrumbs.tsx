@@ -32,7 +32,7 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
 
   return (
     <div className="pt-10 pb-[30px] font-poppins">
-      <nav className="text-gray-500 text-sm">
+      <nav className="text-gray-text text-sm">
         <ol className="flex items-center space-x-2">
           {filteredItems.map((item, index) => {
             const isLastItem = index === filteredItems.length - 1;
@@ -40,8 +40,14 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
 
             return (
               <li key={item.href}>
-                {isLastItem || isCurrentPage ? <span>{item.label}</span> : <Link href={item.href}>{item.label}</Link>}
-                {!isLastItem && <span>/</span>}
+                {isLastItem || isCurrentPage ? (
+                  <span className="text-gray-text">{item.label}</span>
+                ) : (
+                  <span className="text-gray-text-light">
+                    <Link href={item.href}>{item.label}</Link>
+                  </span>
+                )}
+                {!isLastItem && <span> / </span>}
               </li>
             );
           })}

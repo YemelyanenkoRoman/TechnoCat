@@ -3,6 +3,7 @@ import Instagram from '@/public/icons/instagram-16-px.svg';
 import Phone from '@/public/icons/phone-24-px.svg';
 import Modal from '@/components/Modal';
 import { Map } from '@/components';
+import Link from 'next/link';
 
 const Contacts = () => {
   return (
@@ -29,19 +30,19 @@ const Contacts = () => {
                 <p className="pt-[15px] font-poppins">ежедневно: 9:00-20:30</p>
                 <h2 className="pt-10 text-twenty text-blue-dark">Мы в соц сетях: </h2>
 
-                <a href="https://instagram.com/techno_cat_gomel?igshid=MzRlODBiNWFlZA==">
+                <Link href="https://instagram.com/techno_cat_gomel?igshid=MzRlODBiNWFlZA==">
                   <div className="flex items-center font-poppins text-fill-blue">
                     <Instagram stroke="#36568B" />
                     <p className="ml-2">Instagram</p>
                   </div>
-                </a>
+                </Link>
 
-                <a
+                <Link
                   className="font-poppins text-fourteen"
                   href="https://instagram.com/techno_cat_gomel?igshid=MzRlODBiNWFlZA=="
                 >
                   @techno_cat_gomel
-                </a>
+                </Link>
                 {/* <p className="font-poppins text-fourteen">@techno_cat_gomel</p> */}
               </div>
             </section>
@@ -59,10 +60,9 @@ const Contacts = () => {
                 <p className="mx-10">или</p>
                 <div>
                   <p>Позвоните нам по номеру</p>
-                  <a className="text-fill-blue" href="tel:+375291477233">
-                    {' '}
-                    + 375 (29) 330-20-79{' '}
-                  </a>
+                  <Link className="text-fill-blue" href="tel:+375291477233">
+                    + 375 (29) 330-20-79
+                  </Link>
                 </div>
               </div>
             </section>
