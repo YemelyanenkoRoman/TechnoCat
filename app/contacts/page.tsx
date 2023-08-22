@@ -28,19 +28,29 @@ const Contacts = () => {
                 <h2 className="text-twenty text-blue-dark">Время работы:</h2>
                 <p className="pt-[15px] font-poppins">ежедневно: 9:00-20:30</p>
                 <h2 className="pt-10 text-twenty text-blue-dark">Мы в соц сетях: </h2>
-                <div className="flex items-center font-poppins text-fill-blue">
-                  <Instagram stroke="#36568B" />
-                  <p className="ml-2">Instagram</p>
-                </div>
-                <p className="font-poppins text-fourteen">@techno_cat_gomel</p>
+
+                <a href="https://instagram.com/techno_cat_gomel?igshid=MzRlODBiNWFlZA==">
+                  <div className="flex items-center font-poppins text-fill-blue">
+                    <Instagram stroke="#36568B" />
+                    <p className="ml-2">Instagram</p>
+                  </div>
+                </a>
+
+                <a
+                  className="font-poppins text-fourteen"
+                  href="https://instagram.com/techno_cat_gomel?igshid=MzRlODBiNWFlZA=="
+                >
+                  @techno_cat_gomel
+                </a>
+                {/* <p className="font-poppins text-fourteen">@techno_cat_gomel</p> */}
               </div>
             </section>
-            <section className="w-[573px] h-[182px]  rounded-lg bg-local-gray-b p-5">
+            <section className="w-[573px] h-[182px]  rounded-lg bg-d-cyan p-5">
               <h2 className="text-2xl text-blue-dark">У вас остались вопросы? </h2>
               <div className="flex mt-[30px]">
                 <div>
                   {/* TODO: Pass colors  */}
-                  <div className="text-[#36568B]">
+                  <div className="text-fill-blue">
                     <Modal svgHover={'#4B76BC'} svgStroke={'#36568B'} bgColor={''} hoverColor={''} textColor={''} />
                   </div>
 
@@ -49,7 +59,10 @@ const Contacts = () => {
                 <p className="mx-10">или</p>
                 <div>
                   <p>Позвоните нам по номеру</p>
-                  <p>+ 375 (29) 330-20-79</p>
+                  <a className="text-fill-blue" href="tel:+375291477233">
+                    {' '}
+                    + 375 (29) 330-20-79{' '}
+                  </a>
                 </div>
               </div>
             </section>
