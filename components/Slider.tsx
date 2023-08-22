@@ -39,7 +39,11 @@ const Slider = () => {
     <div className="flex flex-col max-w-[810px] h-auto">
       <div className="relative">
         <div {...handlers}>
-          <img src={Images[activeIndex].src} alt={`Image ${activeIndex}`} className="mt-4 max-w-[810px] h-[400px]" />
+          <img
+            src={Images[activeIndex].src}
+            alt={`Image ${activeIndex}`}
+            className="mt-4 object-cover w-[810px] h-[400px]"
+          />
         </div>
         <button className=" transform -translate-y-full absolute top-1/2 left-8" onClick={handlePrevious}>
           <ArrowLeft />

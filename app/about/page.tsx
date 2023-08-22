@@ -4,6 +4,7 @@ import Innovations from '@/public/aboutPage/innovations.svg';
 import ActiveStudent1 from '@/public/aboutPage/ActiveStudent1.svg';
 import ActiveStudent2 from '@/public/aboutPage/ActiveStudent2.svg';
 import Slider from '@/components/Slider';
+import Image from 'next/image';
 
 interface Images {
   src: any;
@@ -18,16 +19,13 @@ export const Images: Images[] = [
   { src: '/aboutPage/Slider5.png', alt: 'My Image' },
   { src: '/aboutPage/Slider6.png', alt: 'My Image' },
   { src: '/aboutPage/Slider7.png', alt: 'My Image' },
-  { src: '/aboutPage/Slider8.png', alt: 'My Image' },
-  { src: '/aboutPage/Slider9.png', alt: 'My Image' },
-  { src: '/aboutPage/Slider10.png', alt: 'My Image' },
 ];
 
 const About = () => {
   return (
     <div className="font-poppins font-normal text-local-gray-t text-sexteen  mt-[107px]  ">
       {/* Правильное позиционирование */}
-      <div className="bg-slate-200">
+      <div>
         <section className="max-w-[1440px] mx-auto">
           <div className="mx-[60px]">
             <Breadcrumbs items={breadcrumbItems} />
@@ -36,16 +34,17 @@ const About = () => {
 
         <section className="h-[calc(100vh-197px)] pb-[90px] flex flex-col justify-center">
           <div className="mx-[60px] items-center flex flex-col">
-            <h1 className="flex font-gilroy  text-forty">Контакты</h1>
+            <h1 className="flex font-gilroy text-blue-dark text-forty">О нас</h1>
             <div className="max-w-[648px] h-[325px] mt-[60px] flex justify-between flex-col">
               <p>
-                Образовательный центр ТехноКот — это место, где дети открывают для себя новые возможности, интересы и
-                учатся с удовольствием, развивают свой потенциал и творчество.
+                <span className="text-blue-dark">Образовательный центр ТехноКот</span> — это место, где дети открывают
+                для себя новые возможности, интересы и учатся с удовольствием, развивают свой потенциал и творчество.
               </p>
               <p>
-                В образовательном центре ТехноКот мы следуем принципам гуманной педагогики, которая ставит в центр
-                личность ребенка, его потребности, и деятельностный подход, который делает ученика активным участником
-                образовательного процесса, а не пассивным слушателем.
+                В образовательном центре ТехноКот мы следуем принципам{' '}
+                <span className="text-blue-dark">гуманной педагогики</span>, которая ставит в центр личность ребенка,
+                его потребности, и деятельностный подход, который делает ученика активным участником образовательного
+                процесса, а не пассивным слушателем.
               </p>
               <p>
                 У нас есть широкий выбор предметов и направлений для развития разных способностей и навыков ребёнка.
@@ -63,49 +62,61 @@ const About = () => {
       <div className="max-w-[1440px] mx-auto">
         <section className=" mt-[90px] flex justify-center">
           <div className="mx-[60px]">
-            <h1 className="flex justify-center font-gilroy text-forty ">Наши принципы</h1>
-            <h2 className="mt-[70px] font-gilroy text-twentyfive">1. Гуманная педагогика</h2>
+            <h1 className="flex justify-center font-gilroy text-forty text-blue-dark">Наши принципы</h1>
+            <h2 className="mt-[70px] font-gilroy text-twentyfive text-blue-dark">1. Гуманная педагогика</h2>
             <div className="flex max-w-[1096px] h-[500px] mt-[40px] ">
               <div className="max-w-[424px] h-[428px] flex flex-col justify-between mr-6">
                 <p>
-                  Мы видим в каждом ребенке уникальный потенциал и уважаем его индивидуальность. Все члены нашей команды
-                  ориентированы на интересы, способности и особенности каждого ученика
+                  Мы видим <span className="text-blue-dark">в каждом ребенке уникальный потенциал</span> и уважаем его
+                  индивидуальность. Все члены нашей команды ориентированы на интересы, способности и особенности каждого
+                  ученика
                 </p>
                 <p>
-                  Мы формируем критическое мышление, креативность и собственный взгляд на мир, но также учим слышать
-                  других и ценить их мнения
+                  Мы <span className="text-blue-dark">формируем критическое мышление</span>, креативность и собственный
+                  взгляд на мир, но также учим слышать других и ценить их мнения
                 </p>
                 <p>
-                  Для нас очень важна свобода ошибаться и учиться на своих ошибках. Ошибки — это естественная и
-                  неотъемлемая часть образовательного процесса, это точки роста
+                  Для нас очень
+                  <span className="text-blue-dark"> важна свобода ошибаться и учиться на своих ошибках.</span> Ошибки —
+                  это естественная и неотъемлемая часть образовательного процесса, это точки роста
                 </p>
                 <p>
-                  Мы стремимся к гармонии между учебой и детством, потому что учёба — это не подготовка к будущей жизни
-                  и работе, это жизнь наших детей здесь и сейчас, и мы хотим, чтобы они были счастливы каждый день
+                  Мы <span className="text-blue-dark">стремимся к гармонии между учебой и детством</span> , потому что
+                  учёба — это не подготовка к будущей жизни и работе, это жизнь наших детей здесь и сейчас, и мы хотим,
+                  чтобы они были счастливы каждый день
                 </p>
               </div>
-              <HumanReady />
+              {/* <HumanReady /> */}
+              <div className="w-auto h-auto">
+                <Image
+                  src="/aboutPage/human-ready.png"
+                  alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
+                  width={648}
+                  height={428}
+                />
+              </div>
             </div>
           </div>
         </section>
 
         <section className="mt-[70px]  flex flex-col items-center mx-[60px]">
           <div className="max-w-[760px] h-[350px]">
-            <h2 className="flex justify-center font-gilroy text-twentyfive">2. Инновационность</h2>
+            <h2 className="flex justify-center font-gilroy text-twentyfive text-blue-dark">2. Инновационность</h2>
             <div className="flex mt-[40px]">
-              <Innovations />
+              <Image src="/aboutPage/innovations.png" alt="Современные учебные пособия." width={648} height={428} />
               <div className="max-w-[424px] h-[278px] flex flex-col justify-between ml-6">
                 <p>
-                  Мы используем современные образовательные технологии и постоянно ищем, как повысить эффективность
-                  преподавания
+                  Мы используем <span className="text-blue-dark">современные образовательные технологи</span> и и
+                  постоянно ищем, как повысить эффективность преподавания
                 </p>
                 <p>
-                  Наши преподаватели регулярно повышают свою квалификацию, обмениваются опытом и работают в системе
-                  образования
+                  Наши <span className="text-blue-dark">преподаватели</span> регулярно{' '}
+                  <span className="text-blue-dark">повышают свою квалификаци</span> ю, обмениваются опытом и работают в
+                  системе образования
                 </p>
                 <p>
-                  Мы используем авторские образовательные программы, которые основаны на международном опыте, признанных
-                  педагогических подходах и научных исследованиях
+                  Мы используем <span className="text-blue-dark">авторские образовательные программы</span> , которые
+                  основаны на международном опыте, признанных педагогических подходах и научных исследованиях
                 </p>
               </div>
             </div>
@@ -114,7 +125,7 @@ const About = () => {
 
         <section className="mt-[70px] flex items-center mx-[60px]">
           <div className="max-w-[1096px] h-[536px] flex flex-col">
-            <h2 className="flex font-gilroy text-twentyfive"> 3. Ученик - активный деятель</h2>
+            <h2 className="flex font-gilroy text-twentyfive text-blue-dark "> 3. Ученик - активный деятель</h2>
             <div className="flex flex-row mt-[40px]">
               <div className="max-w-[424px] h-[464px] flex flex-col justify-between mr-6">
                 <p>
@@ -136,10 +147,22 @@ const About = () => {
                 </p>
               </div>
               <div className="flex">
-                <div className="mr-6">
-                  <ActiveStudent1 />
+                <div className="mr-6 w-auto h-auto">
+                  <Image
+                    src="/aboutPage/ActiveStudent1.png"
+                    alt="Современные учебные пособия."
+                    width={312}
+                    height={464}
+                  />
                 </div>
-                <ActiveStudent2 />
+                <div className="w-auto h-auto">
+                  <Image
+                    src="/aboutPage/ActiveStudent2.png"
+                    alt="Современные учебные пособия."
+                    width={312}
+                    height={464}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -165,7 +188,7 @@ const About = () => {
         </section>
 
         <section className="mt-[70px] mx-[60px] flex flex-col items-center">
-          <h3 className=" max-w-[424px] h-[72px]">
+          <h3 className=" max-w-[424px] h-[72px] text-blue-dark">
             Мы — это дружная и сплоченная команда педагогов и организаторов, которые искренне любят свое дело
           </h3>
         </section>
