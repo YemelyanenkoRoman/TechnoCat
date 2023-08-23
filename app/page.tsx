@@ -2,10 +2,10 @@ import Button from '@/components/buttons/Button';
 import Image from 'next/image';
 
 import WhatFindCenter from '@/components/WhatFindCenter';
-import DirectionCards from '@/components/directions/DirectionCards';
 import Discount from '@/components/Discount';
 import OftenQuestions from '@/components/OftenQuestions';
 import Link from 'next/link';
+import { SliderCenterMode } from '@/components/sliders/SliderCenterMode';
 
 export default function Home() {
   return (
@@ -47,10 +47,10 @@ export default function Home() {
           <WhatFindCenter />
         </section>
 
-        <section className="m-auto max-w-[1320px] pt-[180px]">
+        <section className="m-auto pt-[180px]">
           <h2 className="text-forty text-center pb-[50px]">Направления, которые пользуются спросом</h2>
           <div>
-            <DirectionCards />
+            <SliderCenterMode />
           </div>
         </section>
 
