@@ -1,9 +1,9 @@
 import { Breadcrumbs, breadcrumbItems } from '@/components/Breadcrumbs';
-import HumanReady from '@/public/aboutPage/human-ready.svg';
-import Innovations from '@/public/aboutPage/innovations.svg';
-import ActiveStudent1 from '@/public/aboutPage/ActiveStudent1.svg';
-import ActiveStudent2 from '@/public/aboutPage/ActiveStudent2.svg';
-import Slider from '@/components/Slider';
+// import HumanReady from '@/public/aboutPage/human-ready.svg';
+// import Innovations from '@/public/aboutPage/innovations.svg';
+// import ActiveStudent1 from '@/public/aboutPage/ActiveStudent1.svg';
+// import ActiveStudent2 from '@/public/aboutPage/ActiveStudent2.svg';
+// import Slider from '@/components/Slider';
 import Image from 'next/image';
 import AsNavFor from '@/components/sliders/SliderSynking';
 
@@ -194,12 +194,10 @@ const About = () => {
           </h3>
         </section>
 
-        <section className="mt-[70px] mb-[120px] mx-[60px] flex flex-col items-center">
-          <Slider />
-        </section>
-
-        <section>
-          <AsNavFor />
+        <section className="mt-[70px] mb-[120px] mx-[60px]">
+          <div>
+            <AsNavFor />
+          </div>
         </section>
       </div>
     </div>

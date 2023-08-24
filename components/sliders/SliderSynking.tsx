@@ -4,7 +4,7 @@ import React, { Component, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import Image from 'next/image';
 interface Images {
   src: any;
   alt: string;
@@ -23,58 +23,54 @@ export const Images: Images[] = [
 const AsNavFor = () => {
   const [nav1, setNav1] = useState<Slider | undefined>(undefined);
   const [nav2, setNav2] = useState<Slider | undefined>(undefined);
-  console.log('hello slider');
+
+  const settings1 = {
+    adaptiveHeight: true,
+    arrows: true,
+  };
+
+  const settings = {
+    adaptiveHeight: true,
+    className: 'center',
+    centerMode: true,
+    infinite: true,
+    centerPadding: '120px',
+    slidesToShow: 5,
+    autoplaySpeed: 3000,
+    speed: 2500,
+  };
+
   return (
-    <div>
-      <h2>Slider Syncing (AsNavFor)</h2>
-      <h4>First Slider</h4>
-      <Slider asNavFor={nav2} ref={(slider) => setNav1(slider || undefined)}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
-      <h4>Second Slider</h4>
-      <Slider
-        asNavFor={nav1}
-        ref={(slider) => setNav2(slider || undefined)}
-        slidesToShow={3}
-        swipeToSlide={true}
-        focusOnSelect={true}
-      >
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
+    <div className="w-[810px] mx-auto">
+      <div className="w-[810px]">
+        <Slider {...settings1} asNavFor={nav2} ref={(slider) => setNav1(slider || undefined)}>
+          {Images.map((item) => {
+            return (
+              <div>
+                <Image width={810} height={400} src={item.src} alt={item.alt} />
+              </div>
+            );
+          })}
+        </Slider>
+      </div>
+      <div className="w-[810px]">
+        <Slider
+          {...settings}
+          asNavFor={nav1}
+          ref={(slider) => setNav2(slider || undefined)}
+          slidesToShow={3}
+          swipeToSlide={true}
+          focusOnSelect={true}
+        >
+          {Images.map((item) => {
+            return (
+              <div>
+                <Image width={180} height={160} src={item.src} alt={item.alt} />
+              </div>
+            );
+          })}
+        </Slider>
+      </div>
     </div>
   );
 };
