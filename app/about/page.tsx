@@ -5,6 +5,7 @@ import ActiveStudent1 from '@/public/aboutPage/ActiveStudent1.svg';
 import ActiveStudent2 from '@/public/aboutPage/ActiveStudent2.svg';
 import Slider from '@/components/Slider';
 import Image from 'next/image';
+import AsNavFor from '@/components/sliders/SliderSynking';
 
 interface Images {
   src: any;
@@ -195,6 +196,10 @@ const About = () => {
 
         <section className="mt-[70px] mb-[120px] mx-[60px] flex flex-col items-center">
           <Slider />
+        </section>
+
+        <section>
+          <AsNavFor />
         </section>
       </div>
     </div>
