@@ -47,6 +47,7 @@ export const SliderCenterMode = () => {
         {DirectionCardData.map((item) => {
           return (
             <DirectionCard
+              key={item.id}
               id={item.id}
               img={item.img}
               title={item.title}

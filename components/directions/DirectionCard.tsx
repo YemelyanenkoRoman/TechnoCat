@@ -29,8 +29,10 @@ export const DirectionCardData: DirectionCardData[] = [
       <Image
         src="/DirectionCardImg/DirectionCard1.svg"
         alt="Ребёнок изучает программирование."
-        width={216}
-        height={173}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
       />
     ),
     bgColorImg: 'bg-[#FFC3BA]',
@@ -53,8 +55,10 @@ export const DirectionCardData: DirectionCardData[] = [
       <Image
         src="/DirectionCardImg/DirectionCard2.svg"
         alt="Робот думает и решает логическую задачу."
-        width={167}
-        height={167}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
       />
     ),
     bgColorImg: 'bg-[#E2F9FE]',
@@ -77,8 +81,10 @@ export const DirectionCardData: DirectionCardData[] = [
       <Image
         src="/DirectionCardImg/DirectionCard3.svg"
         alt="Люди свободно общаются на английском языке."
-        width={177}
-        height={177}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
       />
     ),
     bgColorImg: 'bg-[#EAD46F]',
@@ -101,8 +107,10 @@ export const DirectionCardData: DirectionCardData[] = [
       <Image
         src="/DirectionCardImg/DirectionCard4.svg"
         alt="Ребёнок думает и придумывает разные идеи."
-        width={177}
-        height={177}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
       />
     ),
     bgColorImg: 'bg-[#A4EAA0]',
@@ -125,7 +133,7 @@ const DirectionCard = (props: DirectionCardData) => {
   return (
     <>
       <div
-        key={uuidv4()}
+        key={props.id}
         className={`w-[312px] h-[434px] rounded-lg ${props.bgColorCard} ${props.colorText} flex flex-col p-[30px] hover:cursor-grab active:cursor-grabbing`}
       >
         <div className={`relative ${props.bgColorImg} w-[252px] h-[146px] rounded-lg`}>

@@ -42,7 +42,7 @@ export default function Home() {
       </section>
 
       <div className="text-blue-dark">
-        <section className=" pt-[120px]">
+        <section className="m-auto max-w-[1140px] pt-[120px]">
           <h2 className="text-forty text-center">Что вы найдете в нашем центре?</h2>
           <WhatFindCenter />
         </section>
