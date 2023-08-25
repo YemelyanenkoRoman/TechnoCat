@@ -126,7 +126,7 @@ const DirectionCard = (props: DirectionCardData) => {
     <>
       <div
         key={uuidv4()}
-        className={`w-[312px] h-[434px] rounded-lg ${props.bgColorCard} ${props.colorText} flex flex-col p-[30px]`}
+        className={`w-[312px] h-[434px] rounded-lg ${props.bgColorCard} ${props.colorText} flex flex-col p-[30px] hover:cursor-grab active:cursor-grabbing`}
       >
         <div className={`relative ${props.bgColorImg} w-[252px] h-[146px] rounded-lg`}>
           <div className=" flex justify-center">

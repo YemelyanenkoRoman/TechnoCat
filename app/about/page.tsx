@@ -1,11 +1,11 @@
 import { Breadcrumbs, breadcrumbItems } from '@/components/Breadcrumbs';
+import { AsNavFor } from '@/components/sliders/sliderSynking/SliderSynking';
 // import HumanReady from '@/public/aboutPage/human-ready.svg';
 // import Innovations from '@/public/aboutPage/innovations.svg';
 // import ActiveStudent1 from '@/public/aboutPage/ActiveStudent1.svg';
 // import ActiveStudent2 from '@/public/aboutPage/ActiveStudent2.svg';
 // import Slider from '@/components/Slider';
 import Image from 'next/image';
-import AsNavFor from '@/components/sliders/SliderSynking';
 
 interface Images {
   src: any;
