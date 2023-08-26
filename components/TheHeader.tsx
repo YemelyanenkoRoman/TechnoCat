@@ -19,12 +19,12 @@ const TheHeader = () => {
 
   return (
     <header
-      className={`${color.textColor} ${color.bgColor} font-poppins text-sexteen font-normal  fixed top-0 left-0 w-full z-50 `}
+      className={`${color.textColor} ${color.bgColor} font-poppins text-sexteen font-normal fixed top-0 left-0 w-full z-50 `}
     >
-      <div className="max-w-[1440px] mx-auto">
-        <nav className="flex justify-between items-center h-[107px] px-[60px]">
+      <div className="mx-auto">
+        <nav className="flex justify-between items-center h-[107px]   xl:px-[60px]   md:px-[30px]">
           <div className="flex items-center">
-            <div className="mr-[201px]">
+            <div className=" xl:mr-[201px] md:mr-[177px]">
               <Link href="/">
                 <Image
                   src="/logo/technocat-logo-max 1.svg"

@@ -18,7 +18,6 @@ export interface Discount {
 
 export const discounts: Discount[] = [
   {
-    // img: <Image src="/discount/discount.svg" alt="Грамотный человек" width={362} height={338} />,
     img: <DiscountImg />,
     title: 'Учитесь больше — платите меньше!',
     textOne:
@@ -60,9 +59,11 @@ const Discount = () => {
     setErrorMessage(false);
   }
 
+  const width = window.innerWidth;
+
   return (
-    <div className="m-auto max-w-[1141px] h-[462px] bg-[#D8E9FF] rounded-lg">
-      <div className="p-[45px] flex justify-between">
+    <div className="m-auto h-[462px] bg-[#D8E9FF]   lg:max-w-[1140px] lg:rounded-lg  md:w-full md:rounded-none">
+      <div className=" flex justify-between   lg:px-[45px] lg:py-[45px]   md:px-[30px] md:py-[45px] ">
         <Carousel />
 
         <div className="flex justify-center max-w-[312px] h-[342px] relative">
@@ -99,8 +100,10 @@ const Discount = () => {
                 <Image
                   src="/formImg/Magician.svg"
                   alt="Изображение девушка волшебник достаёт зайчика из шляпы."
-                  width={260}
-                  height={260}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full h-auto"
                 />
               </div>
             </div>

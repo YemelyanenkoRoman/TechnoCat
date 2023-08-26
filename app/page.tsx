@@ -9,11 +9,13 @@ import { SliderCenterMode } from '@/components/sliders/SliderCenterMode';
 
 export default function Home() {
   return (
-    <main className="font-gilroy font-normal  text-sexteen  pt-[107px]">
-      <section className="h-[calc(100vh-107px)] text-text-lightblue bg-fill-blue flex">
-        <div className="px-[120px] pt-[100px] pb-[160px] max-w-[1440px] mx-auto flex justify-between items-center">
+    <main className="font-gilroy font-normal  text-sexteen  pt-[107px] overflow-x-hidden">
+      <section className="h-[calc(100vh-107px)] text-text-lightblue bg-fill-blue flex justify-between">
+        <div className=" pt-[100px] pb-[160px]  mx-auto flex justify-between  items-center    xl:px-[120px] xl:max-w-[1440px]   md:px-[30px] md:max-w-[1024px]">
           <div className="max-w-[600px] max-h-[400px]">
-            <h1 className="text-fifty font-normal">ТехноКот — место, где ваш ребенок реализует свои мечты и цели!</h1>
+            <h1 className=" font-normal   xl:text-fifty   md:text-forty">
+              ТехноКот — место, где ваш ребенок реализует свои мечты и цели!
+            </h1>
             <h2 className="text-sexteen font-poppins pt-10 pb-[60px]">
               Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и подарят
               незабываемые впечатления от увлекательных занятий.
@@ -42,7 +44,8 @@ export default function Home() {
       </section>
 
       <div className="text-blue-dark">
-        <section className="m-auto max-w-[1140px] pt-[120px]">
+        {/* <section className="m-auto  pt-[120px]   xl:max-w-[1140px]  md:max-w-[890px]"> */}
+        <section className="m-auto  pt-[120px]   xl:px-[120px]  md:px-[30px]">
           <h2 className="text-forty text-center">Что вы найдете в нашем центре?</h2>
           <WhatFindCenter />
         </section>
@@ -54,12 +57,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="m-auto max-w-[1140px] pt-[180px]">
+        <section className="m-auto pt-[180px]    xl:max-w-[1140px]  md:max-w-[890px]">
           <h2 className="text-forty text-center pb-[50px]">Часто задаваемые вопросы</h2>
           <OftenQuestions />
         </section>
 
-        <section className="pt-[180px] mb-[120px]">
+        <section className="pt-[180px]  xl:mb-[120px] md:mb-0">
           <Discount />
         </section>
       </div>
