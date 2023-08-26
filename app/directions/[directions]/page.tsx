@@ -22,7 +22,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
   return (
     <>
       <div className="font-gilroy font-normal text-gray-text text-sexteen  mx-auto mt-[107px] max-w-[1440px]">
-        <div className="mx-[60px]">
+        <div className="xl:mx-[60px] md:mx-[30px]">
           <section>
             <Breadcrumbs items={breadcrumbItems} />
           </section>
@@ -31,9 +31,9 @@ const Directions = ({ params }: { params: { directions: string } }) => {
       <>
         {data ? (
           <>
-            <div className="font-gilroy font-normal text-gray-text text-sexteen  mx-auto max-w-[1440px]">
-              <div className="mx-[60px]">
-                <section className="flex h-[calc(100vh-227px)]">
+            <div className="font-gilroy font-normal text-gray-text text-sexteen mt-[30px]  mx-auto max-w-[1440px]">
+              <div className="xl:mx-[60px] md:mx-[30px]">
+                <section className="flex    xl:h-[calc(100vh-257px)] ">
                   <div className="flex items-center ">
                     <div className={`${color.bgColor} w-[530px] h-[435px] rounded-lg`}>
                       <div className="flex justify-center">
@@ -88,18 +88,18 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                   </div>
                 </section>
 
-                <section className="flex justify-between items-center">
-                  <div className="flex mt-[70px] font-poppins">
-                    <div className="max-w-[745px] max-h-[562px]">
-                      <div className="flex flex-col justify-between max-w-[745px] h-[247px]">
+                <section className="flex justify-between items-center mt-[70px]">
+                  <div className="flex font-poppins">
+                    <div className="xl:max-w-[745px] h-[562px] md:max-w-[540px] ">
+                      <div className="flex flex-col justify-between max-w-[745px]   xl:h-[247px] md:h-[260px]">
                         <h2 className={`${color.activeColor} text-twentyfive font-gilroy`}>
                           {data.block2.subBlock21.title}
                         </h2>
-                        <p className="mt-[6px]">{data.block2.subBlock21.paragraph1}</p>
+                        <p>{data.block2.subBlock21.paragraph1}</p>
                         <p>{data.block2.subBlock21.paragraph2}</p>
                       </div>
 
-                      <div className="flex flex-col justify-between max-w-[745px] h-[245px] mt-[70px]">
+                      <div className="flex flex-col justify-between max-w-[745px]     xl:h-[245px] xl:mt-[70px] md:h-[260px] md:mt-6">
                         <h2 className={`${color.activeColor} font-gilroy text-twentyfive`}>
                           {data.block2.subBlock22.mainTitle}
                         </h2>
@@ -123,7 +123,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                   </div>
 
                   <div
-                    className={`${color.bgColor} max-w-[485px] h-[476px] p-9 flex flex-col justify-between font-poppins text-fourteen rounded-2xl`}
+                    className={`${color.bgColor} p-9 flex flex-col justify-between font-poppins text-fourteen rounded-2xl xl:max-w-[485px] xl:h-[476px] md:max-w-[372px] md:h-[580px]`}
                   >
                     <h2 className={`${color.activeColor} font-gilroy text-twentyfive`}>
                       {data.block2.subBlock23.title}

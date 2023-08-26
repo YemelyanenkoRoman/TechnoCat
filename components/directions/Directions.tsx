@@ -23,6 +23,14 @@ const Directions = () => {
     setIsMenuOpen(false);
   };
 
+  const clckOpen = () => {
+    setIsMenuOpen(true);
+  };
+
+  const clickClose = () => {
+    setIsMenuOpen(false);
+  };
+
   const pathname = usePathname();
 
   return (

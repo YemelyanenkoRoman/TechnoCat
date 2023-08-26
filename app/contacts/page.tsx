@@ -14,10 +14,10 @@ const Contacts = () => {
         </section>
         <section className="h-[calc(100vh-197px)] pb-[90px] flex flex-col justify-center">
           <h1 className="flex justify-center text-forty text-blue-dark">Контакты</h1>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center     xl:flex-row xl:mt-0 md:flex-col md:mt-[70px]">
             <section className="flex items-center">
               <div>
-                <div className="w-[424px] pb-[22px]">
+                <div className="w-[320px] pb-[22px]">
                   <p className="text-twenty text-blue-dark">Адрес:</p>
                   <p className="pt-[15px] text-sexteen">246003, г. Гомель, ул. Кирова, д. 55, каб. 318</p>
                 </div>
@@ -46,7 +46,7 @@ const Contacts = () => {
                 {/* <p className="font-poppins text-fourteen">@techno_cat_gomel</p> */}
               </div>
             </section>
-            <section className="w-[573px] h-[182px]  rounded-lg bg-d-cyan p-5">
+            <section className="w-[573px] h-[182px]  rounded-lg bg-d-cyan p-5     xl:mt-0 md:mt-[70px]">
               <h2 className="text-2xl text-blue-dark">У вас остались вопросы? </h2>
               <div className="flex mt-[30px]">
                 <div>
