@@ -43,8 +43,8 @@ export default function Carousel() {
               </div>
             </div>
 
-            <div className="   flex flex-col justify-center items-center    md:w-[306px] md:ml-5   lg:w-[343px] lg:ml-[30px]">
-              <h3 className="text-thirtyfour ">{discount.title}</h3>
+            <div className="flex flex-col justify-start items-center    md:w-[306px] md:ml-[25px]   lg:w-[343px] lg:ml-[30px]">
+              <h3 className="lg:text-thirtyfour md:text-[28px]">{discount.title}</h3>
               <p className="font-poppins text-sexteen pt-[25px]">{discount.textOne}</p>
               <p className="font-poppins text-sexteen pt-[15px]">{discount.textTwo}</p>
             </div>
