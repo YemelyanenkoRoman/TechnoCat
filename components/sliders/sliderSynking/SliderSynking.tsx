@@ -26,16 +26,33 @@ const Images: Images[] = [
 export const AsNavFor = () => {
   const [nav1, setNav1] = useState<Slider | undefined>(undefined);
   const [nav2, setNav2] = useState<Slider | undefined>(undefined);
-
-  const settings1 = {
-    speed: 1000,
-    adaptiveHeight: true,
-    arrows: true,
-    // prevArrow: <button className={styles['slick-arrow']}></button>,
-    // nextArrow: <button className={styles[`slick-next`]}></button>,
-    prevArrow: <ArrowLeft />,
-    nextArrow: <ArrowRight />,
-  };
+  const width = window.innerWidth;
+  const settings1 =
+    width >= 1280
+      ? {
+          speed: 1000,
+          adaptiveHeight: true,
+          arrows: true,
+          // prevArrow: <button className={styles['slick-arrow']}></button>,
+          // nextArrow: <button className={styles[`slick-next`]}></button>,
+          prevArrow: <ArrowLeft />,
+          nextArrow: <ArrowRight />,
+        }
+      : width >= 768
+      ? {
+          speed: 1000,
+          adaptiveHeight: true,
+          arrows: false,
+        }
+      : {
+          speed: 1000,
+          adaptiveHeight: true,
+          arrows: true,
+          // prevArrow: <button className={styles['slick-arrow']}></button>,
+          // nextArrow: <button className={styles[`slick-next`]}></button>,
+          prevArrow: <ArrowLeft />,
+          nextArrow: <ArrowRight />,
+        };
 
   const settings = {
     arrows: false,

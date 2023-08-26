@@ -62,8 +62,8 @@ const Discount = () => {
   const width = window.innerWidth;
 
   return (
-    <div className="m-auto h-[462px] bg-[#D8E9FF]   lg:max-w-[1140px] lg:rounded-lg  md:w-full md:rounded-none">
-      <div className=" flex justify-between   lg:px-[45px] lg:py-[45px]   md:px-[30px] md:py-[45px] ">
+    <div className="m-auto h-[462px] bg-[#D8E9FF]  xl:max-w-[1140px] xl:rounded-lg  md:w-full md:rounded-none">
+      <div className=" flex justify-between   xl:px-[45px] xl:py-[45px]   md:px-[30px] md:py-[45px] ">
         <Carousel />
 
         <div className="flex justify-center max-w-[312px] h-[342px] relative">

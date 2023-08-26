@@ -1,10 +1,5 @@
 import { Breadcrumbs, breadcrumbItems } from '@/components/Breadcrumbs';
 import { AsNavFor } from '@/components/sliders/sliderSynking/SliderSynking';
-// import HumanReady from '@/public/aboutPage/human-ready.svg';
-// import Innovations from '@/public/aboutPage/innovations.svg';
-// import ActiveStudent1 from '@/public/aboutPage/ActiveStudent1.svg';
-// import ActiveStudent2 from '@/public/aboutPage/ActiveStudent2.svg';
-// import Slider from '@/components/Slider';
 import Image from 'next/image';
 
 interface Images {
@@ -24,16 +19,16 @@ export const Images: Images[] = [
 
 const About = () => {
   return (
-    <div className="font-poppins font-normal text-local-gray-t text-sexteen  mt-[107px]  ">
+    <div className="font-poppins font-normal text-gray-text text-sexteen  mt-[107px]  ">
       {/* Правильное позиционирование */}
       <div>
         <section className="max-w-[1440px] mx-auto">
-          <div className="mx-[60px]">
+          <div className="xl:mx-[60px] md:mx-[30px]">
             <Breadcrumbs items={breadcrumbItems} />
           </div>
         </section>
 
-        <section className="h-[calc(100vh-197px)] pb-[90px] flex flex-col justify-center">
+        <section className="  flex flex-col justify-center   xl:h-[calc(100vh-197px)] xl:pb-[90px] md:pb-0">
           <div className="mx-[60px] items-center flex flex-col">
             <h1 className="flex font-gilroy text-blue-dark text-forty">О нас</h1>
             <div className="max-w-[648px] h-[325px] mt-[60px] flex justify-between flex-col">
@@ -62,10 +57,10 @@ const About = () => {
       <div />
       <div className="max-w-[1440px] mx-auto">
         <section className=" mt-[90px] flex justify-center">
-          <div className="mx-[60px]">
+          <div className="xl:mx-[60px] md:mx-[30px]">
             <h1 className="flex justify-center font-gilroy text-forty text-blue-dark">Наши принципы</h1>
             <h2 className="mt-[70px] font-gilroy text-twentyfive text-blue-dark">1. Гуманная педагогика</h2>
-            <div className="flex max-w-[1096px] h-[500px] mt-[40px] ">
+            <div className="flex max-w-[1096px] max-h-[500px] mt-[40px] ">
               <div className="max-w-[424px] h-[428px] flex flex-col justify-between mr-6">
                 <p>
                   Мы видим <span className="text-blue-dark">в каждом ребенке уникальный потенциал</span> и уважаем его
@@ -100,7 +95,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="mt-[70px]  flex flex-col items-center mx-[60px]">
+        <section className="mt-[70px]  flex flex-col items-center   xl:mx-[60px] md:mx-[30px]">
           <div className="max-w-[760px] h-[350px]">
             <h2 className="flex justify-center font-gilroy text-twentyfive text-blue-dark">2. Инновационность</h2>
             <div className="flex mt-[40px]">
@@ -124,7 +119,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="mt-[70px] flex items-center mx-[60px]">
+        <section className="mt-[70px] flex items-center   xl:mx-[60px] md:mx-[30px]">
           <div className="max-w-[1096px] h-[536px] flex flex-col">
             <h2 className="flex font-gilroy text-twentyfive text-blue-dark "> 3. Ученик - активный деятель</h2>
             <div className="flex flex-row mt-[40px]">
@@ -169,7 +164,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="mt-[70px]  flex flex-col items-center mx-[60px]">
+        <section className="mt-[70px]  flex flex-col items-center   xl:mx-[60px] md:mx-[30px]">
           <div className="max-w-[760px] h-[350px]">
             <h2 className="flex justify-center font-gilroy text-twentyfive">4. Сообщество</h2>
 
@@ -188,13 +183,13 @@ const About = () => {
           </div>
         </section>
 
-        <section className="mt-[70px] mx-[60px] flex flex-col items-center">
+        <section className="mt-[70px] flex flex-col items-center   xl:mx-[60px] md:mx-[30px]">
           <h3 className=" max-w-[424px] h-[72px] text-blue-dark">
             Мы — это дружная и сплоченная команда педагогов и организаторов, которые искренне любят свое дело
           </h3>
         </section>
 
-        <section className="mt-[70px] mb-[120px] mx-[60px]">
+        <section className="mt-[70px] mb-[120px]   xl:mx-[60px] md:mx-[30px]">
           <div>
             <AsNavFor />
           </div>

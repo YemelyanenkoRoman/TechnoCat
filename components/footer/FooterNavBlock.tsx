@@ -12,7 +12,7 @@ const FooterNavBlock = (props: TheFooterProps) => {
     <div className=" flex flex-col">
       <div className="flex flex-row">
         {props.iconSvg}
-        <h2 className="ml-[10px] font-gilroy text-twenty">{props.title}</h2>
+        <h2 className="ml-[10px] font-gilroy    xl:text-twenty md:text-eighteen">{props.title}</h2>
       </div>
       <ul className="mt-5 flex gap-2 flex-col">
         <FooterNav startIndex={props.startIndex} endIndex={props.endIndex} />

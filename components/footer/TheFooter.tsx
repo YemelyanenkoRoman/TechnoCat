@@ -18,11 +18,13 @@ import { useColor } from '../ColorNavigation';
 const TheFooter = () => {
   const color = useColor();
   return (
-    <footer className={`${color.textColor} ${color.bgColor} font-poppins text-sexteen font-normal`}>
+    <footer
+      className={`${color.textColor} ${color.bgColor} font-poppins font-normal    xl:text-sexteen md:text-fourteen`}
+    >
       <div className="max-w-[1440px] mx-auto">
-        <div className="flex flex-row justify-between items-center h-[209px] px-[60px]">
+        <div className="flex flex-row justify-between items-center h-[209px]    xl:px-[60px] md:px-[30px]">
           <div className="flex">
-            <div className="max-w-[100px] max-h-[109px] flex flex-col mr-[125px]">
+            <div className=" max-h-[109px] flex flex-col max-w-[100px]    xl:mr-[125px] md:mr-[95px]">
               <Link href="/">
                 <Image
                   src="/logo/technocat-logo-min.svg"
@@ -31,11 +33,11 @@ const TheFooter = () => {
                   height={35}
                 />
               </Link>
-              <ul className="mt-5 flex gap-2 flex-col">
+              <ul className="mt-5 flex  flex-col gap-2 ">
                 <Navigation navLinks={NavItems} />
               </ul>
             </div>
-            <div className="flex gap-14">
+            <div className="flex    xl:gap-14 md:gap-10">
               <FooterNavBlock
                 iconSvg={<AcademicCap stroke={color.svgStroke} />}
                 title={'Мы научим'}
@@ -50,11 +52,11 @@ const TheFooter = () => {
               />
             </div>
           </div>
-          <div className="flex gap-14">
+          <div className="flex    xl:gap-14 md:gap-10">
             <div className="flex flex-col max-w-[175px] ">
               <div className="flex flex-row">
                 <Location stroke={color.svgStroke} />
-                <h2 className="ml-[10px] font-gilroy text-twenty">Мы находимся</h2>
+                <h2 className="ml-[10px] font-gilroy    xl:text-twenty md:text-eighteen">Мы находимся</h2>
               </div>
               <Link className="mt-5" href="/contacts">
                 г. Гомель, ул. Кирова, д. 55, каб. 318
@@ -63,9 +65,9 @@ const TheFooter = () => {
             <div className="flex flex-col max-w-[185px]">
               <div className="flex flex-row">
                 <Time stroke={color.svgStroke} />
-                <h2 className="ml-[10px] font-gilroy text-twenty">Мы на связи</h2>
+                <h2 className="ml-[10px] font-gilroy xl:text-twenty md:text-eighteen">Мы на связи</h2>
               </div>
-              <div className="mt-5 flex flex-col gap-2">
+              <div className="mt-5 flex flex-col gap-2 ">
                 <p>ежедневно: 9:00-20:30</p>
                 <p>+ 375 (29) 330-20-79</p>
                 <Link className="flex" href="https://instagram.com/techno_cat_gomel?igshid=MzRlODBiNWFlZA==">
