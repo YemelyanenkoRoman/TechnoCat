@@ -37,7 +37,7 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
     }
   }, [isSent]);
 
-  function handleOverlayClick(event: React.MouseEvent<HTMLDivElement>) {
+  function handleOverlayClick(event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) {
     if (event.target === event.currentTarget) {
       setIsOpen(false);
       setIsSent(false);

@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { DirectionsNav } from './DirectionsNav';
 import { v4 as uuidv4 } from 'uuid';
 import { useColor } from '../ColorNavigation';
@@ -12,6 +12,8 @@ type DirectionsNav = {
 };
 
 const Directions = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
   const color = useColor();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -23,19 +25,29 @@ const Directions = () => {
     setIsMenuOpen(false);
   };
 
-  const clckOpen = () => {
-    setIsMenuOpen(true);
-  };
+  useEffect(() => {
+    const handleClick = (event: MouseEvent | TouchEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
 
-  const clickClose = () => {
-    setIsMenuOpen(false);
-  };
+    window.addEventListener('mousedown', handleClick);
+    window.addEventListener('touchstart', handleClick);
+    return () => {
+      window.removeEventListener('mousedown', handleClick);
+      window.removeEventListener('touchstart', handleClick);
+    };
+  }, []);
 
   const pathname = usePathname();
 
   return (
-    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="relative ">
-      <div className={isMenuOpen ? `${color.textColor} absolute cursor-pointer z-10` : 'absolute cursor-pointer z-10'}>
+    <div ref={ref} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="relative ">
+      <div
+        onClick={() => setIsMenuOpen(true)}
+        className={isMenuOpen ? `${color.textColor} absolute cursor-pointer z-10` : 'absolute cursor-pointer z-10'}
+      >
         Направления
       </div>
       {isMenuOpen && (
