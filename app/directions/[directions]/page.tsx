@@ -20,8 +20,8 @@ const Directions = ({ params }: { params: { directions: string } }) => {
   const color = useColor();
 
   return (
-    <>
-      <div className="font-gilroy font-normal text-gray-text text-sexteen  mx-auto mt-[107px] max-w-[1440px]">
+    <main className="overflow-x-hidden">
+      <div className="font-gilroy font-normal text-gray-text   mx-auto mt-[107px] max-w-[1440px] xl:text-sexteen md:text-fourteen">
         <div className="xl:mx-[60px] md:mx-[30px]">
           <section>
             <Breadcrumbs items={breadcrumbItems} />
@@ -31,7 +31,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
       <>
         {data ? (
           <>
-            <div className="font-gilroy font-normal text-gray-text text-sexteen mt-[30px]  mx-auto max-w-[1440px]">
+            <div className="font-gilroy font-normal text-gray-text mt-[30px] mx-auto max-w-[1440px] xl:text-sexteen md:text-fourteen">
               <div className="xl:mx-[60px] md:mx-[30px]">
                 <section className="flex    xl:h-[calc(100vh-257px)] ">
                   <div className="flex items-center ">
@@ -135,14 +135,14 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                 </section>
 
                 <section className="flex items-center justify-between font-poppins text-fourteen mt-[70px]">
-                  <div className="flex flex-col justify-between h-[258px] max-w-[745px]">
+                  <div className="flex flex-col justify-between h-[258px] max-w-[745px] ">
                     <h2 className={`${color.activeColor} font-gilroy text-twentyfive`}>
                       {data.block3.subBlock31.title}
                     </h2>
                     <div className="max-w-[745px] h-[154px] flex flex-wrap">
                       {data.block3.subBlock31.paragraphs.map((item) => {
                         return (
-                          <div className="flex max-w-[360px]">
+                          <div className="flex xl:max-w-[360px] md:[745px]">
                             <Check />
                             <p className="ml-2 ">{item}</p>
                           </div>
@@ -151,7 +151,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                     </div>
                   </div>
                   <div
-                    className={`${color.bgColor} max-w-[488px] h-[188px] flex flex-col justify-between py-[26px] px-[63px] rounded-2xl`}
+                    className={`${color.bgColor} flex flex-col justify-between py-[26px]  rounded-2xl    xl:max-w-[485px] xl:h-[188px] xl:px-[63px] md:max-w-[372px] md:h-[256px] md:px-9`}
                   >
                     <h3 className={`${color.activeColor} font-gilroy text-twentyfive`}>
                       {data.block3.subBlock32.mainTitle}
@@ -175,7 +175,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
           <div>User not found</div>
         )}
       </>
-    </>
+    </main>
   );
 };
 

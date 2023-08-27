@@ -19,7 +19,7 @@ export const Images: Images[] = [
 
 const About = () => {
   return (
-    <div className="font-poppins font-normal text-gray-text text-sexteen  mt-[107px]  ">
+    <div className="font-poppins font-normal text-gray-text mt-[107px]    xl:text-sexteen md:text-fourteen">
       {/* Правильное позиционирование */}
       <div>
         <section className="max-w-[1440px] mx-auto">
@@ -61,7 +61,7 @@ const About = () => {
             <h1 className="flex justify-center font-gilroy text-forty text-blue-dark">Наши принципы</h1>
             <h2 className="mt-[70px] font-gilroy text-twentyfive text-blue-dark">1. Гуманная педагогика</h2>
             <div className="flex max-w-[1096px] max-h-[500px] mt-[40px] ">
-              <div className="max-w-[424px] h-[428px] flex flex-col justify-between mr-6">
+              <div className=" flex flex-col justify-between mr-6    xl:max-w-[424px] xl:h-[428px] md:max-w-[371px] md:h-[380px]">
                 <p>
                   Мы видим <span className="text-blue-dark">в каждом ребенке уникальный потенциал</span> и уважаем его
                   индивидуальность. Все члены нашей команды ориентированы на интересы, способности и особенности каждого
@@ -123,7 +123,7 @@ const About = () => {
           <div className="max-w-[1096px] h-[536px] flex flex-col">
             <h2 className="flex font-gilroy text-twentyfive text-blue-dark "> 3. Ученик - активный деятель</h2>
             <div className="flex flex-row mt-[40px]">
-              <div className="max-w-[424px] h-[464px] flex flex-col justify-between mr-6">
+              <div className="flex flex-col justify-between mr-6    xl:max-w-[424px] xl:h-[464px] md:max-w-[371px] md:h-[425px]">
                 <p>
                   Ученики получают новые знания и навыки благодаря личной активности, а не пассивному запоминанию
                   информации.
