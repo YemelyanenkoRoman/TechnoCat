@@ -25,6 +25,8 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
   const [isSent, setIsSent] = useState(false);
   const [errorMassage, setErrorMessage] = useState(false);
 
+  const width = window.innerWidth;
+
   const pathname = usePathname();
 
   useEffect(() => {
@@ -64,7 +66,7 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
             color: isHovered ? `${svgHover}` : 'rgba(0,0,0, 0)',
           }}
         />
-        <p>Заказать звонок</p>
+        {width >= 768 ? <p>Заказать звонок</p> : ''}
       </div>
 
       {isOpen && (
