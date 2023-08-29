@@ -43,7 +43,12 @@ const Directions = () => {
   const pathname = usePathname();
 
   return (
-    <div ref={ref} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="relative ">
+    <div
+      ref={ref}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+      className="relative md:font-poppins md:font-normal md:text-sexteen xs:text-twentyfive xs:font-gilroy xs:font-light"
+    >
       <div
         onClick={() => setIsMenuOpen(true)}
         className={isMenuOpen ? `${color.textColor} absolute cursor-pointer z-10` : 'absolute cursor-pointer z-10'}
@@ -51,7 +56,9 @@ const Directions = () => {
         Направления
       </div>
       {isMenuOpen && (
-        <ul className={`${color.directColor} shadow-lg absolute left-[-12px] top-[-8px] rounded-md pt-[51px]`}>
+        <ul
+          className={`${color.directColor}  absolute md:shadow-lg  md:left-[-12px] md:top-[-8px] md:rounded-md md:pt-[51px] `}
+        >
           {DirectionsNav.map((item) => {
             const isActive = pathname === `${item.href}`;
             return (

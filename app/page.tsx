@@ -9,7 +9,7 @@ import { SliderCenterMode } from '@/components/sliders/SliderCenterMode';
 
 export default function Home() {
   return (
-    <main className="font-gilroy font-normal  text-sexteen  pt-[107px] overflow-x-hidden">
+    <main className="font-gilroy font-normal  text-sexteen  pt-[107px] overflow-x-hidden hidden">
       <section className="h-[calc(100vh-107px)] text-text-lightblue bg-fill-blue flex justify-between">
         <div className=" pt-[100px] pb-[160px]  mx-auto flex justify-between  items-center    xl:px-[120px] xl:max-w-[1440px]   md:px-[30px] md:max-w-[1024px]">
           <div className="max-w-[600px] max-h-[400px]">

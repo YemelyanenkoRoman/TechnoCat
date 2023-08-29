@@ -8,6 +8,7 @@ import Navigation from './MainNavigation';
 import Link from 'next/link';
 import Modal from './Modal';
 import { useColor } from './ColorNavigation';
+import BurgerMenu from './BurgerMenu';
 
 export const NavItems = [
   { label: 'О нас', href: '/about' },
@@ -23,7 +24,7 @@ const TheHeader = () => {
       className={`${color.textColor} ${color.bgColor} font-poppins text-sexteen font-normal fixed top-0 left-0 w-full z-50 `}
     >
       <div className="mx-auto">
-        <nav className="flex justify-between items-center h-[107px]   xl:px-[60px]   md:px-[30px]   xs:h-[97px] xs:px-[16px]">
+        <nav className="flex justify-between items-center md:h-[107px]   xl:px-[60px]   md:px-[30px]   xs:h-[97px] xs:px-[16px]">
           <div className="flex items-center">
             <div className=" xl:mr-[201px] md:mr-[177px]">
               <Link href="/">
@@ -48,13 +49,22 @@ const TheHeader = () => {
               ''
             )}
           </div>
-          <Modal
-            textColor={color.textColor}
-            svgHover={color.svgHover}
-            svgStroke={color.svgStroke}
-            bgColor={color.bgColor}
-            hoverColor={color.hoverColor}
-          />
+          <div className={width >= 768 ? '' : 'flex '}>
+            <Modal
+              textColor={color.textColor}
+              svgHover={color.svgHover}
+              svgStroke={color.svgStroke}
+              bgColor={color.bgColor}
+              hoverColor={color.hoverColor}
+            />
+            {width >= 768 ? (
+              ''
+            ) : (
+              <div className="flex items-center">
+                <BurgerMenu />
+              </div>
+            )}
+          </div>
         </nav>
       </div>
     </header>
