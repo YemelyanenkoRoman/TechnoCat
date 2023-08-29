@@ -42,6 +42,8 @@ const Directions = () => {
 
   const pathname = usePathname();
 
+  const width = window.innerWidth;
+
   return (
     <div
       ref={ref}
@@ -49,20 +51,34 @@ const Directions = () => {
       onMouseOut={handleMouseOut}
       className="relative md:font-poppins md:font-normal md:text-sexteen xs:text-twentyfive xs:font-gilroy xs:font-light"
     >
-      <div
-        onClick={() => setIsMenuOpen(true)}
-        className={isMenuOpen ? `${color.textColor} absolute cursor-pointer z-10` : 'absolute cursor-pointer z-10'}
-      >
-        Направления
-      </div>
+      {width >= 768 ? (
+        <div
+          onClick={() => setIsMenuOpen(true)}
+          className={isMenuOpen ? `${color.textColor} absolute cursor-pointer z-10` : 'absolute cursor-pointer z-10'}
+        >
+          Направления
+        </div>
+      ) : (
+        <div
+          onClick={() => setIsMenuOpen(true)}
+          className={
+            isMenuOpen
+              ? `${color.textColor} absolute cursor-pointer z-10 left-[16px]`
+              : 'absolute cursor-pointer z-10 left-[16px]'
+          }
+        >
+          {isMenuOpen ? '' : <div>Направления</div>}
+        </div>
+      )}
+
       {isMenuOpen && (
         <ul
-          className={`${color.directColor}  absolute md:shadow-lg  md:left-[-12px] md:top-[-8px] md:rounded-md md:pt-[51px] `}
+          className={`${color.directColor}  absolute md:shadow-lg  md:left-[-12px] md:top-[-8px] md:rounded-md md:pt-[51px] xs:top-[-135px] xs:w-screen xs:h-screen`}
         >
           {DirectionsNav.map((item) => {
             const isActive = pathname === `${item.href}`;
             return (
-              <li className={`py-2 px-3 cursor-pointer rounded ${color.hoverColor}`} key={uuidv4()}>
+              <li className={`py-2  md:px-3 xs:px-[16px] cursor-pointer rounded ${color.hoverColor}`} key={uuidv4()}>
                 <Link
                   className={
                     isActive
