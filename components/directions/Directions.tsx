@@ -73,7 +73,9 @@ const Directions = () => {
 
       {isMenuOpen && (
         <ul
-          className={`${color.directColor}  absolute md:shadow-lg  md:left-[-12px] md:top-[-8px] md:rounded-md md:pt-[51px] xs:top-[-135px] md:w-0 md:h-0 xs:w-screen xs:h-screen`}
+          className={`${
+            width >= 768 ? color.directColor : color.bgColor
+          }  absolute md:shadow-lg  md:left-[-12px] md:top-[-8px] md:rounded-md md:pt-[51px] xs:top-[-135px] md:w-auto md:h-auto xs:w-screen xs:h-screen`}
         >
           {DirectionsNav.map((item) => {
             const isActive = pathname === `${item.href}`;

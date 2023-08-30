@@ -20,7 +20,7 @@ const MainNavigation = ({ navLinks }: Props) => {
       {navLinks.map((link) => {
         const isActive = pathname === link.href;
         return (
-          <li key={link.label} className="md:mb-0 md:block xs:mb-5 ">
+          <li key={link.label} className="md:mb-0 md:block xs:mb-5 list-none md:ml-0 xs:ml-4">
             <Link
               className={
                 isActive
