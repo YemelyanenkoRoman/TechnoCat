@@ -15,10 +15,7 @@ const BurgerMenu: React.FC = () => {
   return (
     <div className="w-6">
       {/* Menu button */}
-      <button
-        className="block text-gray-500 hover:text-gray-300 focus:text-gray-300 focus:outline-none"
-        onClick={handleClick}
-      >
+      <button className={`${color.textColor} block focus:outline-none`} onClick={handleClick}>
         {/* Animated burger icon */}
         <span
           aria-hidden={true}
