@@ -4,19 +4,21 @@ import { useEffect, useRef, useState } from 'react';
 import { DirectionsNav } from './DirectionsNav';
 import { v4 as uuidv4 } from 'uuid';
 import { useColor } from '../ColorNavigation';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 type DirectionsNav = {
   href: string;
   label: string;
 };
 
-const Directions = () => {
-  const ref = useRef<HTMLDivElement>(null);
+type DirectionProps = {
+  setIsOpen?: (value: boolean) => void;
+};
 
+const Directions = (props: DirectionProps) => {
+  const ref = useRef<HTMLDivElement>(null);
   const color = useColor();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const handleMouseOver = () => {
     setIsMenuOpen(true);
   };
@@ -41,6 +43,15 @@ const Directions = () => {
   }, []);
 
   const pathname = usePathname();
+
+  const isMouted = useRef(false);
+
+  useEffect(() => {
+    if (isMouted.current) {
+      props.setIsOpen && props.setIsOpen(false);
+    }
+    isMouted.current = true;
+  }, [pathname]);
 
   const width = window.innerWidth;
 

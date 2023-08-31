@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Directions from './directions/Directions';
 import Navigation from './MainNavigation';
 import { NavItems } from './TheHeader';
@@ -11,9 +11,25 @@ const BurgerMenu: React.FC = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent | TouchEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('mousedown', handleClick);
+    window.addEventListener('touchstart', handleClick);
+    return () => {
+      window.removeEventListener('mousedown', handleClick);
+      window.removeEventListener('touchstart', handleClick);
+    };
+  }, []);
 
   return (
-    <div className="w-6">
+    <div ref={ref} className="w-6">
       {/* Menu button */}
       <button className={`${color.textColor} block focus:outline-none`} onClick={handleClick}>
         {/* Animated burger icon */}
@@ -43,7 +59,7 @@ const BurgerMenu: React.FC = () => {
           {/* Menu items */}
 
           <Navigation navLinks={NavItems} />
-          <Directions />
+          <Directions setIsOpen={setIsOpen} />
         </div>
       )}
     </div>

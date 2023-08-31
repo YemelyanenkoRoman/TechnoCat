@@ -72,19 +72,25 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
       {isOpen && (
         <div
           onClick={handleOverlayClick}
-          className="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50 "
+          className="fixed inset-0 z-50 flex justify-center w-full h-full md:items-center md:bg-black md:bg-opacity-50 xs:items-end xs:bg-none xs:bg-opacity-0"
         >
           <div
             className={`
             
-            ${pathname === '/' || pathname === '/about' || pathname === '/contacts' ? 'bg-[#EBF4FF]' : `${bgColor}`}
+            ${
+              pathname === '/' || pathname === '/about' || pathname === '/contacts'
+                ? 'md:bg-[#EBF4FF] xs:bg-[#36568B]'
+                : `${bgColor}`
+            }
             
             ${
-              pathname === '/' || pathname === '/about' || pathname === '/contacts' ? 'text-[#36568B]' : `${textColor}`
-            } rounded-lg w-[510px] h-[500px] relative z-10 shadow-lg`}
+              pathname === '/' || pathname === '/about' || pathname === '/contacts'
+                ? 'md:text-[#36568B] xs:text-[#EBF4FF]'
+                : `${textColor}`
+            }  relative z-10 shadow-lg md:rounded-lg md:w-[510px] md:h-[500px] xs:w-screen xs:h-[calc(100vh-96px)] xs:rounded-none`}
           >
             {errorMassage ? (
-              <div className="z-10 absolute flex items-center justify-center w-[510px] h-[500px] bg-white bg-opacity-50 rounded-lg">
+              <div className="z-10 absolute flex items-center justify-center bg-white bg-opacity-50 md:rounded-lg md:w-[510px] md:h-[500px] xs:w-screen xs:h-screen xs:rounded-none">
                 <div
                   onClick={() => setErrorMessage(false)}
                   className="flex flex-col items-center justify-center cursor-pointer"
@@ -98,7 +104,7 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
             )}
 
             {isLoading ? (
-              <div className="z-10 absolute flex items-center justify-center w-[510px] h-[500px] bg-white bg-opacity-50 rounded-lg">
+              <div className="z-10 absolute flex items-center justify-center  bg-white bg-opacity-50 md:rounded-lg md:w-[510px] md:h-[500px] xs:w-screen xs:h-screen xs:rounded-none">
                 <Loader />
               </div>
             ) : (
@@ -130,21 +136,31 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
                     Заполните форму и наши специалисты свяжутся с вами в течение рабочего дня.
                   </p>
                 </div>
-                <div className="flex mt-10 relative">
+                <div
+                  className={`flex mt-10 relative md:text-inherit ${
+                    pathname === '/' || pathname === '/about' || pathname === '/contacts'
+                      ? 'xs:text-[#36568B]'
+                      : `xs:${textColor}`
+                  }`}
+                >
                   <FormCall setIsLoading={setIsLoading} setIsSent={setIsSent} setErrorMessage={setErrorMessage} />
                 </div>
               </div>
             )}
-            <div
-              onClick={() => {
-                setIsOpen(false);
-                setIsSent(false);
-                setErrorMessage(false);
-              }}
-              className="absolute top-5 right-5 cursor-pointer z-50"
-            >
-              <CrossIcon className={`stroke-current ${hoverColor}`} />
-            </div>
+            {width >= 768 ? (
+              <div
+                onClick={() => {
+                  setIsOpen(false);
+                  setIsSent(false);
+                  setErrorMessage(false);
+                }}
+                className="absolute top-5 right-5 cursor-pointer z-50"
+              >
+                <CrossIcon className={`stroke-current ${hoverColor}`} />
+              </div>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       )}
