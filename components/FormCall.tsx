@@ -8,6 +8,7 @@ import MistakeIcon from '@/public/icons/formMistake.svg';
 import { useColor } from './ColorNavigation';
 import { useState } from 'react';
 import Loader from './loader/Loader';
+import { usePathname } from 'next/navigation';
 
 interface FormValues {
   name: string;
@@ -24,7 +25,7 @@ const FormCall = (props: FormCallProps) => {
   // const [errorMassage, setErrorMessage] = useState('');
   // const [isLoading, setIsLoading] = useState(false);
   // const [isSent, setIsSent] = useState(false);
-
+  const pathname = usePathname();
   const color = useColor();
   const methods = useForm<FormValues>({ mode: 'onBlur' });
   const {
@@ -120,7 +121,15 @@ const FormCall = (props: FormCallProps) => {
               <CheckboxField control={control} name="checkBox" height="24px" width="24px" />
             </div>
 
-            <p className="font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
+            <p
+              className={`font-poppins text-twelve ${
+                pathname === '/' || pathname === '/about' || pathname === '/contacts'
+                  ? 'md:text-[#36568B] xs:text-[#EBF4FF]'
+                  : `${color.textColor}`
+              }`}
+            >
+              Даю согласие на обработку данных персональных
+            </p>
           </div>
           <div className="absolute top-[240px] flex">
             {!!Object.keys(errors).length && (
