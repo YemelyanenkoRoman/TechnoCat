@@ -72,27 +72,30 @@ const Finding: Finding[] = [
 const WhatFindCenter = () => {
   return (
     <div>
-      <div className="flex justify-center gap-[30px] pt-[60px]">
+      <div className="flex justify-center gap-[30px] pt-[60px] md:flex-row xs:flex-col">
         {Finding.slice(0, 2).map((item) => {
           return (
-            <div key={uuidv4()} className="flex  gap-[30px]">
+            <div key={uuidv4()} className="flex md:gap-[30px] xs:gap-5 xs:items-center ">
               <div>{item.img}</div>
-              <div className="max-w-[253px] flex flex-col justify-center">
+              <div className="md:max-w-[253px] md:h-auto xs:h-[146px] xs:max-w-[200px] flex flex-col justify-center">
                 <h4 className="text-twenty ">{item.headingDiscription}</h4>
-                <p className="text-fourteen">{item.textDiscription}</p>
+                <p className="text-fourteen md:mt-[20px]">{item.textDiscription}</p>
               </div>
             </div>
           );
         })}
       </div>
-      <div className="flex justify-center gap-[30px] pt-[30px]">
+      <div className="flex justify-center gap-[30px] pt-[30px] md:flex-row xs:flex-col">
         {Finding.slice(2).map((item) => {
           return (
-            <div key={uuidv4()} className="flex flex-row-reverse gap-[30px] ">
+            <div
+              key={uuidv4()}
+              className="flex md:flex-row-reverse xs:flex-row md:gap-[30px] xs:gap-5 xs:items-center "
+            >
               <div>{item.img}</div>
-              <div className="max-w-[253px] flex flex-col justify-center">
+              <div className="max-w-[253px] md:h-auto xs:h-[146px] xs:max-w-[200px] flex flex-col justify-center">
                 <h4 className="text-twenty ">{item.headingDiscription}</h4>
-                <p className="text-fourteen">{item.textDiscription}</p>
+                <p className="text-fourteen md:mt-[20px]">{item.textDiscription}</p>
               </div>
             </div>
           );

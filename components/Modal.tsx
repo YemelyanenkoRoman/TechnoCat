@@ -26,7 +26,6 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
   const [errorMassage, setErrorMessage] = useState(false);
 
   const width = window.innerWidth;
-
   const pathname = usePathname();
 
   useEffect(() => {
