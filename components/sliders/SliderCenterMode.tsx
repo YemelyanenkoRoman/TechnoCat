@@ -31,6 +31,16 @@ export const SliderCenterMode = () => {
           autoplaySpeed: 3000,
           speed: 2500,
         }
+      : width >= 320
+      ? {
+          className: 'center',
+          centerMode: true,
+          infinite: true,
+          centerPadding: '25px',
+          slidesToShow: 1,
+          autoplaySpeed: 3000,
+          speed: 2500,
+        }
       : {
           className: 'center',
           centerMode: true,
@@ -55,7 +65,7 @@ export const SliderCenterMode = () => {
               duration={item.duration}
               cost={item.cost}
               quantity={item.quantity}
-              bgColorImg={item.bgColorCard}
+              bgColorImg={item.bgColorImg}
               bgColorCard={item.bgColorCard}
               colorText={item.colorText}
               buttonBorder={item.buttonBorder}

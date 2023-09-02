@@ -112,15 +112,19 @@ export default function Home() {
           <WhatFindCenter />
         </section>
 
-        <section className="m-auto pt-[180px] hidden">
-          <h2 className="text-forty text-center pb-[50px]">Направления, которые пользуются спросом</h2>
+        <section className="m-auto md:pt-[180px] xs:pt-[80px]">
+          <h2 className="md:text-forty xs:text-twentyfive text-center md:pb-[50px] xs:pb-[30px]">
+            Направления, которые пользуются спросом
+          </h2>
           <div>
             <SliderCenterMode />
           </div>
         </section>
 
-        <section className="m-auto pt-[180px]    xl:max-w-[1140px]  md:max-w-[890px] hidden">
-          <h2 className="text-forty text-center pb-[50px]">Часто задаваемые вопросы</h2>
+        <section className="md:m-auto xs:mx-4 pt-[180px]    xl:max-w-[1140px]  md:max-w-[890px]">
+          <h2 className="md:text-forty xs:text-twentyfive text-center md:pb-[50px] xs:pb-[30px]">
+            Часто задаваемые вопросы
+          </h2>
           <OftenQuestions />
         </section>
 

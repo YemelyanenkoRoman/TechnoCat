@@ -1,9 +1,8 @@
 'use client';
 import { v4 as uuidv4 } from 'uuid';
 
-import CirclePlus from '@/public/icons/circle-button-plus.svg';
-import CircleMinus from '@/public/icons/circle-button-minus.svg';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const questions = [
   {
@@ -38,16 +37,46 @@ function OftenQuestions() {
   };
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col md:gap-5 xs:gap-4">
       {questions.map((question, index) => {
         return (
           <div key={uuidv4()} className="">
             <div onClick={() => openText(index)} className="flex items-center">
-              <div className="mr-[30px]">{isOpen[index] ? <CircleMinus /> : <CirclePlus />}</div>
+              <div className="md:mr-[30px] xs:mr-[20px]">
+                {isOpen[index] ? (
+                  <div className="md:w-[70px] md:h-[70px] xs:w-[50px] xs:h-[50px]">
+                    <Image
+                      src="/icons/circle-button-minus.svg"
+                      alt="Кнопка скрыть информацию"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : (
+                  <div className="md:w-[70px] md:h-[70px] xs:w-[50px] xs:h-[50px]">
+                    <Image
+                      src="/icons/circle-button-plus.svg"
+                      alt="Кнопка раскрыть информацию"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                )}
+              </div>
 
-              <h3 className={`${isOpen[index] ? 'text-[#4B76BC]' : ''} text-3xl`}>{question.title}</h3>
+              <h3
+                className={`${
+                  isOpen[index] ? 'text-[#4B76BC]' : ''
+                } md:text-3xl xs:text-twenty xs:max-w-[270px] md:max-w-[908px]`}
+              >
+                {question.title}
+              </h3>
             </div>
-            <div className="ml-[101px] mt-3 text-eighteen text-[#4B76BC]">
+            <div className="md:ml-[100px] xs:ml-[70px] mt-3 md:text-eighteen xs:text-sexteen text-[#4B76BC] ">
               <p className={isOpen[index] ? 'block' : 'hidden'}>{question.description}</p>
             </div>
           </div>
@@ -58,3 +87,12 @@ function OftenQuestions() {
 }
 
 export default OftenQuestions;
+
+<Image
+  src="/homePage/inOurCenter/inCenter3.svg"
+  alt="Комфорт и знания. Человек работает в комфортном месте и получает знания."
+  width={0}
+  height={0}
+  sizes="100vw"
+  className="w-full h-auto"
+/>;
