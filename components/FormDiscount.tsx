@@ -23,7 +23,7 @@ type MyFormProps = {
 const MyForm = (props: MyFormProps) => {
   const color = useColor();
   const methods = useForm<FormValues>({ mode: 'onBlur' });
-
+  const width = window.innerWidth;
   const {
     control,
     handleSubmit,

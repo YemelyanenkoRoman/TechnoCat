@@ -18,21 +18,51 @@ export interface Discount {
 
 export const discounts: Discount[] = [
   {
-    img: <DiscountImg />,
+    // img: <DiscountImg />,
+    img: (
+      <Image
+        src="/discount/discount.svg"
+        alt="Радостный человек"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
+    ),
     title: 'Учитесь больше — платите меньше!',
     textOne:
       'Если ваш ребенок ходит на два направления в нашем образовательном центре, то один из них вы можете получить со скидкой 10%.',
     textTwo: 'Спешите записаться на интересующие вас направления и получите выгодное предложение.',
   },
   {
-    img: <DiscountImg2 />,
+    // img: <DiscountImg2 />,
+    img: (
+      <Image
+        src="/discount/discount2.svg"
+        alt="Радостный человек"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
+    ),
     title: 'Семейная скидка в нашем образовательном центре!',
     textOne:
       'Если у вас двое детей, которые хотят посещать занятия в нашем образовательном центре, то мы дарим вам 10% скидку на одно из них.',
     textTwo: 'Не упустите шанс дать своим детям качественное образование по доступной цене.',
   },
   {
-    img: <DiscountImg3 />,
+    // img: <DiscountImg3 />,
+    img: (
+      <Image
+        src="/discount/discount3.svg"
+        alt="Радостный человек"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
+    ),
     title: 'Делитесь знаниями с друзьями и экономьте!',
     textOne:
       'Если вы приведете друга в наш образовательный центр, то вы и он получите по 10% скидку на любой курс на целый месяц',
@@ -62,11 +92,15 @@ const Discount = () => {
   const width = window.innerWidth;
 
   return (
-    <div className="m-auto h-[462px] bg-[#D8E9FF]  xl:max-w-[1140px] xl:rounded-lg  md:w-full md:rounded-none">
+    <div className="m-auto md:h-[462px] xs:h-[1051px] bg-[#D8E9FF]  xl:max-w-[1140px] xl:rounded-lg  md:w-full md:rounded-none">
       <div className=" flex justify-between   xl:px-[45px] xl:py-[45px]   md:px-[30px] md:py-[45px] ">
         <Carousel />
 
-        <div className="flex justify-center max-w-[312px] h-[342px] relative">
+        <div
+          className={`flex justify-center max-w-[312px] h-[342px] ${
+            width >= 768 ? 'relative' : 'absolute bottom-[230px] left-[calc(50%-140px)]'
+          } `}
+        >
           {errorMassage ? (
             <div className="z-10 absolute flex items-center justify-center w-[280px] h-[342px] bg-white bg-opacity-50 rounded-lg">
               <div
@@ -109,6 +143,7 @@ const Discount = () => {
             </div>
           ) : (
             <FormDiscount
+              // styleTop={width >= 768 ? 'top-[360px]' : 'top-[660px]'}
               styleTop="top-[360px]"
               setIsLoading={setIsLoading}
               setIsSent={setIsSent}

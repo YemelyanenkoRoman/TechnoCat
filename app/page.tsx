@@ -128,7 +128,7 @@ export default function Home() {
           <OftenQuestions />
         </section>
 
-        <section className="pt-[180px]  xl:mb-[120px] md:mb-0 hidden">
+        <section className="xs:pt-[80px] md:pt-[180px]  xl:mb-[120px] md:mb-0">
           <Discount />
         </section>
       </div>
