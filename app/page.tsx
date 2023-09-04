@@ -107,7 +107,7 @@ export default function Home() {
       )}
 
       <div className="text-blue-dark">
-        <section className="m-auto  xs:pt-[60px] xs:px-4  xl:px-[120px] md:pt-[120px] md:px-[30px]">
+        <section className="m-auto  xs:pt-[80px] xs:px-4  xl:px-[120px] md:pt-[120px] md:px-[30px]">
           <h2 className="md:text-forty xs:text-twentyfive text-center">Что вы найдете в нашем центре?</h2>
           <WhatFindCenter />
         </section>
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="md:m-auto xs:mx-4 pt-[180px]    xl:max-w-[1140px]  md:max-w-[890px]">
+        <section className="md:m-auto xs:mx-4 xl:max-w-[1140px]  md:max-w-[890px] md:pt-[120px] xs:pt-[80px]">
           <h2 className="md:text-forty xs:text-twentyfive text-center md:pb-[50px] xs:pb-[30px]">
             Часто задаваемые вопросы
           </h2>

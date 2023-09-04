@@ -72,7 +72,7 @@ const Finding: Finding[] = [
 const WhatFindCenter = () => {
   return (
     <div>
-      <div className="flex justify-center gap-[30px] pt-[60px] md:flex-row xs:flex-col">
+      <div className="flex justify-center gap-[30px] md:pt-[60px] xs:pt-[30px] md:flex-row xs:flex-col">
         {Finding.slice(0, 2).map((item) => {
           return (
             <div key={uuidv4()} className="flex md:gap-[30px] xs:gap-5 xs:items-center ">
