@@ -21,7 +21,7 @@ export default function ModalWithDirection() {
 
   const color = useColor();
   const pathname = usePathname();
-
+  const width = window.innerWidth;
   console.log(usePathname());
 
   useEffect(() => {
@@ -54,22 +54,35 @@ export default function ModalWithDirection() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Button
-          title={'Записаться'}
-          type={onclick}
-          width={'159'}
-          height={'50'}
-          backgroundColor={color.bgButton}
-          bgHover={color.bgButtonActive}
-          focus={color.bgButtonActive}
-          textColor={color.buttonTextColor}
-        />
+        {width >= 768 ? (
+          <Button
+            title={'Записаться'}
+            type={onclick}
+            width={'159px'}
+            height={'50px'}
+            backgroundColor={color.bgButton}
+            bgHover={color.bgButtonActive}
+            focus={color.bgButtonActive}
+            textColor={color.buttonTextColor}
+          />
+        ) : (
+          <Button
+            title={'Записаться'}
+            type={onclick}
+            width={'90vw'}
+            height={'50px'}
+            backgroundColor={color.bgButton}
+            bgHover={color.bgButtonActive}
+            focus={color.bgButtonActive}
+            textColor={color.buttonTextColor}
+          />
+        )}
       </div>
 
       {isOpen && (
         <div
           onClick={handleOverlayClick}
-          className="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50 "
+          className="fixed inset-0 z-50 flex md:items-center justify-center w-full h-full md:bg-black md:bg-opacity-50 xs:items-end xs:bg-none xs:bg-opacity-0"
         >
           <div
             className={`
@@ -84,7 +97,7 @@ export default function ModalWithDirection() {
               pathname === '/' || pathname === '/about' || pathname === '/contacts'
                 ? 'text-[#36568B]'
                 : `${color.textColor}`
-            } rounded-lg w-[510px] h-[586px] relative z-10 shadow-lg`}
+            } md:rounded-lg md:w-[510px] md:h-[586px] xs:w-screen xs:h-[calc(100vh-96px)] xs:rounded-none relative z-10 shadow-lg`}
           >
             {errorMassage ? (
               <div className="z-10 absolute flex items-center justify-center w-[510px] h-[586px] bg-white bg-opacity-50 rounded-lg">
@@ -101,7 +114,7 @@ export default function ModalWithDirection() {
             )}
 
             {isLoading ? (
-              <div className="z-10 absolute flex items-center justify-center w-[510px] h-[586px] bg-white bg-opacity-50 rounded-lg">
+              <div className="z-10 absolute flex items-center justify-center md:w-[510px] md:h-[586px] bg-white bg-opacity-50 md:rounded-lg xs:w-screen xs:h-screen xs:rounded-none">
                 <Loader />
               </div>
             ) : (
@@ -145,16 +158,20 @@ export default function ModalWithDirection() {
                 </div>
               </div>
             )}
-            <div
-              onClick={() => {
-                setIsOpen(false);
-                setIsSent(false);
-                setErrorMessage(false);
-              }}
-              className="absolute top-5 right-5 cursor-pointer z-50"
-            >
-              <CrossIcon className={`stroke-current ${color.hoverColor}`} />
-            </div>
+            {width >= 768 ? (
+              <div
+                onClick={() => {
+                  setIsOpen(false);
+                  setIsSent(false);
+                  setErrorMessage(false);
+                }}
+                className="absolute top-5 right-5 cursor-pointer z-50"
+              >
+                <CrossIcon className={`stroke-current ${color.hoverColor}`} />
+              </div>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       )}

@@ -66,7 +66,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                       </div>
                     )}
 
-                    <div className="flex flex-col font-poppins md:max-w-[593px] md:h-[435px] xs:max-w-screen content-between justify-between ml-[30px]">
+                    <div className="flex flex-col font-poppins md:max-w-[593px] md:h-[435px] xs:max-w-screen content-between justify-between md:ml-[30px]">
                       {width >= 768 && (
                         <div>
                           <h1 className={`${color.activeColor} text-forty font-gilroy`}>{data.block1.mainTitle}</h1>
@@ -90,7 +90,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                         </div>
                       </div>
 
-                      {width >= 768 && (
+                      {width >= 768 ? (
                         <div className="flex flex-row justify-between text-fourteen">
                           <div className="flex">
                             <p className={`${color.activeColor} font-gilroy text-twenty`}>{data.block1.price} BYN</p>
@@ -102,13 +102,17 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                           </div>
                           <p>Набор в группу с {data.block1.startClasses}</p>
                         </div>
+                      ) : (
+                        <p className={`${color.activeColor} font-gilroy text-twentyfive mt-[35px] mb-[20px]`}>
+                          {data.block1.price} BYN
+                        </p>
                       )}
 
-                      <div className="flex flex-row justify-between content-between items-center">
+                      <div className="flex md:flex-row xs:flex-col justify-between content-between items-center">
                         <div className="flex">
                           <ModalWithDirection />
                         </div>
-                        <p className="max-w-[285px] max-h-[40px] font-gilroy font-light text-fourteen flex">
+                        <p className="max-w-[285px] max-h-[40px] font-gilroy font-light text-fourteen flex xs:mt-[20px] md:mt-0">
                           {data.block1.discount}
                         </p>
                       </div>
@@ -116,10 +120,10 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                   </div>
                 </section>
 
-                <section className="flex justify-between items-center mt-[70px]">
+                <section className="flex md:flex-row xs:flex-col justify-between items-center md:mt-[70px] xs:mt-[35px]">
                   <div className="flex font-poppins">
-                    <div className="xl:max-w-[745px] h-[562px] md:max-w-[540px] ">
-                      <div className="flex flex-col justify-between max-w-[745px]   xl:h-[247px] md:h-[260px]">
+                    <div className="xl:max-w-[745px] md:h-[562px] md:max-w-[540px] ">
+                      <div className="flex flex-col justify-between max-w-[745px]   xl:h-[247px] md:h-[260px] xs:h-[440px]">
                         <h2 className={`${color.activeColor} text-twentyfive font-gilroy`}>
                           {data.block2.subBlock21.title}
                         </h2>
@@ -127,19 +131,19 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                         <p>{data.block2.subBlock21.paragraph2}</p>
                       </div>
 
-                      <div className="flex flex-col justify-between max-w-[745px]     xl:h-[245px] xl:mt-[70px] md:h-[260px] md:mt-6">
+                      <div className="flex flex-col justify-between max-w-[745px]     xl:h-[245px] xl:mt-[70px] md:h-[260px] xs:h-[450px] md:mt-6 xs:mt-[35px]">
                         <h2 className={`${color.activeColor} font-gilroy text-twentyfive`}>
                           {data.block2.subBlock22.mainTitle}
                         </h2>
                         <p className="mt-[6px]">{data.block2.subBlock22.subMainTitle}</p>
-                        <div className="flex flex-row">
+                        <div className="flex md:flex-row xs:flex-col">
                           <div>
                             <h3 className={`${color.activeColor} font-gilroy text-twenty`}>
                               {data.block2.subBlock22.subTitle1}
                             </h3>
                             <p className="mt-[12px] text-fourteen">{data.block2.subBlock22.paragraph1}</p>
                           </div>
-                          <div>
+                          <div className="md:mt-0 xs:mt-[24px]">
                             <h3 className={`${color.activeColor} font-gilroy text-twenty`}>
                               {data.block2.subBlock22.subTitle2}
                             </h3>
@@ -151,7 +155,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                   </div>
 
                   <div
-                    className={`${color.bgColor} p-9 flex flex-col justify-between font-poppins text-fourteen rounded-2xl xl:max-w-[485px] xl:h-[476px] md:max-w-[372px] md:h-[580px]`}
+                    className={`${color.bgColor} md:mt-0 xs:mt-[35px] md:p-9 xs:p-5 flex flex-col justify-between font-poppins text-fourteen rounded-2xl xl:max-w-[485px] xl:h-[476px] md:max-w-[372px] md:h-[580px] xs:h-[550px]`}
                   >
                     <h2 className={`${color.activeColor} font-gilroy text-twentyfive`}>
                       {data.block2.subBlock23.title}
@@ -162,12 +166,12 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                   </div>
                 </section>
 
-                <section className="flex items-center justify-between font-poppins text-fourteen mt-[70px]">
-                  <div className="flex flex-col justify-between h-[258px] max-w-[745px] ">
+                <section className="flex md:flex-row xs:flex-col items-center justify-between font-poppins text-fourteen md:mt-[70px] xs:mt-[35px]">
+                  <div className="flex flex-col justify-between md:h-[258px] md:max-w-[745px] xs:h-[388px]">
                     <h2 className={`${color.activeColor} font-gilroy text-twentyfive`}>
                       {data.block3.subBlock31.title}
                     </h2>
-                    <div className="max-w-[745px] h-[154px] flex flex-wrap">
+                    <div className="md:max-w-[745px] md:h-[154px] xs:h-[262px] flex flex-wrap md:mt-0 xs:mt-[30px] ">
                       {data.block3.subBlock31.paragraphs.map((item) => {
                         return (
                           <div className="flex xl:max-w-[360px] md:[745px]">
@@ -179,7 +183,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                     </div>
                   </div>
                   <div
-                    className={`${color.bgColor} flex flex-col justify-between py-[26px]  rounded-2xl    xl:max-w-[485px] xl:h-[188px] xl:px-[63px] md:max-w-[372px] md:h-[256px] md:px-9`}
+                    className={`${color.bgColor} flex flex-col justify-between md:py-[26px]  rounded-2xl    xl:max-w-[485px] xl:h-[188px] xl:px-[63px] md:max-w-[372px] md:h-[256px] xs:h-[222px] md:px-9 xs:py-5 xs:px-5 md:mt-0 xs:mt-[35px]`}
                   >
                     <h3 className={`${color.activeColor} font-gilroy text-twentyfive`}>
                       {data.block3.subBlock32.mainTitle}
@@ -188,14 +192,14 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                   </div>
                 </section>
 
-                <section className="pt-[90px]">
+                <section className="md:pt-[90px] xs:mt-[35px]">
                   <h2 className={`${color.activeColor} font-gilroy text-twentyfive pb-[30px]`}>
                     Вам также могут быть интересны
                   </h2>
                 </section>
               </div>
             </div>
-            <div className=" pb-[120px]">
+            <div className=" md:pb-[120px] xs:pb-[90px]">
               <SliderCenterMode />
             </div>
           </>
