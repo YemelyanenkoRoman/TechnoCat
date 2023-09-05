@@ -35,10 +35,8 @@ const Directions = ({ params }: { params: { directions: string } }) => {
               <div className="xl:mx-[60px] md:mx-[30px]">
                 <section className="flex    xl:h-[calc(100vh-257px)] ">
                   <div className="flex items-center ">
-                    <div className={`${color.bgColor} w-[530px] h-[435px] rounded-lg`}>
-                      <div className="flex justify-center">
-                        <div className="mt-[20px]">{data.block1.mainImage}</div>
-                      </div>
+                    <div className={`${color.bgColor} w-[530px] h-[435px] rounded-lg flex justify-center p-[20px] `}>
+                      <div className="flex ">{data.block1.mainImage}</div>
                     </div>
 
                     <div className="flex flex-col font-poppins max-w-[593px] h-[435px] content-between justify-between ml-[30px]">
