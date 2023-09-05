@@ -14,15 +14,14 @@ import { SliderCenterMode } from '@/components/sliders/SliderCenterMode';
 
 const Directions = ({ params }: { params: { directions: string } }) => {
   console.log(params.directions, 'page Direction');
-
+  const width = window.innerWidth;
   const data = DirectionsContent.find((item) => item.id === params.directions);
-
   const color = useColor();
 
   return (
     <main className="overflow-x-hidden">
-      <div className="font-gilroy font-normal text-gray-text   mx-auto mt-[107px] max-w-[1440px] xl:text-sexteen md:text-fourteen">
-        <div className="xl:mx-[60px] md:mx-[30px]">
+      <div className="font-gilroy font-normal text-gray-text   mx-auto mt-[107px]  xl:text-sexteen md:text-fourteen max-w-[1440px]">
+        <div className="xl:mx-[60px] md:mx-[30px] xs:mx-[16px]">
           <section>
             <Breadcrumbs items={breadcrumbItems} />
           </section>
@@ -31,21 +30,50 @@ const Directions = ({ params }: { params: { directions: string } }) => {
       <>
         {data ? (
           <>
-            <div className="font-gilroy font-normal text-gray-text mt-[30px] mx-auto max-w-[1440px] xl:text-sexteen md:text-fourteen">
-              <div className="xl:mx-[60px] md:mx-[30px]">
+            <div className="font-gilroy font-normal text-gray-text md:mt-[30px] mx-auto  xl:text-sexteen md:text-fourteen max-w-[1440px]">
+              <div className="xl:mx-[60px] md:mx-[30px] xs:mx-4">
                 <section className="flex    xl:h-[calc(100vh-257px)] ">
-                  <div className="flex items-center ">
-                    <div className={`${color.bgColor} w-[530px] h-[435px] rounded-lg flex justify-center p-[20px] `}>
+                  <div className="flex md:items-center md:flex-row xs:flex-col">
+                    {width >= 768 ? (
+                      ''
+                    ) : (
+                      <div>
+                        <h1 className={`${color.activeColor} text-twentyfive font-gilroy`}>{data.block1.mainTitle}</h1>
+                        <p className="text-fourteen mt-[10px] mb-[35px]">{data.block1.subTitle}</p>
+                      </div>
+                    )}
+                    <div
+                      className={`${color.bgColor} md:w-[530px] md:h-[435px] xs:max-w-screen rounded-lg flex justify-center p-[20px] `}
+                    >
                       <div className="flex ">{data.block1.mainImage}</div>
                     </div>
 
-                    <div className="flex flex-col font-poppins max-w-[593px] h-[435px] content-between justify-between ml-[30px]">
-                      <div>
-                        <h1 className={`${color.activeColor} text-forty font-gilroy`}>{data.block1.mainTitle}</h1>
-                        <p className="text-fourteen mt-[10px]">{data.block1.subTitle}</p>
-                      </div>
+                    {width >= 768 ? (
+                      ''
+                    ) : (
+                      <div className="flex flex-col justify-center mt-[35px] text-fourteen">
+                        <p className={`${color.activeColor} flex justify-center font-poppins`}>
+                          Набор в группу с {data.block1.startClasses}
+                        </p>
 
-                      <div>
+                        <div className="flex justify-between mt-[15px]">
+                          <p>Продолжительность занятия</p>
+                          <div className="flex">
+                            <Time stroke={color.svgHover} />
+                            <p className="ml-[10px]">{data.block1.time} минут</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="flex flex-col font-poppins md:max-w-[593px] md:h-[435px] xs:max-w-screen content-between justify-between ml-[30px]">
+                      {width >= 768 && (
+                        <div>
+                          <h1 className={`${color.activeColor} text-forty font-gilroy`}>{data.block1.mainTitle}</h1>
+                          <p className="text-fourteen mt-[10px]">{data.block1.subTitle}</p>
+                        </div>
+                      )}
+                      <div className="md:mt-0 xs:mt-[35px]">
                         <div>
                           <div className="flex">
                             <Book stroke={color.svgHover} />
@@ -62,17 +90,19 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                         </div>
                       </div>
 
-                      <div className="flex flex-row justify-between text-fourteen">
-                        <div className="flex">
-                          <p className={`${color.activeColor} font-gilroy text-twenty`}>{data.block1.price} BYN</p>
-                          <p className=" ml-[18px]">{data.block1.numberLessons}</p>
+                      {width >= 768 && (
+                        <div className="flex flex-row justify-between text-fourteen">
+                          <div className="flex">
+                            <p className={`${color.activeColor} font-gilroy text-twenty`}>{data.block1.price} BYN</p>
+                            <p className=" ml-[18px]">{data.block1.numberLessons}</p>
+                          </div>
+                          <div className="flex">
+                            <Time stroke={color.svgHover} />
+                            <p className="ml-[10px]">{data.block1.time} минут</p>
+                          </div>
+                          <p>Набор в группу с {data.block1.startClasses}</p>
                         </div>
-                        <div className="flex">
-                          <Time stroke={color.svgHover} />
-                          <p className="ml-[10px]">{data.block1.time} минут</p>
-                        </div>
-                        <p>Набор в группу с {data.block1.startClasses}</p>
-                      </div>
+                      )}
 
                       <div className="flex flex-row justify-between content-between items-center">
                         <div className="flex">
@@ -158,7 +188,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                   </div>
                 </section>
 
-                <section className="pt-[90px] ">
+                <section className="pt-[90px]">
                   <h2 className={`${color.activeColor} font-gilroy text-twentyfive pb-[30px]`}>
                     Вам также могут быть интересны
                   </h2>
