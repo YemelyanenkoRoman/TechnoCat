@@ -3,6 +3,7 @@ import Robotics from '@/public/DirectionsPages/Robotics.svg';
 import English from '@/public/DirectionsPages/English.svg';
 import Preparingforschool from '@/public/DirectionsPages/Preparingforschool.svg';
 import Firstgradestudent from '@/public/DirectionsPages/Firstgradestudent.svg';
+import Image from 'next/image';
 
 interface block1 {
   mainImage: JSX.Element;
@@ -70,7 +71,17 @@ export const DirectionsContent: DirectionContent[] = [
     id: 'programming',
 
     block1: {
-      mainImage: <Programming />,
+      // mainImage: <Programming />,
+      mainImage: (
+        <Image
+          src="/DirectionsPages/Programming.svg"
+          alt="Программист"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full h-auto"
+        />
+      ),
       mainTitle: 'Программирование',
       subTitle: 'для самых маленьких',
       whatStudyTitle: 'Что изучаем?',
@@ -138,7 +149,17 @@ export const DirectionsContent: DirectionContent[] = [
     id: 'robotics',
 
     block1: {
-      mainImage: <Robotics />,
+      // mainImage: <Robotics />,
+      mainImage: (
+        <Image
+          src="/DirectionsPages/Robotics.svg"
+          alt="Робот"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full h-auto"
+        />
+      ),
       mainTitle: 'Робототехника',
       subTitle: 'МИНИ ГРУППЫ',
       whatStudyTitle: 'Что изучаем?',
@@ -206,7 +227,17 @@ export const DirectionsContent: DirectionContent[] = [
     id: 'english',
 
     block1: {
-      mainImage: <English />,
+      // mainImage: <English />,
+      mainImage: (
+        <Image
+          src="/DirectionsPages/English.svg"
+          alt="Люди разговаривают на английском языке"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full h-auto"
+        />
+      ),
       mainTitle: 'Английский язык',
       subTitle: 'учи английский язык играя',
       whatStudyTitle: 'Что изучаем?',
@@ -274,7 +305,17 @@ export const DirectionsContent: DirectionContent[] = [
     id: 'preparingforschool',
 
     block1: {
-      mainImage: <Preparingforschool />,
+      // mainImage: <Preparingforschool />,
+      mainImage: (
+        <Image
+          src="/DirectionsPages/Preparingforschool.svg"
+          alt="Ребёнок делает уроки"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full h-auto"
+        />
+      ),
       mainTitle: 'Подготовка к школе',
       subTitle: 'Подготовся к школе на все 100%',
       whatStudyTitle: 'Что изучаем?',
@@ -342,7 +383,17 @@ export const DirectionsContent: DirectionContent[] = [
     id: 'firstgradestudent',
 
     block1: {
-      mainImage: <Firstgradestudent />,
+      // mainImage: <Firstgradestudent />,
+      mainImage: (
+        <Image
+          src="/DirectionsPages/Firstgradestudent.svg"
+          alt="Умный ребёнок"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full h-auto"
+        />
+      ),
       mainTitle: 'Помощь первокласснику',
       subTitle: 'Помощь первокласснику!!!',
       whatStudyTitle: 'Что изучаем?',
