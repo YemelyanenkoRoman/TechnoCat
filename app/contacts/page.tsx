@@ -12,14 +12,14 @@ const Contacts = () => {
         <section>
           <Breadcrumbs items={breadcrumbItems} />
         </section>
-        <section className="md:h-[calc(100vh-197px)] pb-[90px] flex flex-col justify-center">
+        <section className="xl:h-[calc(100vh-197px)] pb-[90px] flex flex-col justify-center">
           <h1 className="flex justify-center text-forty text-blue-dark md:mb-0 xs:mb-[30px]">Контакты</h1>
           <div className="flex justify-between md:items-center     xl:flex-row xl:mt-0 md:flex-col md:mt-[70px] xs:flex-col">
             <section className="flex md:items-center md:flex-row xs:flex-col ">
               <div>
                 <div className="md:w-[320px] pb-[22px]">
                   <p className="text-twenty text-blue-dark">Адрес:</p>
-                  <p className="pt-[15px] md:text-sexteen xs:text-[15px] md:font-gilroy xs:font-poppins">
+                  <p className="pt-[15px] text-sexteen md:font-gilroy xs:font-poppins">
                     246003, г. Гомель, ул. Кирова, д. 55, каб. 318
                   </p>
                 </div>
