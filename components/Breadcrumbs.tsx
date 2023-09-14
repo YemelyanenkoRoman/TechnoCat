@@ -31,7 +31,7 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   const filteredItems = items.filter((item) => pathname.startsWith(item.href));
 
   return (
-    <div className="pt-10 pb-[30px] font-poppins">
+    <div className="md:pt-10 xs:pt-[30px] pb-[30px] font-poppins">
       <nav className="text-gray-text text-sm">
         <ol className="flex items-center space-x-2">
           {filteredItems.map((item, index) => {
