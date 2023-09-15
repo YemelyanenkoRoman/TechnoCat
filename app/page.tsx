@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { SliderCenterMode } from '@/components/sliders/SliderCenterMode';
 import { useState } from 'react';
 import Loading from './loading';
+import Loader from '@/components/loader/Loader';
 
 export default function Home() {
   const [reveal, setReveal] = useState(false);
@@ -42,11 +43,12 @@ export default function Home() {
             </div>
 
             <div className={`w-[465px] h-[465px]`}>
-              {/* {reveal === false ? <Loading /> : ''} */}
-              {/* <div className={`${reveal === false ? '' : 'hidden'}`}>
-                <Loading />
-              </div> */}
-              {/* <div className={`${reveal === false ? 'hidden' : 'block'}`}> */}
+              <div className={`  ${reveal === false ? 'block relative' : 'hidden'}`}>
+                <div className="z-10 absolute flex items-center justify-center   w-[465px] h-[465px]">
+                  <Loader />
+                </div>
+              </div>
+
               <Image
                 src="/homePage/main-page-h1.svg"
                 alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
@@ -58,12 +60,11 @@ export default function Home() {
                 onLoad={() => setReveal(false)}
                 onLoadingComplete={() => setReveal(true)}
               />
-              {/* </div> */}
             </div>
           </div>
         </section>
       ) : (
-        <section className="h-[calc(100vh-97px)] text-text-lightblue bg-fill-blue flex ">
+        <section className="md:h-[calc(100vh-97px)] pt-[30px] text-text-lightblue bg-fill-blue flex ">
           <div className=" s:mb-[30px] md:mb-0  mx-[16px] flex justify-around flex-col ">
             <div>
               <h1 className=" font-normal text-twentyfive">
@@ -79,6 +80,11 @@ export default function Home() {
             </div>
 
             <div className="">
+              <div className={`  ${reveal === false ? 'flex justify-center ' : 'hidden'}`}>
+                <div className="relative flex items-center justify-center w-[320px] h-[320px]">
+                  <Loader />
+                </div>
+              </div>
               <Image
                 src="/homePage/main-page-h1.svg"
                 alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
@@ -86,6 +92,9 @@ export default function Home() {
                 height={0}
                 sizes="100vw"
                 className="w-full h-auto"
+                onError={() => setReveal(false)}
+                onLoad={() => setReveal(false)}
+                onLoadingComplete={() => setReveal(true)}
               />
             </div>
             <div>
