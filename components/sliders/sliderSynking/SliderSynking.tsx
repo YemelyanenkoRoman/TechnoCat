@@ -67,8 +67,8 @@ export const AsNavFor = () => {
   };
 
   return (
-    <div className="w-[810px] mx-auto">
-      <div className="w-[810px] mb-1 ">
+    <div className="md:w-[810px] xs:w-full xs:overflow-x-hidden mx-auto">
+      <div className="md:w-[810px] xs:w-full xs:overflow-x-hidden mb-1 ">
         <Slider {...settings1} asNavFor={nav2} ref={(slider) => setNav1(slider || undefined)}>
           {Images.map((item) => {
             return (

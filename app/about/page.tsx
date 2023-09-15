@@ -174,13 +174,13 @@ const About = () => {
           <div className="md:max-w-[760px] md:h-[350px]">
             <h2 className="flex md:justify-center font-gilroy text-twentyfive  text-blue-dark">4. Сообщество</h2>
 
-            <div className=" mt-[40px] md:max-w-[424px] md:h-[278px]">
+            <div className=" xs:mt-[40px] md:max-w-[424px] md:h-[278px]">
               <p>
                 Образовательный процесс в образовательном центре ТехноКот строится на искреннем диалоге педагогов и
                 учеников. Мы заботимся о дружелюбных и уважительных отношениях между учениками и всеми членами
                 образовательного центра ТехноКот.
               </p>
-              <p className="mt-6">
+              <p className="md:mt-0 xs:mt-6">
                 Мы понимаем, что все наши ученики не могут, и не должны быть друг другу близкими друзьями, но в наших
                 силах научить их вести уважительный диалог друг с другом, решать конфликтные ситуации без агрессии,
                 уметь работать в команде и принимать друг друга такими, какие они есть.
@@ -189,13 +189,13 @@ const About = () => {
           </div>
         </section>
 
-        <section className="mt-[70px] flex flex-col items-center   xl:mx-[60px] md:mx-[30px]">
-          <h3 className=" max-w-[424px] h-[72px] text-blue-dark">
+        <section className="md:mt-[70px] xs:mt-[50px] flex flex-col items-center   xl:mx-[60px] md:mx-[30px] xs:mx-[16px]">
+          <h3 className=" md:max-w-[424px] md:h-[72px] text-blue-dark">
             Мы — это дружная и сплоченная команда педагогов и организаторов, которые искренне любят свое дело
           </h3>
         </section>
 
-        <section className="mt-[70px] mb-[120px]   xl:mx-[60px] md:mx-[30px] xs:hidden md:block">
+        <section className="md:mt-[70px] xs:mt-[50px] mb-[120px] xl:mx-[60px] md:mx-[30px]">
           <div>
             <AsNavFor />
           </div>
