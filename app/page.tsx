@@ -7,8 +7,12 @@ import Discount from '@/components/Discount';
 import OftenQuestions from '@/components/OftenQuestions';
 import Link from 'next/link';
 import { SliderCenterMode } from '@/components/sliders/SliderCenterMode';
+import { useState } from 'react';
+import Loading from './loading';
 
 export default function Home() {
+  const [reveal, setReveal] = useState(false);
+  console.log(reveal, 'hihihi');
   const width = window.innerWidth;
   return (
     <main className="font-gilroy font-normal  text-sexteen  md:pt-[107px] xs:pt-[97px] overflow-x-hidden">
@@ -37,7 +41,12 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="w-[465px] h-[465px]">
+            <div className={`w-[465px] h-[465px]`}>
+              {/* {reveal === false ? <Loading /> : ''} */}
+              {/* <div className={`${reveal === false ? '' : 'hidden'}`}>
+                <Loading />
+              </div> */}
+              {/* <div className={`${reveal === false ? 'hidden' : 'block'}`}> */}
               <Image
                 src="/homePage/main-page-h1.svg"
                 alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
@@ -45,7 +54,11 @@ export default function Home() {
                 height={0}
                 sizes="100vw"
                 className="w-full h-auto"
+                onError={() => setReveal(false)}
+                onLoad={() => setReveal(false)}
+                onLoadingComplete={() => setReveal(true)}
               />
+              {/* </div> */}
             </div>
           </div>
         </section>
