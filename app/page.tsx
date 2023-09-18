@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import Button from '@/components/buttons/Button';
-import Image from 'next/image';
-import WhatFindCenter from '@/components/WhatFindCenter';
-import Discount from '@/components/Discount';
-import OftenQuestions from '@/components/OftenQuestions';
-import Link from 'next/link';
-import { SliderCenterMode } from '@/components/sliders/SliderCenterMode';
-import { useState } from 'react';
-import Loading from './loading';
-import Loader from '@/components/loader/Loader';
+import Button from "@/components/buttons/Button";
+import Image from "next/image";
+import WhatFindCenter from "@/components/WhatFindCenter";
+import Discount from "@/components/Discount";
+import OftenQuestions from "@/components/OftenQuestions";
+import Link from "next/link";
+import { SliderCenterMode } from "@/components/sliders/SliderCenterMode";
+import { useState } from "react";
+import Loading from "./loading";
+import Loader from "@/components/loader/Loader";
 
 export default function Home() {
   const [reveal, setReveal] = useState(false);
-  console.log(reveal, 'hihihi');
-  const width = window.innerWidth;
+  console.log(reveal, "hihihi");
+  const width = typeof window === "undefined" ? 0 : window.innerWidth;
   return (
     <main className="font-gilroy font-normal  text-sexteen  md:pt-[107px] xs:pt-[97px] overflow-x-hidden">
       {width >= 768 ? (
@@ -25,25 +25,30 @@ export default function Home() {
                 ТехноКот — место, где ваш ребенок реализует свои мечты и цели!
               </h1>
               <h2 className="text-sexteen font-poppins pt-10 pb-[60px]">
-                Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и подарят
-                незабываемые впечатления от увлекательных занятий!
+                Наши квалифицированные преподаватели помогут получить вашему
+                ребенку качественное образование и подарят незабываемые
+                впечатления от увлекательных занятий!
               </h2>
-              <Link href={'/about'}>
+              <Link href={"/about"}>
                 <Button
                   width="185px"
                   height="50px"
                   title="Узнать больше"
                   type="button"
                   backgroundColor="bg-text-lightblue"
-                  bgHover={'hover:bg-d-blue'}
-                  focus={'hover:text-text-lightblue'}
+                  bgHover={"hover:bg-d-blue"}
+                  focus={"hover:text-text-lightblue"}
                   textColor="text-fill-blue"
                 />
               </Link>
             </div>
 
             <div className={`w-[465px] h-[465px]`}>
-              <div className={`  ${reveal === false ? 'block relative' : 'hidden'}`}>
+              <div
+                className={`  ${
+                  reveal === false ? "block relative" : "hidden"
+                }`}
+              >
                 <div className="z-10 absolute flex items-center justify-center   w-[465px] h-[465px]">
                   <Loader />
                 </div>
@@ -73,14 +78,19 @@ export default function Home() {
 
               {width >= 376 && (
                 <h2 className="text-sexteen font-poppins mt-[20px]">
-                  Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и
-                  подарят незабываемые впечатления от увлекательных занятий.
+                  Наши квалифицированные преподаватели помогут получить вашему
+                  ребенку качественное образование и подарят незабываемые
+                  впечатления от увлекательных занятий.
                 </h2>
               )}
             </div>
 
             <div className="">
-              <div className={`  ${reveal === false ? 'flex justify-center ' : 'hidden'}`}>
+              <div
+                className={`  ${
+                  reveal === false ? "flex justify-center " : "hidden"
+                }`}
+              >
                 <div className="relative flex items-center justify-center w-[320px] h-[320px]">
                   <Loader />
                 </div>
@@ -98,7 +108,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <Link href={'/about'} className="">
+              <Link href={"/about"} className="">
                 {width >= 768 ? (
                   <Button
                     width="185px"
@@ -106,8 +116,8 @@ export default function Home() {
                     title="Узнать больше"
                     type="button"
                     backgroundColor="bg-text-lightblue"
-                    bgHover={'hover:bg-d-blue'}
-                    focus={'hover:text-text-lightblue'}
+                    bgHover={"hover:bg-d-blue"}
+                    focus={"hover:text-text-lightblue"}
                     textColor="text-fill-blue"
                   />
                 ) : (
@@ -117,8 +127,8 @@ export default function Home() {
                     title="Узнать больше"
                     type="button"
                     backgroundColor="bg-text-lightblue"
-                    bgHover={'hover:bg-d-blue'}
-                    focus={'hover:text-text-lightblue'}
+                    bgHover={"hover:bg-d-blue"}
+                    focus={"hover:text-text-lightblue"}
                     textColor="text-fill-blue"
                   />
                 )}
@@ -130,7 +140,9 @@ export default function Home() {
 
       <div className="text-blue-dark">
         <section className="m-auto  xs:pt-[80px] xs:px-4  xl:px-[120px] md:pt-[120px] md:px-[30px]">
-          <h2 className="md:text-forty xs:text-twentyfive text-center">Что вы найдете в нашем центре?</h2>
+          <h2 className="md:text-forty xs:text-twentyfive text-center">
+            Что вы найдете в нашем центре?
+          </h2>
           <WhatFindCenter />
         </section>
 
