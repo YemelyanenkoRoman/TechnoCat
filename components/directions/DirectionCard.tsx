@@ -127,6 +127,33 @@ export const DirectionCardData: DirectionCardData[] = [
     cost: 60,
     quantity: '1 месяц',
   },
+
+  {
+    id: 'painting',
+    img: (
+      <Image
+        src="/DirectionCardImg/DirectionCard5.svg"
+        alt="Художник."
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
+    ),
+    bgColorImg: 'bg-[#ECDDFF]',
+    bgColorCard: 'bg-fill-violet',
+    colorText: 'text-hover-violet',
+
+    buttonBorder: 'border-button-violet',
+    buttonBorderActive: 'focus:border-hover-violet',
+    buttonBorderHover: 'hover:border-hover-violet',
+
+    title: 'Рисвание',
+    age: 5,
+    duration: 45,
+    cost: 60,
+    quantity: '1 месяц',
+  },
 ];
 
 const DirectionCard = (props: DirectionCardData) => {
