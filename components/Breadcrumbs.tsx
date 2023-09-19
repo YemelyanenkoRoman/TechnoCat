@@ -10,6 +10,7 @@ export const breadcrumbItems = [
   { href: '/directions/english', label: 'Английский язык' },
   { href: '/directions/preparingforschool', label: 'Подготовка к школе' },
   { href: '/directions/firstgradestudent', label: 'Помощь первокласснику' },
+  { href: '/directions/painting', label: 'Рисование' },
 ];
 
 import Link from 'next/link';

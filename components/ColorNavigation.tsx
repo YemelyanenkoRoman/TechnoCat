@@ -131,6 +131,20 @@ export const colorNavObj: colorNavObj = {
     formBorderActive: 'focus:border-hover-green',
     buttonTextColor: 'text-[#EFF6FF]',
   },
+  '/directions/painting': {
+    bgColor: 'bg-fill-violet',
+    bgButton: 'bg-button-violet',
+    bgButtonActive: 'hover:bg-hover-violet',
+    textColor: 'text-tetx-violet',
+    hoverColor: 'hover:text-hover-violet',
+    activeColor: 'text-hover-violet',
+    directColor: 'bg-d-violet',
+    svgStroke: '#9783B0',
+    svgHover: '#724DA1',
+    formBorder: 'border-button-violet',
+    formBorderActive: 'focus:border-hover-violet',
+    buttonTextColor: 'text-[#EFF6FF]',
+  },
 };
 
 export const useColor = () => {
