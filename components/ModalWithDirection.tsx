@@ -11,7 +11,11 @@ import Image from 'next/image';
 import Button from './buttons/Button';
 import FormDiscount from './FormDiscount';
 
-export default function ModalWithDirection() {
+type ModalWithDirectionProps = {
+  nameDirection?: string;
+};
+
+export default function ModalWithDirection(props: ModalWithDirectionProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -153,6 +157,7 @@ export default function ModalWithDirection() {
                       setIsLoading={setIsLoading}
                       setIsSent={setIsSent}
                       setErrorMessage={setErrorMessage}
+                      nameDirection={props.nameDirection}
                     />
                   </div>
                 </div>

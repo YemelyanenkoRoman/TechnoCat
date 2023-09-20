@@ -110,7 +110,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
 
                       <div className="flex md:flex-row xs:flex-col justify-between content-between items-center">
                         <div className="flex">
-                          <ModalWithDirection />
+                          <ModalWithDirection nameDirection={data.block1.mainTitle} />
                         </div>
                         <p className="max-w-[285px] max-h-[40px] font-gilroy font-light text-fourteen flex xs:mt-[20px] md:mt-0">
                           {data.block1.discount}

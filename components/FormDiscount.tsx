@@ -18,6 +18,8 @@ type MyFormProps = {
   setIsLoading: (value: boolean) => void;
   setIsSent: (value: boolean) => void;
   setErrorMessage: (value: boolean) => void;
+
+  nameDirection?: string | undefined;
 };
 
 const MyForm = (props: MyFormProps) => {
@@ -100,7 +102,7 @@ const MyForm = (props: MyFormProps) => {
           width="280px"
           height="51px"
           placeholder="Направление"
-          defaultValue=""
+          defaultValue={props.nameDirection}
           control={control}
           name={'direction'}
           rules={{
