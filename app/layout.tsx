@@ -1,22 +1,20 @@
-import { TheHeader } from "@/components/TheHeader";
-import { TheFooter } from "@/components/footer/TheFooter";
-import "./globals.css";
-import { gilroy, poppins } from "./fonts/fonts";
-import Head from "next/head";
-import { getMetadata } from "@/utils";
+import { TheHeader } from '@/components/TheHeader';
+import { TheFooter } from '@/components/footer/TheFooter';
+import './globals.css';
+import { gilroy, poppins } from './fonts/fonts';
+import Head from 'next/head';
+import { getMetadata } from '@/utils';
 
 export const metadata = getMetadata({
   title: {
-    template: "%s - Технокот",
-    default: "Технокот",
+    template: 'ТехноКот - %s',
+    default: 'ТехноКот',
   },
+  description:
+    'Образовательный центр для детей ТехноКот. Занятия для детей по следующим направлениям: программирование, робототехника, подготовка к школе, английский язык, рисование, графический дизайн, подготовка к школе, помощь первокласснику.',
 });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru" className={`${gilroy.variable} ${poppins.variable} `}>
       <body className="relative overflow-x-hidden flex flex-col min-h-screen">
