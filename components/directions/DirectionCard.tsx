@@ -140,13 +140,13 @@ export const DirectionCardData: DirectionCardData[] = [
         className="w-full h-auto"
       />
     ),
-    bgColorImg: 'bg-[#ECDDFF]',
-    bgColorCard: 'bg-fill-violet',
-    colorText: 'text-hover-violet',
+    bgColorImg: 'bg-[#4497AD]',
+    bgColorCard: 'bg-fill-aqua',
+    colorText: 'text-hover-aqua',
 
-    buttonBorder: 'border-button-violet',
-    buttonBorderActive: 'focus:border-hover-violet',
-    buttonBorderHover: 'hover:border-hover-violet',
+    buttonBorder: 'border-hover-aqua',
+    buttonBorderActive: 'focus:border-button-aqua',
+    buttonBorderHover: 'hover:border-button-aqua',
 
     title: 'Рисвание',
     age: 5,
