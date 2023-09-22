@@ -6,6 +6,10 @@ import InputPhoneField from './formElement/inputField/InputPhoneField';
 import { CheckboxField } from './formElement/checkboxField/CheckboxField';
 import MistakeIcon from '@/public/icons/formMistake.svg';
 import { useColor } from './ColorNavigation';
+import SelectDirection from './formElement/select/Select';
+import SelectField from './formElement/selectField/SelectField';
+import { Option } from './formElement/select/Select';
+import { DirectionsNav } from './directions/DirectionsNav';
 
 interface FormValues {
   name: string;
@@ -25,7 +29,6 @@ type MyFormProps = {
 const MyForm = (props: MyFormProps) => {
   const color = useColor();
   const methods = useForm<FormValues>({ mode: 'onBlur' });
-  const width = window.innerWidth;
   const {
     control,
     handleSubmit,
@@ -98,7 +101,7 @@ const MyForm = (props: MyFormProps) => {
           control={control}
         />
 
-        <InputField
+        {/* <InputField
           width="280px"
           height="51px"
           placeholder="Направление"
@@ -119,6 +122,19 @@ const MyForm = (props: MyFormProps) => {
               message: 'Максимум 50 символов',
               value: 50,
             },
+          }}
+        /> */}
+
+        <SelectField
+          width="280px"
+          height="51px"
+          options={DirectionsNav}
+          placeholder="Направление"
+          defaultValue={DirectionsNav.find((x) => x.label === props.nameDirection)?.value}
+          control={control}
+          name={'direction'}
+          rules={{
+            required: 'Пожалуйста, заполните это поле',
           }}
         />
 

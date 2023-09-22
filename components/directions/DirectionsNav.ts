@@ -1,13 +1,14 @@
 interface DirectionsNav {
   label: string;
   href: string;
+  value: string;
 }
 
 export const DirectionsNav: DirectionsNav[] = [
-  { label: 'Программирование', href: '/directions/programming' },
-  { label: 'Робототехника', href: '/directions/robotics' },
-  { label: 'Английский язык', href: '/directions/english' },
-  { label: 'Рисование', href: '/directions/painting' },
-  { label: 'Подготовка к школе', href: '/directions/preparingforschool' },
-  { label: 'Помощь первокласснику', href: '/directions/firstgradestudent' },
+  { label: 'Программирование', href: '/directions/programming', value: 'programming' },
+  { label: 'Робототехника', href: '/directions/robotics', value: 'robotics' },
+  { label: 'Английский язык', href: '/directions/english', value: 'english' },
+  { label: 'Рисование', href: '/directions/painting', value: 'painting' },
+  { label: 'Подготовка к школе', href: '/directions/preparingforschool', value: 'preparingforschool' },
+  { label: 'Помощь первокласснику', href: '/directions/firstgradestudent', value: 'firstgradestudent' },
 ];

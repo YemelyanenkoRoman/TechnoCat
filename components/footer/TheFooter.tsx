@@ -14,10 +14,12 @@ import Time from '@/public/icons/time-24-px.svg';
 import Instagram from '@/public/icons/instagram-16-px.svg';
 import FooterNavBlock from './FooterNavBlock';
 import { useColor } from '../ColorNavigation';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 const TheFooter = () => {
   const color = useColor();
-  const width = typeof window === 'undefined' ? 0 : window.innerWidth;
+  // const width = typeof window === 'undefined' ? 0 : window.innerWidth;
+  const width = useWindowWidth();
   return (
     <footer
       className={`${color.textColor} ${color.bgColor} font-poppins font-normal    xl:text-sexteen md:text-fourteen`}
