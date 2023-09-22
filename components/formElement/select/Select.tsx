@@ -16,23 +16,38 @@ type SelectProps = {
 
   width: string;
   height: string;
-  borderColor?: string;
+  borderColor: string;
 };
 
 const SelectDirection = (props: SelectProps) => (
   <Select
-    theme={(theme) => ({
-      ...theme,
-      borderRadius: 3,
-      colors: {
-        ...theme.colors,
-        primary25: 'rgba(117, 179, 125, 0.5)',
-        primary: 'none',
-      },
-    })}
-    // classNames={{
-    //   control: () => 'border border-gray-300 rounded-md',
-    // }}
+    styles={{
+      control: (baseStyles) => ({
+        ...baseStyles,
+        borderRadius: '8px',
+        borderWidth: '2px',
+      }),
+      container: (baseStyles) => ({
+        ...baseStyles,
+        width: props.width,
+        height: props.height,
+      }),
+      valueContainer: (baseStyles) => ({
+        ...baseStyles,
+        height: props.height,
+        paddingLeft: '20px',
+        borderWidth: '0px',
+      }),
+    }}
+    className={`${props.borderColor}`}
+    classNames={{
+      container: () => '',
+      indicatorsContainer: () => '',
+      control: () => props.borderColor,
+      valueContainer: () => 'font-poppins text-sexteen',
+      input: () => '',
+    }}
+    // unstyled={true}
     options={props.options}
     value={props.value}
     onChange={props.onChange}
