@@ -1,4 +1,4 @@
-import Select from 'react-select';
+import Select from "react-select";
 
 export interface Option {
   value: string;
@@ -13,7 +13,8 @@ type SelectProps = {
   onBlur: () => void;
   placeholder?: string;
   defaultValue?: Option;
-
+  optionClass: string;
+  optionClassSelected: string;
   width: string;
   height: string;
   borderColor: string;
@@ -24,8 +25,9 @@ const SelectDirection = (props: SelectProps) => (
     styles={{
       control: (baseStyles) => ({
         ...baseStyles,
-        borderRadius: '8px',
-        borderWidth: '2px',
+        borderRadius: "8px",
+        borderWidth: "2px",
+        backgroundColor: "white",
       }),
       container: (baseStyles) => ({
         ...baseStyles,
@@ -35,19 +37,34 @@ const SelectDirection = (props: SelectProps) => (
       valueContainer: (baseStyles) => ({
         ...baseStyles,
         height: props.height,
-        paddingLeft: '20px',
-        borderWidth: '0px',
+        paddingLeft: "20px",
+        borderWidth: "0px",
+      }),
+      menu: (baseStyles) => ({
+        ...baseStyles,
+        backgroundColor: "white",
+        marginTop: "8px",
+        borderRadius: "8px",
+      }),
+      option: (baseStyles) => ({
+        ...baseStyles,
+        padding: "10px 20px",
+      }),
+      indicatorsContainer: (baseStyles) => ({
+        ...baseStyles,
+        paddingRight: "5px",
       }),
     }}
-    className={`${props.borderColor}`}
     classNames={{
-      container: () => '',
-      indicatorsContainer: () => '',
+      container: () => "",
+      indicatorsContainer: () => "",
       control: () => props.borderColor,
-      valueContainer: () => 'font-poppins text-sexteen',
-      input: () => '',
+      valueContainer: () => "font-poppins text-sexteen",
+      input: () => "",
+      option: (state) =>
+        state.isSelected ? props.optionClassSelected : props.optionClass,
     }}
-    // unstyled={true}
+    unstyled
     options={props.options}
     value={props.value}
     onChange={props.onChange}

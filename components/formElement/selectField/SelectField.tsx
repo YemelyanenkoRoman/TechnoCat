@@ -1,7 +1,7 @@
-import { Controller } from 'react-hook-form';
-import { Mistake } from '@/components/formElement/inputField/Mistake';
-import { useColor } from '@/components/ColorNavigation';
-import SelectDirection, { Option } from '../select/Select';
+import { Controller } from "react-hook-form";
+import { Mistake } from "@/components/formElement/inputField/Mistake";
+import { useColor } from "@/components/ColorNavigation";
+import SelectDirection, { Option } from "../select/Select";
 
 type SelectProps = {
   control: any;
@@ -26,7 +26,12 @@ const SelectField = (props: SelectProps) => {
         control={props.control}
         defaultValue={props.defaultValue}
         render={({ field, fieldState }) => {
-          console.log(props.defaultValue, field.value, props.options, 'cjj,otybt');
+          console.log(
+            props.defaultValue,
+            field.value,
+            props.options,
+            "cjj,otybt"
+          );
           return (
             <div className="flex items-center">
               {fieldState.error && <Mistake error={fieldState.error} />}
@@ -34,7 +39,11 @@ const SelectField = (props: SelectProps) => {
               <SelectDirection
                 options={props.options}
                 focus={color.formBorderActive}
-                borderColor={fieldState.error ? 'border-[#E0474E]' : `${color.formBorder}`}
+                borderColor={
+                  fieldState.error ? "border-[#E0474E]" : `${color.formBorder}`
+                }
+                optionClass={color.option}
+                optionClassSelected={color.selectedOption}
                 width={props.width}
                 height={props.height}
                 placeholder={props.placeholder}
