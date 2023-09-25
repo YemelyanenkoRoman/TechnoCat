@@ -5,6 +5,7 @@ import { DirectionsNav } from './DirectionsNav';
 import { v4 as uuidv4 } from 'uuid';
 import { useColor } from '../ColorNavigation';
 import { usePathname, useRouter } from 'next/navigation';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 type DirectionsNav = {
   href: string;
@@ -53,7 +54,7 @@ const Directions = (props: DirectionProps) => {
     isMouted.current = true;
   }, [pathname]);
 
-  const width = window.innerWidth;
+  const width = useWindowWidth();
 
   return (
     <div

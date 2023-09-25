@@ -8,6 +8,7 @@ import FormDiscount from './FormDiscount';
 import Form from './FormDiscount';
 import Image from 'next/image';
 import Loader from './loader/Loader';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 export interface Discount {
   img: JSX.Element;
@@ -89,7 +90,7 @@ const Discount = () => {
     setErrorMessage(false);
   }
 
-  const width = window.innerWidth;
+  const width = useWindowWidth();
 
   return (
     <div className="m-auto md:h-[462px] xs:h-[1051px] bg-[#D8E9FF]  xl:max-w-[1140px] xl:rounded-lg  md:w-full md:rounded-none">

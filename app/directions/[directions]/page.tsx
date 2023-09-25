@@ -11,10 +11,11 @@ import Check from '@/public/icons/check-16-px.svg';
 import { useColor } from '@/components/ColorNavigation';
 import ModalWithDirection from '@/components/ModalWithDirection';
 import { SliderCenterMode } from '@/components/sliders/SliderCenterMode';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 const Directions = ({ params }: { params: { directions: string } }) => {
   console.log(params.directions, 'page Direction');
-  const width = window.innerWidth;
+  const width = useWindowWidth();
   const data = DirectionsContent.find((item) => item.id === params.directions);
   const color = useColor();
 

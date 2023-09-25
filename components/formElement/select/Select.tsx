@@ -1,4 +1,4 @@
-import Select from "react-select";
+import Select from 'react-select';
 
 export interface Option {
   value: string;
@@ -18,6 +18,8 @@ type SelectProps = {
   width: string;
   height: string;
   borderColor: string;
+
+  menuListClass?: any;
 };
 
 const SelectDirection = (props: SelectProps) => (
@@ -25,9 +27,9 @@ const SelectDirection = (props: SelectProps) => (
     styles={{
       control: (baseStyles) => ({
         ...baseStyles,
-        borderRadius: "8px",
-        borderWidth: "2px",
-        backgroundColor: "white",
+        borderRadius: '8px',
+        borderWidth: '2px',
+        backgroundColor: 'white',
       }),
       container: (baseStyles) => ({
         ...baseStyles,
@@ -37,32 +39,36 @@ const SelectDirection = (props: SelectProps) => (
       valueContainer: (baseStyles) => ({
         ...baseStyles,
         height: props.height,
-        paddingLeft: "20px",
-        borderWidth: "0px",
+        paddingLeft: '20px',
+        borderWidth: '0px',
       }),
       menu: (baseStyles) => ({
         ...baseStyles,
-        backgroundColor: "white",
-        marginTop: "8px",
-        borderRadius: "8px",
+        backgroundColor: 'white',
+        marginTop: '8px',
+        borderRadius: '8px',
       }),
       option: (baseStyles) => ({
         ...baseStyles,
-        padding: "10px 20px",
+        padding: '10px 20px',
       }),
       indicatorsContainer: (baseStyles) => ({
         ...baseStyles,
-        paddingRight: "5px",
+        paddingRight: '5px',
       }),
+      // menuList: (baseStyles) => ({
+      //   ...baseStyles,
+      //   height: '180px',
+      // }),
     }}
     classNames={{
-      container: () => "",
-      indicatorsContainer: () => "",
+      container: () => '',
+      indicatorsContainer: () => '',
       control: () => props.borderColor,
-      valueContainer: () => "font-poppins text-sexteen",
-      input: () => "",
-      option: (state) =>
-        state.isSelected ? props.optionClassSelected : props.optionClass,
+      valueContainer: () => 'font-poppins text-sexteen',
+      input: () => '',
+      option: (state) => (state.isSelected ? props.optionClassSelected : props.optionClass),
+      menuList: () => props.menuListClass,
     }}
     unstyled
     options={props.options}

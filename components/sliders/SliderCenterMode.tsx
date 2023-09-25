@@ -5,9 +5,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import DirectionCard, { DirectionCardData } from '@/components/directions/DirectionCard';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 export const SliderCenterMode = () => {
-  const width = window.innerWidth;
+  const width = useWindowWidth();
 
   const settings =
     width >= 1440

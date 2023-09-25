@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
 import ArrowRight from '@/public/icons/arrow-right.svg';
 import ArrowLeft from '@/public/icons/arrow-left.svg';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 interface Images {
   src: any;
@@ -26,7 +27,8 @@ const Images: Images[] = [
 export const AsNavFor = () => {
   const [nav1, setNav1] = useState<Slider | undefined>(undefined);
   const [nav2, setNav2] = useState<Slider | undefined>(undefined);
-  const width = window.innerWidth;
+
+  const width = useWindowWidth();
   const settings1 =
     width >= 1280
       ? {

@@ -1,5 +1,6 @@
 'use client';
 
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 import { discounts } from './Discount';
 import { useState, useEffect } from 'react';
 
@@ -21,7 +22,8 @@ export default function Carousel() {
   const handleSelectSlide = (index: number) => {
     setCurrentSlide(index);
   };
-  const width = window.innerWidth;
+
+  const width = useWindowWidth();
   return (
     <div className="p-[35px] flex justify-between relative" onClick={handleNextSlide} style={{ cursor: 'pointer' }}>
       {discounts.map((discount, index) => (

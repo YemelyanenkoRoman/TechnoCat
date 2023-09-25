@@ -18,7 +18,6 @@ export const NavItems = [
 
 const TheHeader = () => {
   const color = useColor();
-  // const width = typeof window === "undefined" ? 0 : window.innerWidth;
   const width = useWindowWidth();
 
   return (
