@@ -175,7 +175,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                     <div className="md:max-w-[745px] md:h-[154px] xs:h-[262px] flex flex-wrap md:mt-0 xs:mt-[30px] ">
                       {data.block3.subBlock31.paragraphs.map((item) => {
                         return (
-                          <div className="flex xl:max-w-[360px] md:[745px]">
+                          <div className="flex xl:w-[360px] md:[745px]">
                             <Check />
                             <p className="ml-2 ">{item}</p>
                           </div>

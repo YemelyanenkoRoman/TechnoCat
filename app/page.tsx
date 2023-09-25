@@ -11,11 +11,14 @@ import { useState } from 'react';
 import Loading from './loading';
 import Loader from '@/components/loader/Loader';
 import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
+import { headers } from 'next/dist/client/components/headers';
 
 export default function Home() {
+  // const headersList = headers();
+  // console.log(headersList);
   const [reveal, setReveal] = useState(false);
   console.log(reveal, 'hihihi');
-  // const width = typeof window === "undefined" ? 0 : window.innerWidth;
+  // const width = typeof window === 'undefined' ? 0 : window.innerWidth;
   const width = useWindowWidth();
   return (
     <main className="font-gilroy font-normal  text-sexteen  md:pt-[107px] xs:pt-[97px] overflow-x-hidden">
