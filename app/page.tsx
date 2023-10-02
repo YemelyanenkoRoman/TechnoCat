@@ -81,7 +81,7 @@ export default function Home() {
           </div>
         </section>
       ) : (
-        <section className="md:h-[calc(100vh-97px)] pt-[30px] text-text-lightblue bg-fill-blue flex ">
+        <section className="h-[calc(100vh-97px)] pt-[30px] text-text-lightblue bg-fill-blue flex ">
           <div className=" s:mb-[30px] md:mb-0  mx-[16px] flex justify-around flex-col ">
             <div>
               <h1 className=" font-normal text-twentyfive">
