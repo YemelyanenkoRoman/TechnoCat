@@ -10,5 +10,5 @@ export const DirectionsNav: DirectionsNav[] = [
   { label: 'Английский язык', href: '/directions/english', value: 'english' },
   { label: 'Рисование', href: '/directions/painting', value: 'painting' },
   { label: 'Подготовка к школе', href: '/directions/preparingforschool', value: 'preparingforschool' },
-  { label: 'Помощь первокласснику', href: '/directions/firstgradestudent', value: 'firstgradestudent' },
+  // { label: 'Помощь первокласснику', href: '/directions/firstgradestudent', value: 'firstgradestudent' },
 ];

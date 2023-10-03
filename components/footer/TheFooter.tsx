@@ -51,7 +51,7 @@ const TheFooter = () => {
                   iconSvg={<Book stroke={color.svgStroke} />}
                   title={'Мы поможем'}
                   startIndex={4}
-                  endIndex={6}
+                  endIndex={5}
                 />
               </div>
             </div>

@@ -17,7 +17,7 @@ const linkLabels: { [key: string]: string } = {
   '/directions/english': 'Английскому языку',
   '/directions/painting': 'Рисованию',
   '/directions/preparingforschool': 'Подготовим к школе',
-  '/directions/firstgradestudent': 'Поможем первокласснику',
+  // '/directions/firstgradestudent': 'Поможем первокласснику',
 };
 
 type NavigationItem = {

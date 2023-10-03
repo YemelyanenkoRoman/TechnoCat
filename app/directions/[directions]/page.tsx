@@ -54,7 +54,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                     ) : (
                       <div className="flex flex-col justify-center mt-[35px] text-fourteen">
                         <p className={`${color.activeColor} flex justify-center font-poppins`}>
-                          Набор в группу с {data.block1.startClasses}
+                          {data.block1.startClasses}
                         </p>
 
                         <div className="flex justify-between mt-[15px]">
@@ -101,7 +101,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                             <Time stroke={color.svgHover} />
                             <p className="ml-[10px]">{data.block1.time} минут</p>
                           </div>
-                          <p>Набор в группу с {data.block1.startClasses}</p>
+                          <p>{data.block1.startClasses}</p>
                         </div>
                       ) : (
                         <p className={`${color.activeColor} font-gilroy text-twentyfive mt-[35px] mb-[20px]`}>
