@@ -72,9 +72,9 @@ export const AsNavFor = () => {
     <div className="md:w-[810px] xs:w-full xs:overflow-x-hidden mx-auto">
       <div className="md:w-[810px] xs:w-full xs:overflow-x-hidden mb-1 ">
         <Slider {...settings1} asNavFor={nav2} ref={(slider) => setNav1(slider || undefined)}>
-          {Images.map((item) => {
+          {Images.map((item, index) => {
             return (
-              <div className="hover:cursor-grab active:cursor-grabbing">
+              <div key={index} className="hover:cursor-grab active:cursor-grabbing">
                 <Image width={810} height={400} src={item.src} alt={item.alt} />
               </div>
             );
@@ -90,9 +90,9 @@ export const AsNavFor = () => {
           swipeToSlide={true}
           focusOnSelect={true}
         >
-          {Images.map((item) => {
+          {Images.map((item, index) => {
             return (
-              <div className="hover:cursor-grab active:cursor-grabbing">
+              <div key={index} className="hover:cursor-grab active:cursor-grabbing">
                 <Image width={180} height={160} src={item.src} alt={item.alt} />
               </div>
             );
