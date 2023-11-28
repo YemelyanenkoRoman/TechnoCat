@@ -161,8 +161,12 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                     <h2 className={`${color.activeColor} font-gilroy text-twentyfive`}>
                       {data.block2.subBlock23.title}
                     </h2>
-                    {data.block2.subBlock23.paragraphs.map((item) => {
-                      return <p className={`${color.textColor}`}>{item}</p>;
+                    {data.block2.subBlock23.paragraphs.map((item, index) => {
+                      return (
+                        <p key={index} className={`${color.textColor}`}>
+                          {item}
+                        </p>
+                      );
                     })}
                   </div>
                 </section>
@@ -173,9 +177,9 @@ const Directions = ({ params }: { params: { directions: string } }) => {
                       {data.block3.subBlock31.title}
                     </h2>
                     <div className="md:max-w-[745px] md:h-[154px] xs:h-[262px] flex flex-wrap md:mt-0 xs:mt-[30px] ">
-                      {data.block3.subBlock31.paragraphs.map((item) => {
+                      {data.block3.subBlock31.paragraphs.map((item, index) => {
                         return (
-                          <div className="flex xl:w-[360px] md:[745px]">
+                          <div key={index} className="flex xl:w-[360px] md:[745px]">
                             <Check />
                             <p className="ml-2 ">{item}</p>
                           </div>

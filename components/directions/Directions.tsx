@@ -89,10 +89,10 @@ const Directions = (props: DirectionProps) => {
             width >= 768 ? color.directColor : color.bgColor
           }  absolute md:shadow-lg  md:left-[-12px] md:top-[-8px] md:rounded-md md:pt-[51px] xs:top-[-135px] md:w-auto md:h-auto xs:w-screen xs:h-screen`}
         >
-          {DirectionsNav.map((item) => {
+          {DirectionsNav.map((item, index) => {
             const isActive = pathname === `${item.href}`;
             return (
-              <li className={`py-2  md:px-3 xs:px-[16px] cursor-pointer rounded ${color.hoverColor}`} key={uuidv4()}>
+              <li key={index} className={`py-2  md:px-3 xs:px-[16px] cursor-pointer rounded ${color.hoverColor}`}>
                 <Link
                   className={
                     isActive

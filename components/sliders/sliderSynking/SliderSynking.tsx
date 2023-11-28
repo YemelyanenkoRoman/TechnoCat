@@ -5,8 +5,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
-import ArrowRight from '@/public/icons/arrow-right.svg';
-import ArrowLeft from '@/public/icons/arrow-left.svg';
 import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 interface Images {
@@ -32,40 +30,29 @@ export const AsNavFor = () => {
   const settings1 =
     width >= 1280
       ? {
-          speed: 1000,
+          speed: 500,
           adaptiveHeight: true,
           arrows: true,
-          // prevArrow: <button className={styles['slick-arrow']}></button>,
-          // nextArrow: <button className={styles[`slick-next`]}></button>,
-          prevArrow: <ArrowLeft />,
-          nextArrow: <ArrowRight />,
         }
       : width >= 768
       ? {
-          speed: 1000,
+          speed: 500,
           adaptiveHeight: true,
-          arrows: false,
         }
       : {
-          speed: 1000,
+          speed: 500,
           adaptiveHeight: true,
-          arrows: true,
-          // prevArrow: <button className={styles['slick-arrow']}></button>,
-          // nextArrow: <button className={styles[`slick-next`]}></button>,
-          prevArrow: <ArrowLeft />,
-          nextArrow: <ArrowRight />,
         };
 
   const settings = {
-    arrows: false,
+    arrows: true,
     adaptiveHeight: true,
     className: 'center',
     centerMode: true,
     infinite: true,
     centerPadding: '120px',
     slidesToShow: 5,
-    autoplaySpeed: 3000,
-    speed: 2500,
+    speed: 500,
   };
 
   return (
@@ -75,7 +62,9 @@ export const AsNavFor = () => {
           {Images.map((item, index) => {
             return (
               <div key={index} className="hover:cursor-grab active:cursor-grabbing">
-                <Image width={810} height={400} src={item.src} alt={item.alt} />
+                <div className="w-auto h-auto">
+                  <Image width={810} height={400} src={item.src} alt={item.alt} />
+                </div>
               </div>
             );
           })}
