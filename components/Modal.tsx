@@ -66,7 +66,7 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
             color: isHovered ? `${svgHover}` : 'rgba(0,0,0, 0)',
           }}
         />
-        {width >= 768 ? <p>Заказать звонок</p> : ''}
+        {width > 820 ? <p>Заказать звонок</p> : ''}
       </div>
 
       {isOpen && (

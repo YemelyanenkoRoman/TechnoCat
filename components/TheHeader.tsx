@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import LogoMax from "../public/logo/technocat-logo-max 1.svg";
-import Image from "next/image";
+import LogoMax from '../public/logo/technocat-logo-max 1.svg';
+import Image from 'next/image';
 
-import Directions from "./directions/Directions";
-import Navigation from "./MainNavigation";
-import Link from "next/link";
-import Modal from "./Modal";
-import { useColor } from "./ColorNavigation";
-import BurgerMenu from "./BurgerMenu";
-import { useWindowWidth } from "@/utils/hooks/useWindowWidth";
+import Directions from './directions/Directions';
+import Navigation from './MainNavigation';
+import Link from 'next/link';
+import Modal from './Modal';
+import { useColor } from './ColorNavigation';
+import BurgerMenu from './BurgerMenu';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 export const NavItems = [
-  { label: "О нас", href: "/about" },
-  { label: "Контакты", href: "/contacts" },
+  { label: 'О нас', href: '/about' },
+  { label: 'Контакты', href: '/contacts' },
 ];
 
 const TheHeader = () => {
@@ -50,7 +50,7 @@ const TheHeader = () => {
               <></>
             )}
           </div>
-          <div className={width >= 768 ? "" : "flex "}>
+          <div className={width > 768 ? '' : 'flex '}>
             <Modal
               textColor={color.textColor}
               svgHover={color.svgHover}
