@@ -1,11 +1,11 @@
-'use client';
-import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
-import { DirectionsNav } from './DirectionsNav';
-import { v4 as uuidv4 } from 'uuid';
-import { useColor } from '../ColorNavigation';
-import { usePathname, useRouter } from 'next/navigation';
-import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
+"use client";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { DirectionsNav } from "./DirectionsNav";
+import { v4 as uuidv4 } from "uuid";
+import { useColor } from "../ColorNavigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useWindowWidth } from "@/utils/hooks/useWindowWidth";
 
 type DirectionsNav = {
   href: string;
@@ -35,11 +35,11 @@ const Directions = (props: DirectionProps) => {
       }
     };
 
-    window.addEventListener('mousedown', handleClick);
-    window.addEventListener('touchstart', handleClick);
+    window.addEventListener("mousedown", handleClick);
+    window.addEventListener("touchstart", handleClick);
     return () => {
-      window.removeEventListener('mousedown', handleClick);
-      window.removeEventListener('touchstart', handleClick);
+      window.removeEventListener("mousedown", handleClick);
+      window.removeEventListener("touchstart", handleClick);
     };
   }, []);
 
@@ -66,7 +66,11 @@ const Directions = (props: DirectionProps) => {
       {width >= 768 ? (
         <div
           onClick={() => setIsMenuOpen(true)}
-          className={isMenuOpen ? `${color.textColor} absolute cursor-pointer z-10` : 'absolute cursor-pointer z-10'}
+          className={
+            isMenuOpen
+              ? `${color.textColor} absolute cursor-pointer z-10`
+              : "absolute cursor-pointer z-10"
+          }
         >
           Направления
         </div>
@@ -76,10 +80,10 @@ const Directions = (props: DirectionProps) => {
           className={
             isMenuOpen
               ? `${color.textColor} absolute cursor-pointer z-10 left-[16px]`
-              : 'absolute cursor-pointer z-10 left-[16px]'
+              : "absolute cursor-pointer z-10 left-[16px]"
           }
         >
-          {isMenuOpen ? '' : <div>Направления</div>}
+          {isMenuOpen ? "" : <div>Направления</div>}
         </div>
       )}
 
@@ -92,7 +96,10 @@ const Directions = (props: DirectionProps) => {
           {DirectionsNav.map((item, index) => {
             const isActive = pathname === `${item.href}`;
             return (
-              <li key={index} className={`py-2  md:px-3 xs:px-[16px] cursor-pointer rounded ${color.hoverColor}`}>
+              <li
+                key={index}
+                className={`py-2  md:px-3 xs:px-[16px] cursor-pointer rounded ${color.hoverColor}`}
+              >
                 <Link
                   className={
                     isActive

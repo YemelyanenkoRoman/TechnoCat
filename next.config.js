@@ -1,13 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = nextConfig;
-
 module.exports = {
+  reactStrictMode: false,
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack'],
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            typescript: true,
+            ext: "tsx",
+          },
+        },
+      ],
     });
 
     return config;
