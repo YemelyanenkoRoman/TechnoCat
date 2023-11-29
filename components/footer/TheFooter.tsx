@@ -14,10 +14,11 @@ import Time from '@/public/icons/time-24-px.svg';
 import Instagram from '@/public/icons/instagram-16-px.svg';
 import FooterNavBlock from './FooterNavBlock';
 import { useColor } from '../ColorNavigation';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 const TheFooter = () => {
   const color = useColor();
-  const width = window.innerWidth;
+  const width = useWindowWidth();
   return (
     <footer
       className={`${color.textColor} ${color.bgColor} font-poppins font-normal    xl:text-sexteen md:text-fourteen`}
@@ -44,12 +45,12 @@ const TheFooter = () => {
                   iconSvg={<AcademicCap stroke={color.svgStroke} />}
                   title={'Мы научим'}
                   startIndex={0}
-                  endIndex={3}
+                  endIndex={4}
                 />
                 <FooterNavBlock
                   iconSvg={<Book stroke={color.svgStroke} />}
                   title={'Мы поможем'}
-                  startIndex={3}
+                  startIndex={4}
                   endIndex={5}
                 />
               </div>

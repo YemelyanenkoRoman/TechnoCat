@@ -15,6 +15,8 @@ interface colorNavObj {
     formBorder: string;
     formBorderActive: string;
     buttonTextColor: string;
+    option: string;
+    selectedOption: string;
   };
 }
 
@@ -32,6 +34,8 @@ export const colorNavObj: colorNavObj = {
     formBorder: 'border-d-blue',
     formBorderActive: 'focus:border-fill-blue',
     buttonTextColor: 'text-[#EFF6FF]',
+    option: 'hover:bg-hover-lightblue',
+    selectedOption: 'bg-fill-blue',
   },
   '/about': {
     bgColor: 'bg-fill-blue',
@@ -46,6 +50,8 @@ export const colorNavObj: colorNavObj = {
     formBorder: 'border-d-blue',
     formBorderActive: 'focus:border-fill-blue',
     buttonTextColor: 'text-[#EFF6FF]',
+    option: 'hover:bg-hover-lightblue',
+    selectedOption: 'bg-fill-blue',
   },
   '/contacts': {
     bgColor: 'bg-fill-blue',
@@ -60,6 +66,8 @@ export const colorNavObj: colorNavObj = {
     formBorder: 'border-d-blue',
     formBorderActive: 'focus:border-fill-blue',
     buttonTextColor: 'text-[#EFF6FF]',
+    option: 'hover:bg-hover-lightblue',
+    selectedOption: 'bg-fill-blue',
   },
   '/directions/programming': {
     bgColor: 'bg-fill-violet',
@@ -74,6 +82,8 @@ export const colorNavObj: colorNavObj = {
     formBorder: 'border-button-violet',
     formBorderActive: 'focus:border-hover-violet',
     buttonTextColor: 'text-[#EFF6FF]',
+    option: 'hover:bg-hover-violet',
+    selectedOption: 'bg-fill-violet',
   },
   '/directions/robotics': {
     bgColor: 'bg-fill-cyan',
@@ -88,6 +98,8 @@ export const colorNavObj: colorNavObj = {
     formBorder: 'border-d-blue',
     formBorderActive: 'focus:border-fill-blue',
     buttonTextColor: 'text-[#EFF6FF]',
+    option: 'hover:bg-hover-cyan',
+    selectedOption: 'bg-fill-cyan',
   },
   '/directions/english': {
     bgColor: 'bg-fill-yelow',
@@ -102,6 +114,8 @@ export const colorNavObj: colorNavObj = {
     formBorder: 'border-button-yellow',
     formBorderActive: 'focus:border-hover-yellow',
     buttonTextColor: 'text-[#EFF6FF]',
+    option: 'hover:bg-hover-brown',
+    selectedOption: 'bg-fill-pink',
   },
   '/directions/preparingforschool': {
     bgColor: 'bg-fill-pink',
@@ -116,6 +130,8 @@ export const colorNavObj: colorNavObj = {
     formBorder: 'border-button-brown',
     formBorderActive: 'focus:border-hover-brown',
     buttonTextColor: 'text-[#EFF6FF]',
+    option: 'hover:bg-hover-brown',
+    selectedOption: 'bg-fill-pink',
   },
   '/directions/firstgradestudent': {
     bgColor: 'bg-fill-green',
@@ -130,6 +146,24 @@ export const colorNavObj: colorNavObj = {
     formBorder: 'border-button-green',
     formBorderActive: 'focus:border-hover-green',
     buttonTextColor: 'text-[#EFF6FF]',
+    option: 'hover:bg-hover-green',
+    selectedOption: 'bg-fill-aqua',
+  },
+  '/directions/painting': {
+    bgColor: 'bg-fill-aqua',
+    bgButton: 'bg-button-aqua',
+    bgButtonActive: 'hover:bg-hover-aqua',
+    textColor: 'text-tetx-aqua',
+    hoverColor: 'hover:text-hover-aqua',
+    activeColor: 'text-hover-aqua',
+    directColor: 'bg-d-aqua',
+    svgStroke: '#4497AD',
+    svgHover: '#1C6A77',
+    formBorder: 'border-button-aqua',
+    formBorderActive: 'focus:border-hover-aqua',
+    buttonTextColor: 'text-[#EFF6FF]',
+    option: 'hover:bg-hover-aqua',
+    selectedOption: 'bg-fill-aqua',
   },
 };
 

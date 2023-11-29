@@ -10,8 +10,13 @@ import Loader from './loader/Loader';
 import Image from 'next/image';
 import Button from './buttons/Button';
 import FormDiscount from './FormDiscount';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
-export default function ModalWithDirection() {
+type ModalWithDirectionProps = {
+  nameDirection?: string;
+};
+
+export default function ModalWithDirection(props: ModalWithDirectionProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -21,7 +26,7 @@ export default function ModalWithDirection() {
 
   const color = useColor();
   const pathname = usePathname();
-  const width = window.innerWidth;
+  const width = useWindowWidth();
   console.log(usePathname());
 
   useEffect(() => {
@@ -153,6 +158,7 @@ export default function ModalWithDirection() {
                       setIsLoading={setIsLoading}
                       setIsSent={setIsSent}
                       setErrorMessage={setErrorMessage}
+                      nameDirection={props.nameDirection}
                     />
                   </div>
                 </div>

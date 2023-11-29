@@ -8,6 +8,7 @@ import { useColor } from './ColorNavigation';
 import { usePathname } from 'next/navigation';
 import Loader from './loader/Loader';
 import Image from 'next/image';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 interface ModalProps {
   svgHover: string;
@@ -25,7 +26,7 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
   const [isSent, setIsSent] = useState(false);
   const [errorMassage, setErrorMessage] = useState(false);
 
-  const width = window.innerWidth;
+  const width = useWindowWidth();
   const pathname = usePathname();
 
   useEffect(() => {

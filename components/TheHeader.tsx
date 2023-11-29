@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Modal from './Modal';
 import { useColor } from './ColorNavigation';
 import BurgerMenu from './BurgerMenu';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 export const NavItems = [
   { label: 'О нас', href: '/about' },
@@ -17,7 +18,7 @@ export const NavItems = [
 
 const TheHeader = () => {
   const color = useColor();
-  const width = window.innerWidth;
+  const width = useWindowWidth();
 
   return (
     <header

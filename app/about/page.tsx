@@ -1,21 +1,9 @@
 import { Breadcrumbs, breadcrumbItems } from '@/components/Breadcrumbs';
 import { AsNavFor } from '@/components/sliders/sliderSynking/SliderSynking';
+import { getMetadata } from '@/utils';
 import Image from 'next/image';
 
-interface Images {
-  src: any;
-  alt: string;
-}
-
-export const Images: Images[] = [
-  { src: '/aboutPage/Slider1.png', alt: 'My Image' },
-  { src: '/aboutPage/Slider2.png', alt: 'My Image' },
-  { src: '/aboutPage/Slider3.png', alt: 'My Image' },
-  { src: '/aboutPage/Slider4.png', alt: 'My Image' },
-  { src: '/aboutPage/Slider5.png', alt: 'My Image' },
-  { src: '/aboutPage/Slider6.png', alt: 'My Image' },
-  { src: '/aboutPage/Slider7.png', alt: 'My Image' },
-];
+export const metadata = getMetadata({ title: 'О нас' });
 
 const About = () => {
   return (

@@ -44,9 +44,9 @@ export const DirectionCardData: DirectionCardData[] = [
     buttonBorderHover: 'hover:border-hover-brown',
 
     title: 'Подготовка к школе',
-    age: 5,
-    duration: 45,
-    cost: 60,
+    age: 4.5,
+    duration: 60,
+    cost: 80,
     quantity: '1 месяц',
   },
   {
@@ -71,8 +71,8 @@ export const DirectionCardData: DirectionCardData[] = [
 
     title: 'Робототехника',
     age: 5,
-    duration: 45,
-    cost: 60,
+    duration: 60,
+    cost: 80,
     quantity: '1 месяц',
   },
   {
@@ -97,34 +97,61 @@ export const DirectionCardData: DirectionCardData[] = [
 
     title: 'Английский язык',
     age: 5,
-    duration: 45,
-    cost: 60,
+    duration: 60,
+    cost: 80,
     quantity: '1 месяц',
   },
+  // {
+  //   id: 'firstgradestudent',
+  //   img: (
+  //     <Image
+  //       src="/DirectionCardImg/DirectionCard4.svg"
+  //       alt="Ребёнок думает и придумывает разные идеи."
+  //       width={0}
+  //       height={0}
+  //       sizes="100vw"
+  //       className="w-full h-auto"
+  //     />
+  //   ),
+  //   bgColorImg: 'bg-[#A4EAA0]',
+  //   bgColorCard: 'bg-fill-green',
+  //   colorText: 'text-hover-green',
+
+  //   buttonBorder: 'border-button-green',
+  //   buttonBorderActive: 'focus:border-hover-green',
+  //   buttonBorderHover: 'hover:border-hover-green',
+
+  //   title: 'Помощь первокласснику',
+  //   age: 5,
+  //   duration: 45,
+  //   cost: 60,
+  //   quantity: '1 месяц',
+  // },
+
   {
-    id: 'firstgradestudent',
+    id: 'painting',
     img: (
       <Image
-        src="/DirectionCardImg/DirectionCard4.svg"
-        alt="Ребёнок думает и придумывает разные идеи."
+        src="/DirectionCardImg/DirectionCard5.svg"
+        alt="Художник."
         width={0}
         height={0}
         sizes="100vw"
         className="w-full h-auto"
       />
     ),
-    bgColorImg: 'bg-[#A4EAA0]',
-    bgColorCard: 'bg-fill-green',
-    colorText: 'text-hover-green',
+    bgColorImg: 'bg-[#4497AD]',
+    bgColorCard: 'bg-fill-aqua',
+    colorText: 'text-hover-aqua',
 
-    buttonBorder: 'border-button-green',
-    buttonBorderActive: 'focus:border-hover-green',
-    buttonBorderHover: 'hover:border-hover-green',
+    buttonBorder: 'border-hover-aqua',
+    buttonBorderActive: 'focus:border-button-aqua',
+    buttonBorderHover: 'hover:border-button-aqua',
 
-    title: 'Помощь первокласснику',
+    title: 'Рисвание',
     age: 5,
-    duration: 45,
-    cost: 60,
+    duration: 60,
+    cost: 80,
     quantity: '1 месяц',
   },
 ];

@@ -77,6 +77,12 @@ module.exports = {
         'hover-violet': '#724DA1',
         'd-violet': '#ECDDFF',
         'button-violet': '#8F5DCE',
+        //painting
+        'fill-aqua': '#A0DAEA',
+        'tetx-aqua': '#207C91',
+        'hover-aqua': '#1C6A77',
+        'd-aqua': '#D7EEF9',
+        'button-aqua': '#4497AD',
 
         'fill-medium': '#9CA4B1',
         'blue-dark': '#3D4A56',

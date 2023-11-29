@@ -5,9 +5,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import DirectionCard, { DirectionCardData } from '@/components/directions/DirectionCard';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 export const SliderCenterMode = () => {
-  const width = window.innerWidth;
+  const width = useWindowWidth();
 
   const settings =
     width >= 1440
@@ -17,9 +18,9 @@ export const SliderCenterMode = () => {
           infinite: true,
           centerPadding: '220px',
           slidesToShow: 3,
-          autoplaySpeed: 3000,
-          speed: 2500,
+          swipeToSlide: true,
           autoplay: true,
+          autoplaySpeed: 3000,
         }
       : width >= 1024
       ? {
@@ -28,8 +29,9 @@ export const SliderCenterMode = () => {
           infinite: true,
           centerPadding: '150px',
           slidesToShow: 2,
+          swipeToSlide: true,
+          autoplay: true,
           autoplaySpeed: 3000,
-          speed: 2500,
         }
       : width >= 320
       ? {
@@ -38,8 +40,7 @@ export const SliderCenterMode = () => {
           infinite: true,
           centerPadding: '25px',
           slidesToShow: 1,
-          autoplaySpeed: 3000,
-          speed: 2500,
+          swipeToSlide: true,
         }
       : {
           className: 'center',
@@ -47,8 +48,7 @@ export const SliderCenterMode = () => {
           infinite: true,
           centerPadding: '120px',
           slidesToShow: 3,
-          autoplaySpeed: 3000,
-          speed: 2500,
+          swipeToSlide: true,
         };
 
   return (

@@ -8,13 +8,16 @@ import OftenQuestions from '@/components/OftenQuestions';
 import Link from 'next/link';
 import { SliderCenterMode } from '@/components/sliders/SliderCenterMode';
 import { useState } from 'react';
-import Loading from './loading';
 import Loader from '@/components/loader/Loader';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 export default function Home() {
+  // const headersList = headers();
+  // console.log(headersList);
   const [reveal, setReveal] = useState(false);
   console.log(reveal, 'hihihi');
-  const width = window.innerWidth;
+  // const width = typeof window === 'undefined' ? 0 : window.innerWidth;
+  const width = useWindowWidth();
   return (
     <main className="font-gilroy font-normal  text-sexteen  md:pt-[107px] xs:pt-[97px] overflow-x-hidden">
       {width >= 768 ? (
@@ -43,11 +46,25 @@ export default function Home() {
             </div>
 
             <div className={`w-[465px] h-[465px]`}>
-              <div className={`  ${reveal === false ? 'block relative' : 'hidden'}`}>
-                <div className="z-10 absolute flex items-center justify-center   w-[465px] h-[465px]">
-                  <Loader />
+              {/* {reveal === false ? (
+                <div className="block relative">
+                  <div className="z-10 absolute flex items-center justify-center   w-[465px] h-[465px]">
+                    <Loader />
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <Image
+                  src="/homePage/main-page-h1.svg"
+                  alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full h-auto"
+                  onError={() => setReveal(false)}
+                  onLoad={() => setReveal(false)}
+                  onLoadingComplete={() => setReveal(true)}
+                />
+              )} */}
 
               <Image
                 src="/homePage/main-page-h1.svg"
@@ -64,7 +81,7 @@ export default function Home() {
           </div>
         </section>
       ) : (
-        <section className="md:h-[calc(100vh-97px)] pt-[30px] text-text-lightblue bg-fill-blue flex ">
+        <section className="h-[calc(100vh-97px)] pt-[30px] text-text-lightblue bg-fill-blue flex ">
           <div className=" s:mb-[30px] md:mb-0  mx-[16px] flex justify-around flex-col ">
             <div>
               <h1 className=" font-normal text-twentyfive">
@@ -80,11 +97,6 @@ export default function Home() {
             </div>
 
             <div className="">
-              <div className={`  ${reveal === false ? 'flex justify-center ' : 'hidden'}`}>
-                <div className="relative flex items-center justify-center w-[320px] h-[320px]">
-                  <Loader />
-                </div>
-              </div>
               <Image
                 src="/homePage/main-page-h1.svg"
                 alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
@@ -96,7 +108,28 @@ export default function Home() {
                 onLoad={() => setReveal(false)}
                 onLoadingComplete={() => setReveal(true)}
               />
+
+              {/* {reveal === false ? (
+                <div className="block relative">
+                  <div className="relative flex items-center justify-center w-[320px] h-[320px]">
+                    <Loader />
+                  </div>
+                </div>
+              ) : (
+                <Image
+                  src="/homePage/main-page-h1.svg"
+                  alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full h-auto"
+                  onError={() => setReveal(false)}
+                  onLoad={() => setReveal(false)}
+                  onLoadingComplete={() => setReveal(true)}
+                />
+              )} */}
             </div>
+
             <div>
               <Link href={'/about'} className="">
                 {width >= 768 ? (
