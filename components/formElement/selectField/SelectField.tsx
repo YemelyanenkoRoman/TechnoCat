@@ -1,9 +1,9 @@
-'use client';
-import { Controller } from 'react-hook-form';
-import { Mistake } from '@/components/formElement/inputField/Mistake';
-import { useColor } from '@/components/ColorNavigation';
-import SelectDirection, { Option } from '../select/Select';
-import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
+"use client";
+import { Controller } from "react-hook-form";
+import { Mistake } from "@/components/formElement/inputField/Mistake";
+import { useColor } from "@/components/ColorNavigation";
+import SelectDirection, { Option } from "../select/Select";
+import { useWindowWidth } from "@/utils/hooks/useWindowWidth";
 
 type SelectProps = {
   control: any;
@@ -29,7 +29,6 @@ const SelectField = (props: SelectProps) => {
         control={props.control}
         defaultValue={props.defaultValue}
         render={({ field, fieldState }) => {
-          console.log(props.defaultValue, field.value, props.options, 'cjj,otybt');
           return (
             <div className="flex items-center">
               {fieldState.error && <Mistake error={fieldState.error} />}
@@ -37,7 +36,9 @@ const SelectField = (props: SelectProps) => {
               <SelectDirection
                 options={props.options}
                 focus={color.formBorderActive}
-                borderColor={fieldState.error ? 'border-[#E0474E]' : `${color.formBorder}`}
+                borderColor={
+                  fieldState.error ? "border-[#E0474E]" : `${color.formBorder}`
+                }
                 menuListClass={width >= 768 ? `h-[180px]` : `h-[150px]`}
                 optionClass={color.option}
                 optionClassSelected={color.selectedOption}

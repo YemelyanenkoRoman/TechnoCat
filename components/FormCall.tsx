@@ -1,14 +1,14 @@
-'use client';
-import { useForm, FormProvider } from 'react-hook-form';
-import InputField from './formElement/inputField/InputField';
-import Button from './buttons/Button';
-import InputPhoneField from './formElement/inputField/InputPhoneField';
-import { CheckboxField } from './formElement/checkboxField/CheckboxField';
-import MistakeIcon from '@/public/icons/formMistake.svg';
-import { useColor } from './ColorNavigation';
-import { useState } from 'react';
-import Loader from './loader/Loader';
-import { usePathname } from 'next/navigation';
+"use client";
+import { useForm, FormProvider } from "react-hook-form";
+import InputField from "./formElement/inputField/InputField";
+import Button from "./buttons/Button";
+import InputPhoneField from "./formElement/inputField/InputPhoneField";
+import { CheckboxField } from "./formElement/checkboxField/CheckboxField";
+import MistakeIcon from "@/public/icons/formMistake.svg";
+import { useColor } from "./ColorNavigation";
+import { useState } from "react";
+import Loader from "./loader/Loader";
+import { usePathname } from "next/navigation";
 
 interface FormValues {
   name: string;
@@ -27,7 +27,7 @@ const FormCall = (props: FormCallProps) => {
   // const [isSent, setIsSent] = useState(false);
   const pathname = usePathname();
   const color = useColor();
-  const methods = useForm<FormValues>({ mode: 'onBlur' });
+  const methods = useForm<FormValues>({ mode: "onBlur" });
   const {
     control,
     handleSubmit,
@@ -38,8 +38,8 @@ const FormCall = (props: FormCallProps) => {
     props.setIsLoading(true);
 
     try {
-      const response = await fetch('/api/request-call', {
-        method: 'POST',
+      const response = await fetch("/api/request-call", {
+        method: "POST",
         body: JSON.stringify({
           name: data.name,
           phone: data.phone,
@@ -48,7 +48,6 @@ const FormCall = (props: FormCallProps) => {
       props.setIsSent(true);
 
       const restData = await response.json();
-      console.log(response, restData, 'RESP');
       methods.reset();
     } catch (error) {
       props.setErrorMessage(true);
@@ -64,26 +63,29 @@ const FormCall = (props: FormCallProps) => {
         <p>Данные успешно отправлены!</p>
       ) : ( */}
       <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[15px]">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col gap-[15px]"
+        >
           <InputField
             width="280px"
             height="51px"
             placeholder="Имя"
             defaultValue=""
             control={control}
-            name={'name'}
+            name={"name"}
             rules={{
-              required: 'Введите ваше имя',
+              required: "Введите ваше имя",
               pattern: {
-                message: 'Используйте только буквы',
+                message: "Используйте только буквы",
                 value: /^[A-Za-zА-Яа-я]+$/,
               },
               minLength: {
-                message: 'Минимум 2 символа',
+                message: "Минимум 2 символа",
                 value: 2,
               },
               maxLength: {
-                message: 'Максимум 20 символов',
+                message: "Максимум 20 символов",
                 value: 20,
               },
             }}
@@ -94,11 +96,12 @@ const FormCall = (props: FormCallProps) => {
             height="51px"
             placeholder="Телефон"
             defaultValue=""
-            name={'phone'}
+            name={"phone"}
             rules={{
-              required: 'Пожалуйста, заполните это поле',
+              required: "Пожалуйста, заполните это поле",
               pattern: {
-                message: 'Пржалуйста, проверьте правильность указанного номера телефона',
+                message:
+                  "Пржалуйста, проверьте правильность указанного номера телефона",
                 value: /^\+375 \((29|44|25|33)\) \d{3}-\d{2}-\d{2}$/,
               },
             }}
@@ -106,10 +109,10 @@ const FormCall = (props: FormCallProps) => {
           />
 
           <Button
-            width={'280px'}
-            height={'50'}
-            title={'Записаться на занятие'}
-            type={'submit'}
+            width={"280px"}
+            height={"50"}
+            title={"Записаться на занятие"}
+            type={"submit"}
             backgroundColor={color.bgButton}
             focus={color.formBorderActive}
             bgHover={color.bgButtonActive}
@@ -118,13 +121,20 @@ const FormCall = (props: FormCallProps) => {
 
           <div className="flex max-w-[280px] h-[32px] ">
             <div className="mr-[10px]">
-              <CheckboxField control={control} name="checkBox" height="24px" width="24px" />
+              <CheckboxField
+                control={control}
+                name="checkBox"
+                height="24px"
+                width="24px"
+              />
             </div>
 
             <p
               className={`font-poppins text-twelve ${
-                pathname === '/' || pathname === '/about' || pathname === '/contacts'
-                  ? 'md:text-[#36568B] xs:text-[#EBF4FF]'
+                pathname === "/" ||
+                pathname === "/about" ||
+                pathname === "/contacts"
+                  ? "md:text-[#36568B] xs:text-[#EBF4FF]"
                   : `${color.textColor}`
               }`}
             >
@@ -138,7 +148,9 @@ const FormCall = (props: FormCallProps) => {
                   <MistakeIcon stroke="#E0474E" />
                 </div>
 
-                <p className="font-poppins text-twelve text-red-mistake">Пожалуйста, проверьте введенные данные</p>
+                <p className="font-poppins text-twelve text-red-mistake">
+                  Пожалуйста, проверьте введенные данные
+                </p>
               </div>
             )}
           </div>

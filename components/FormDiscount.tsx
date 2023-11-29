@@ -1,15 +1,15 @@
-'use client';
-import { useForm, FormProvider } from 'react-hook-form';
-import InputField from './formElement/inputField/InputField';
-import Button from './buttons/Button';
-import InputPhoneField from './formElement/inputField/InputPhoneField';
-import { CheckboxField } from './formElement/checkboxField/CheckboxField';
-import MistakeIcon from '@/public/icons/formMistake.svg';
-import { useColor } from './ColorNavigation';
-import SelectDirection from './formElement/select/Select';
-import SelectField from './formElement/selectField/SelectField';
-import { Option } from './formElement/select/Select';
-import { DirectionsNav } from './directions/DirectionsNav';
+"use client";
+import { useForm, FormProvider } from "react-hook-form";
+import InputField from "./formElement/inputField/InputField";
+import Button from "./buttons/Button";
+import InputPhoneField from "./formElement/inputField/InputPhoneField";
+import { CheckboxField } from "./formElement/checkboxField/CheckboxField";
+import MistakeIcon from "@/public/icons/formMistake.svg";
+import { useColor } from "./ColorNavigation";
+import SelectDirection from "./formElement/select/Select";
+import SelectField from "./formElement/selectField/SelectField";
+import { Option } from "./formElement/select/Select";
+import { DirectionsNav } from "./directions/DirectionsNav";
 
 interface FormValues {
   name: string;
@@ -28,7 +28,7 @@ type MyFormProps = {
 
 const MyForm = (props: MyFormProps) => {
   const color = useColor();
-  const methods = useForm<FormValues>({ mode: 'onBlur' });
+  const methods = useForm<FormValues>({ mode: "onBlur" });
   const {
     control,
     handleSubmit,
@@ -39,8 +39,8 @@ const MyForm = (props: MyFormProps) => {
     props.setIsLoading(true);
 
     try {
-      const response = await fetch('/api/request-call', {
-        method: 'POST',
+      const response = await fetch("/api/request-call", {
+        method: "POST",
         body: JSON.stringify({
           name: data.name,
           phone: data.phone,
@@ -50,7 +50,6 @@ const MyForm = (props: MyFormProps) => {
       props.setIsSent(true);
 
       const restData = await response.json();
-      console.log(response, restData, 'RESP');
       methods.reset();
     } catch (error) {
       props.setErrorMessage(true);
@@ -60,26 +59,29 @@ const MyForm = (props: MyFormProps) => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-between">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col justify-between"
+      >
         <InputField
           width="280px"
           height="51px"
           placeholder="Имя"
           defaultValue=""
           control={control}
-          name={'name'}
+          name={"name"}
           rules={{
-            required: 'Введите ваше имя',
+            required: "Введите ваше имя",
             pattern: {
-              message: 'Используйте только буквы',
+              message: "Используйте только буквы",
               value: /^[A-Za-zА-Яа-я]+$/,
             },
             minLength: {
-              message: 'Минимум 2 символа',
+              message: "Минимум 2 символа",
               value: 2,
             },
             maxLength: {
-              message: 'Максимум 20 символов',
+              message: "Максимум 20 символов",
               value: 20,
             },
           }}
@@ -90,11 +92,12 @@ const MyForm = (props: MyFormProps) => {
           height="51px"
           placeholder="Телефон"
           defaultValue=""
-          name={'phone'}
+          name={"phone"}
           rules={{
-            required: 'Пожалуйста, заполните это поле',
+            required: "Пожалуйста, заполните это поле",
             pattern: {
-              message: 'Пржалуйста, проверьте правильность указанного номера телефона',
+              message:
+                "Пржалуйста, проверьте правильность указанного номера телефона",
               value: /^\+375 \((29|44|25|33)\) \d{3}-\d{2}-\d{2}$/,
             },
           }}
@@ -130,19 +133,21 @@ const MyForm = (props: MyFormProps) => {
           height="51px"
           options={DirectionsNav}
           placeholder="Направление"
-          defaultValue={DirectionsNav.find((x) => x.label === props.nameDirection)?.value}
+          defaultValue={
+            DirectionsNav.find((x) => x.label === props.nameDirection)?.value
+          }
           control={control}
-          name={'direction'}
+          name={"direction"}
           rules={{
-            required: 'Пожалуйста, заполните это поле',
+            required: "Пожалуйста, заполните это поле",
           }}
         />
 
         <Button
-          width={'280px'}
-          height={'50'}
-          title={'Записаться на занятие'}
-          type={'submit'}
+          width={"280px"}
+          height={"50"}
+          title={"Записаться на занятие"}
+          type={"submit"}
           backgroundColor={color.bgButton}
           focus={color.formBorderActive}
           bgHover={color.bgButtonActive}
@@ -151,10 +156,17 @@ const MyForm = (props: MyFormProps) => {
 
         <div className="flex max-w-[280px] h-[32px]">
           <div className="mr-[10px]">
-            <CheckboxField control={control} name="checkBox" height="24px" width="24px" />
+            <CheckboxField
+              control={control}
+              name="checkBox"
+              height="24px"
+              width="24px"
+            />
           </div>
 
-          <p className=" font-poppins text-twelve">Даю согласие на обработку данных персональных</p>
+          <p className=" font-poppins text-twelve">
+            Даю согласие на обработку данных персональных
+          </p>
         </div>
         <div className={`${props.styleTop} absolute flex`}>
           {!!Object.keys(errors).length && (
@@ -163,7 +175,9 @@ const MyForm = (props: MyFormProps) => {
                 <MistakeIcon stroke="#E0474E" />
               </div>
 
-              <p className="font-poppins text-twelve text-red-mistake">Пожалуйста, проверьте введенные данные</p>
+              <p className="font-poppins text-twelve text-red-mistake">
+                Пожалуйста, проверьте введенные данные
+              </p>
             </div>
           )}
         </div>

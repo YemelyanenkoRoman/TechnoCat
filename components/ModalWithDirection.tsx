@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import PhoneIcon from '../public/icons/phone-24-px.svg';
-import CrossIcon from '../public/icons/cross-12-px.svg';
-import FormCall from './FormCall';
-import { useColor } from './ColorNavigation';
-import { usePathname } from 'next/navigation';
-import Loader from './loader/Loader';
-import Image from 'next/image';
-import Button from './buttons/Button';
-import FormDiscount from './FormDiscount';
-import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
+import { useState, useEffect } from "react";
+import PhoneIcon from "../public/icons/phone-24-px.svg";
+import CrossIcon from "../public/icons/cross-12-px.svg";
+import FormCall from "./FormCall";
+import { useColor } from "./ColorNavigation";
+import { usePathname } from "next/navigation";
+import Loader from "./loader/Loader";
+import Image from "next/image";
+import Button from "./buttons/Button";
+import FormDiscount from "./FormDiscount";
+import { useWindowWidth } from "@/utils/hooks/useWindowWidth";
 
 type ModalWithDirectionProps = {
   nameDirection?: string;
@@ -27,7 +27,6 @@ export default function ModalWithDirection(props: ModalWithDirectionProps) {
   const color = useColor();
   const pathname = usePathname();
   const width = useWindowWidth();
-  console.log(usePathname());
 
   useEffect(() => {
     if (isSent) {
@@ -52,8 +51,8 @@ export default function ModalWithDirection(props: ModalWithDirectionProps) {
       <div
         className="flex cursor-pointer "
         style={{
-          color: isHovered ? `${color.svgHover}` : '',
-          cursor: 'pointer',
+          color: isHovered ? `${color.svgHover}` : "",
+          cursor: "pointer",
         }}
         onClick={() => setIsOpen(true)}
         onMouseEnter={() => setIsHovered(true)}
@@ -61,10 +60,9 @@ export default function ModalWithDirection(props: ModalWithDirectionProps) {
       >
         {width >= 768 ? (
           <Button
-            title={'Записаться'}
-            type={onclick}
-            width={'159px'}
-            height={'50px'}
+            title={"Записаться"}
+            width={"159px"}
+            height={"50px"}
             backgroundColor={color.bgButton}
             bgHover={color.bgButtonActive}
             focus={color.bgButtonActive}
@@ -72,10 +70,9 @@ export default function ModalWithDirection(props: ModalWithDirectionProps) {
           />
         ) : (
           <Button
-            title={'Записаться'}
-            type={onclick}
-            width={'90vw'}
-            height={'50px'}
+            title={"Записаться"}
+            width={"90vw"}
+            height={"50px"}
             backgroundColor={color.bgButton}
             bgHover={color.bgButtonActive}
             focus={color.bgButtonActive}
@@ -93,14 +90,18 @@ export default function ModalWithDirection(props: ModalWithDirectionProps) {
             className={`
             
             ${
-              pathname === '/' || pathname === '/about' || pathname === '/contacts'
-                ? 'bg-[#EBF4FF]'
+              pathname === "/" ||
+              pathname === "/about" ||
+              pathname === "/contacts"
+                ? "bg-[#EBF4FF]"
                 : `${color.bgColor}`
             }
             
             ${
-              pathname === '/' || pathname === '/about' || pathname === '/contacts'
-                ? 'text-[#36568B]'
+              pathname === "/" ||
+              pathname === "/about" ||
+              pathname === "/contacts"
+                ? "text-[#36568B]"
                 : `${color.textColor}`
             } md:rounded-lg md:w-[510px] md:h-[586px] xs:w-screen xs:h-[calc(100vh-96px)] xs:rounded-none relative z-10 shadow-lg`}
           >
@@ -110,8 +111,12 @@ export default function ModalWithDirection(props: ModalWithDirectionProps) {
                   onClick={() => setErrorMessage(false)}
                   className="flex flex-col items-center justify-center cursor-pointer"
                 >
-                  <h2 className="font-gilroy text-3xl flex mb-4">Ошибка отправки формы</h2>
-                  <p className="font-gilroy text-3xl flex mb-4 ">отправить ещё раз</p>
+                  <h2 className="font-gilroy text-3xl flex mb-4">
+                    Ошибка отправки формы
+                  </h2>
+                  <p className="font-gilroy text-3xl flex mb-4 ">
+                    отправить ещё раз
+                  </p>
                 </div>
               </div>
             ) : (
@@ -128,7 +133,9 @@ export default function ModalWithDirection(props: ModalWithDirectionProps) {
             {isSent ? (
               <div className="m-[60px] flex items-center  flex-col">
                 <div className="w-[346px] flex flex-col ">
-                  <h3 className="font-gilroy text-3xl flex content-center justify-center">Спасибо</h3>
+                  <h3 className="font-gilroy text-3xl flex content-center justify-center">
+                    Спасибо
+                  </h3>
                   <p className="font-poppins text-fourteen mt-[15px]  text-center">
                     Мы свяжемся с вами в ближайшее время
                   </p>
@@ -145,10 +152,12 @@ export default function ModalWithDirection(props: ModalWithDirectionProps) {
             ) : (
               <div className="m-[60px] flex items-center justify-center flex-col">
                 <div className="w-[346px] flex flex-col ">
-                  <h3 className="font-gilroy text-3xl flex justify-center">Запись на занятие</h3>
+                  <h3 className="font-gilroy text-3xl flex justify-center">
+                    Запись на занятие
+                  </h3>
                   <p className="font-poppins text-fourteen mt-[15px]  text-center">
-                    Заполните форму и наши специалисты свяжутся с вами для согласования времени и даты занятия в течение
-                    рабочего дня.
+                    Заполните форму и наши специалисты свяжутся с вами для
+                    согласования времени и даты занятия в течение рабочего дня.
                   </p>
                 </div>
                 <div className="flex mt-10 relative ">
@@ -176,7 +185,7 @@ export default function ModalWithDirection(props: ModalWithDirectionProps) {
                 <CrossIcon className={`stroke-current ${color.hoverColor}`} />
               </div>
             ) : (
-              ''
+              ""
             )}
           </div>
         </div>

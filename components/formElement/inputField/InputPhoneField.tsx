@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { Control, Controller } from 'react-hook-form';
-import 'react-phone-number-input/style.css';
-import InputPhone from '@/components/input/InputPhone';
+import { Control, Controller } from "react-hook-form";
+import "react-phone-number-input/style.css";
+import InputPhone from "@/components/input/InputPhone";
 
-import Input from '../../input/Input';
-import { Mistake } from './Mistake';
-import PhoneInput from '@/components/input/InputPhone';
-import { useColor } from '@/components/ColorNavigation';
+import Input from "../../input/Input";
+import { Mistake } from "./Mistake";
+import PhoneInput from "@/components/input/InputPhone";
+import { useColor } from "@/components/ColorNavigation";
 
 type InputProps = {
   control: any;
@@ -32,15 +32,15 @@ const InputPhoneField = (props: InputProps) => {
         control={props.control}
         defaultValue={props.defaultValue}
         render={({ field, fieldState }) => {
-          // console.log(fieldState.error, 'star wars');
-
           return (
             <div className="flex items-center">
               {fieldState.error && <Mistake error={fieldState.error} />}
 
               <PhoneInput
                 focus={color.formBorderActive}
-                borderColor={fieldState.error ? 'border-[#E0474E]' : `${color.formBorder}`}
+                borderColor={
+                  fieldState.error ? "border-[#E0474E]" : `${color.formBorder}`
+                }
                 width={props.width}
                 height={props.height}
                 placeholder={props.placeholder}

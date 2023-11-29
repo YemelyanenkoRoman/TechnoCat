@@ -3,7 +3,7 @@ export type PropsButton = {
   height: string;
   backgroundColor: string;
   title: string;
-  type: any;
+  type?: "submit" | "reset" | "button" | undefined;
   bgHover: string;
   focus: string;
   textColor?: string;
