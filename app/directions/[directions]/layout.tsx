@@ -7,7 +7,7 @@ type Props = {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata // parent: Promise<Metadata>
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const data = DirectionsContent.find((item) => item.id === params.directions);
 
