@@ -6,16 +6,16 @@ type Props = {
   params: { directions: string };
 };
 
-export async function generateMetadata({ params }: Props, parent: Promise<Metadata>): Promise<Metadata> {
-  const data = DirectionsContent.find((item) => item.id === params.directions);
+// export async function generateMetadata({ params }: Props, parent: Promise<Metadata>): Promise<Metadata> {
+//   const data = DirectionsContent.find((item) => item.id === params.directions);
 
-  return getMetadata(
-    {
-      title: data?.block1.mainTitle,
-    },
-    await parent
-  );
-}
+//   return getMetadata(
+//     {
+//       title: data?.block1.mainTitle,
+//     },
+//     await parent
+//   );
+// }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
