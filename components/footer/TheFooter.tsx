@@ -1,12 +1,8 @@
 'use client';
-
 import Image from 'next/image';
-
-import { v4 as uuidv4 } from 'uuid';
 import { NavItems } from '../TheHeader';
 import Navigation from '../MainNavigation';
 import Link from 'next/link';
-
 import AcademicCap from '@/public/icons/academic-cap-24-px.svg';
 import Book from '@/public/icons/book-24-px.svg';
 import Location from '@/public/icons/location-pin-24-px.svg';
@@ -45,13 +41,13 @@ const TheFooter = () => {
                   iconSvg={<AcademicCap stroke={color.svgStroke} />}
                   title={'Мы научим'}
                   startIndex={0}
-                  endIndex={4}
+                  endIndex={3}
                 />
                 <FooterNavBlock
                   iconSvg={<Book stroke={color.svgStroke} />}
                   title={'Мы поможем'}
-                  startIndex={4}
-                  endIndex={5}
+                  startIndex={3}
+                  endIndex={4}
                 />
               </div>
             </div>

@@ -16,18 +16,23 @@ export const SliderCenterMode = () => {
           className: 'center',
           centerMode: true,
           infinite: true,
-          centerPadding: '220px',
-          slidesToShow: 3,
-          swipeToSlide: true,
-          autoplay: true,
-          autoplaySpeed: 3000,
+          centerPadding: '60px',
+          slidesToShow: 4,
         }
       : width >= 1024
       ? {
           className: 'center',
+          infinite: true,
+          centerPadding: '40px',
+          slidesToShow: 3,
+          swipeToSlide: true,
+        }
+      : width >= 768
+      ? {
+          className: 'center',
           centerMode: true,
           infinite: true,
-          centerPadding: '150px',
+          centerPadding: '60px',
           slidesToShow: 2,
           swipeToSlide: true,
           autoplay: true,

@@ -14,9 +14,9 @@ type FooterProps = {
 const linkLabels: { [key: string]: string } = {
   '/directions/programming': 'Программированию',
   '/directions/robotics': 'Робототехнике',
-  '/directions/english': 'Английскому языку',
   '/directions/painting': 'Рисованию',
   '/directions/preparingforschool': 'Подготовим к школе',
+  // '/directions/english': 'Английскому языку',
   // '/directions/firstgradestudent': 'Поможем первокласснику',
 };
 

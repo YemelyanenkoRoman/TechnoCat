@@ -23,6 +23,33 @@ interface DirectionCardData {
 
 export const DirectionCardData: DirectionCardData[] = [
   {
+    id: 'programming',
+
+    img: (
+      <Image
+        src="/DirectionCardImg/DirectionCard6.svg"
+        alt="Ребёнок изучает программирование."
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
+    ),
+    bgColorImg: 'bg-[#724DA1]',
+    bgColorCard: 'bg-fill-violet',
+    colorText: 'text-hover-violet',
+
+    buttonBorder: 'border-button-violet',
+    buttonBorderActive: 'focus:border-button-violet',
+    buttonBorderHover: 'hover:border-hover-violet',
+
+    title: 'Программирование',
+    age: 5,
+    duration: 60,
+    cost: 80,
+    quantity: '1 месяц',
+  },
+  {
     id: 'preparingforschool',
 
     img: (
@@ -75,32 +102,32 @@ export const DirectionCardData: DirectionCardData[] = [
     cost: 80,
     quantity: '1 месяц',
   },
-  {
-    id: 'english',
-    img: (
-      <Image
-        src="/DirectionCardImg/DirectionCard3.svg"
-        alt="Люди свободно общаются на английском языке."
-        width={0}
-        height={0}
-        sizes="100vw"
-        className="w-full h-auto"
-      />
-    ),
-    bgColorImg: 'bg-[#EAD46F]',
-    bgColorCard: 'bg-fill-yelow',
-    colorText: 'text-hover-yellow',
+  // {
+  //   id: 'english',
+  //   img: (
+  //     <Image
+  //       src="/DirectionCardImg/DirectionCard3.svg"
+  //       alt="Люди свободно общаются на английском языке."
+  //       width={0}
+  //       height={0}
+  //       sizes="100vw"
+  //       className="w-full h-auto"
+  //     />
+  //   ),
+  //   bgColorImg: 'bg-[#EAD46F]',
+  //   bgColorCard: 'bg-fill-yelow',
+  //   colorText: 'text-hover-yellow',
 
-    buttonBorder: 'border-button-yellow',
-    buttonBorderActive: 'focus:border-hover-yellow',
-    buttonBorderHover: 'hover:border-hover-yellow',
+  //   buttonBorder: 'border-button-yellow',
+  //   buttonBorderActive: 'focus:border-hover-yellow',
+  //   buttonBorderHover: 'hover:border-hover-yellow',
 
-    title: 'Английский язык',
-    age: 5,
-    duration: 60,
-    cost: 80,
-    quantity: '1 месяц',
-  },
+  //   title: 'Английский язык',
+  //   age: 5,
+  //   duration: 60,
+  //   cost: 80,
+  //   quantity: '1 месяц',
+  // },
   // {
   //   id: 'firstgradestudent',
   //   img: (
