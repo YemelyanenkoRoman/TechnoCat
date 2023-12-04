@@ -50,7 +50,7 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
   return (
     <>
       <div
-        className="flex cursor-pointer "
+        className="flex cursor-pointer xs:pt-[4px] md:pt-0"
         style={{
           color: isHovered ? `${svgHover}` : '',
           cursor: 'pointer',
@@ -61,7 +61,7 @@ export default function Modal({ svgHover, svgStroke, bgColor, hoverColor, textCo
       >
         <PhoneIcon
           stroke={svgStroke}
-          className="mr-2"
+          className="xs:mr-4 md:mr-2 xs:w-8 xs:h-8 md:w-6 md:h-6"
           style={{
             color: isHovered ? `${svgHover}` : 'rgba(0,0,0, 0)',
           }}

@@ -59,7 +59,10 @@ const Contacts = () => {
                   {/* TODO: Pass colors  */}
                   <div className="text-fill-blue md:block xs:flex xs:flex-row">
                     <Modal svgHover={'#4B76BC'} svgStroke={'#36568B'} bgColor={''} hoverColor={''} textColor={''} />
-                    <Link className="text-fill-blue md:hidden xs:block" href="tel:+375291477233">
+                    <Link
+                      className="text-fill-blue md:hidden xs:block md:text-base xs:text-[22px] xs:pt-1 md:pt-0"
+                      href="tel:+375291477233"
+                    >
                       + 375 (29) 330-20-79
                     </Link>
                   </div>

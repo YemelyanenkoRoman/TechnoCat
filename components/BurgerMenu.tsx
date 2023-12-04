@@ -29,25 +29,25 @@ const BurgerMenu: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-6">
+    <div className="w-8">
       {/* Menu button */}
       <button className={`${color.textColor} block focus:outline-none`} onClick={handleClick}>
         {/* Animated burger icon */}
         <span
           aria-hidden={true}
-          className={`block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ${
-            isOpen ? 'rotate-45' : '-translate-y-1.5'
+          className={`block absolute h-[3px] w-8 bg-current transform transition duration-500 ease-in-out rounded-md ${
+            isOpen ? 'rotate-45' : '-translate-y-3'
           }`}
         ></span>
         <span
           aria-hidden={true}
-          className={`block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ${
-            isOpen ? '-rotate-45' : 'translate-y-1.5'
+          className={`block absolute h-[3px] w-8 bg-current transform transition duration-500 ease-in-out rounded-md ${
+            isOpen ? '-rotate-45' : 'translate-y-3'
           }`}
         ></span>
         <span
           aria-hidden={true}
-          className={`block absolute h-0.5 w-5 bg-current ${
+          className={`block absolute h-[3px] w-8 bg-current rounded-md ${
             isOpen ? 'opacity-0' : ''
           } transition duration-500 ease-in-out`}
         ></span>
