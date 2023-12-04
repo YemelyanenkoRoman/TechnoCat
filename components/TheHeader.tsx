@@ -29,9 +29,20 @@ const TheHeader = () => {
           <div className="flex items-center">
             <div className=" xl:mr-[201px] md:mr-[177px]">
               <Link href="/">
-                <div className="md:w-[135px] md:h-[47px]   xs:w-[106px] xs:h-[37px]">
+                <div className="xs:hidden md:block md:w-[135px] md:h-[47px]">
                   <Image
                     src="/logo/technocat-logo-max 1.svg"
+                    alt="Главный логотип образовательного центра ТехноКот"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-full h-auto"
+                  />
+                </div>
+
+                <div className="xs:block md:hidden xs:w-[120px]">
+                  <Image
+                    src="/logo/technocat-logo-min.png"
                     alt="Главный логотип образовательного центра ТехноКот"
                     width={0}
                     height={0}
