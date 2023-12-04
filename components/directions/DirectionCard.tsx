@@ -55,7 +55,7 @@ export const DirectionCardData: DirectionCardData[] = [
     img: (
       <Image
         src="/DirectionCardImg/DirectionCard1.svg"
-        alt="Ребёнок изучает программирование."
+        alt="Подготовка к школе."
         width={0}
         height={0}
         sizes="100vw"
@@ -102,32 +102,32 @@ export const DirectionCardData: DirectionCardData[] = [
     cost: 80,
     quantity: '1 месяц',
   },
-  // {
-  //   id: 'english',
-  //   img: (
-  //     <Image
-  //       src="/DirectionCardImg/DirectionCard3.svg"
-  //       alt="Люди свободно общаются на английском языке."
-  //       width={0}
-  //       height={0}
-  //       sizes="100vw"
-  //       className="w-full h-auto"
-  //     />
-  //   ),
-  //   bgColorImg: 'bg-[#EAD46F]',
-  //   bgColorCard: 'bg-fill-yelow',
-  //   colorText: 'text-hover-yellow',
+  {
+    id: 'mentalarithmetic',
+    img: (
+      <Image
+        src="/DirectionCardImg/DirectionCard7.svg"
+        alt="Ментальная арифметика."
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
+    ),
+    bgColorImg: 'bg-[#EAD46F]',
+    bgColorCard: 'bg-fill-yelow',
+    colorText: 'text-hover-yellow',
 
-  //   buttonBorder: 'border-button-yellow',
-  //   buttonBorderActive: 'focus:border-hover-yellow',
-  //   buttonBorderHover: 'hover:border-hover-yellow',
+    buttonBorder: 'border-button-yellow',
+    buttonBorderActive: 'focus:border-hover-yellow',
+    buttonBorderHover: 'hover:border-hover-yellow',
 
-  //   title: 'Английский язык',
-  //   age: 5,
-  //   duration: 60,
-  //   cost: 80,
-  //   quantity: '1 месяц',
-  // },
+    title: 'Ментальная арифметика',
+    age: 5,
+    duration: 60,
+    cost: 80,
+    quantity: '1 месяц',
+  },
   // {
   //   id: 'firstgradestudent',
   //   img: (

@@ -53,7 +53,7 @@ module.exports = {
         'hover-brown': '#99564C',
         'd-brown': '#FFE9E6',
         'button-brown': '#D67768',
-        // english
+        // mentalarithmetic
         'fill-yelow': '#FCF1BE',
         'text-yellow': '#B0A36A',
         'hover-yellow': '#C3A411',

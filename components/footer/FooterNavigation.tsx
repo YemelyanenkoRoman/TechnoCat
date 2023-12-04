@@ -16,7 +16,7 @@ const linkLabels: { [key: string]: string } = {
   '/directions/robotics': 'Робототехнике',
   '/directions/painting': 'Рисованию',
   '/directions/preparingforschool': 'Подготовим к школе',
-  // '/directions/english': 'Английскому языку',
+  '/directions/mentalarithmetic': 'C ментальной арифметикой',
   // '/directions/firstgradestudent': 'Поможем первокласснику',
 };
 

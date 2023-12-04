@@ -101,7 +101,7 @@ export const colorNavObj: colorNavObj = {
     option: 'hover:bg-hover-cyan',
     selectedOption: 'bg-fill-cyan',
   },
-  '/directions/english': {
+  '/directions/mentalarithmetic': {
     bgColor: 'bg-fill-yelow',
     bgButton: 'bg-button-yellow',
     bgButtonActive: 'hover:bg-hover-yellow',
