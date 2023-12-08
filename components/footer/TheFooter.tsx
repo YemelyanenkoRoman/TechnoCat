@@ -26,7 +26,7 @@ const TheFooter = () => {
               <div className=" max-h-[109px] flex flex-col max-w-[100px]    xl:mr-[125px] md:mr-[95px]">
                 <Link href="/">
                   <Image
-                    src="/logo/technocat-logo-min.svg"
+                    src="/logo/technocat-logo-max 1.svg"
                     alt="Логотип образовательного центра ТехноКот"
                     width={100}
                     height={35}

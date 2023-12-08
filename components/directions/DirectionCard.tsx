@@ -46,8 +46,8 @@ export const DirectionCardData: DirectionCardData[] = [
     title: 'Программирование',
     age: 5,
     duration: 60,
-    cost: 80,
-    quantity: '1 месяц',
+    cost: 95,
+    quantity: 'за 1 месяц',
   },
   {
     id: 'preparingforschool',
@@ -71,10 +71,10 @@ export const DirectionCardData: DirectionCardData[] = [
     buttonBorderHover: 'hover:border-hover-brown',
 
     title: 'Подготовка к школе',
-    age: 4.5,
+    age: 5,
     duration: 60,
-    cost: 80,
-    quantity: '1 месяц',
+    cost: 85,
+    quantity: 'за 1 месяц',
   },
   {
     id: 'robotics',
@@ -99,8 +99,8 @@ export const DirectionCardData: DirectionCardData[] = [
     title: 'Робототехника',
     age: 5,
     duration: 60,
-    cost: 80,
-    quantity: '1 месяц',
+    cost: 85,
+    quantity: 'за 1 месяц',
   },
   {
     id: 'mentalarithmetic',
@@ -125,8 +125,8 @@ export const DirectionCardData: DirectionCardData[] = [
     title: 'Ментальная арифметика',
     age: 5,
     duration: 60,
-    cost: 80,
-    quantity: '1 месяц',
+    cost: 75,
+    quantity: 'за 1 месяц',
   },
   // {
   //   id: 'firstgradestudent',
@@ -178,8 +178,8 @@ export const DirectionCardData: DirectionCardData[] = [
     title: 'Рисвание',
     age: 5,
     duration: 60,
-    cost: 80,
-    quantity: '1 месяц',
+    cost: 85,
+    quantity: 'за 1 месяц',
   },
 ];
 
