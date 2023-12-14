@@ -18,7 +18,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
   const color = useColor();
 
   return (
-    <main className="overflow-x-hidden">
+    <div className="overflow-x-hidden">
       <div className="font-gilroy font-normal text-gray-text   mx-auto mt-[107px]  xl:text-sexteen md:text-fourteen max-w-[1440px]">
         <div className="xl:mx-[60px] md:mx-[30px] xs:mx-[16px]">
           <section>
@@ -273,7 +273,7 @@ const Directions = ({ params }: { params: { directions: string } }) => {
           <div>User not found</div>
         )}
       </>
-    </main>
+    </div>
   );
 };
 

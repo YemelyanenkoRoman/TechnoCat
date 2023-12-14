@@ -15,7 +15,7 @@ export default function Home() {
   const [reveal, setReveal] = useState(false);
   const width = useWindowWidth();
   return (
-    <main className="font-gilroy font-normal  text-sexteen  md:pt-[107px] xs:pt-[97px] overflow-x-hidden">
+    <div className="font-gilroy font-normal  text-sexteen  md:pt-[107px] xs:pt-[97px] overflow-x-hidden">
       {width >= 768 ? (
         <section className="md:h-[calc(100vh-107px)] text-text-lightblue bg-fill-blue flex justify-between">
           <div className=" pt-[100px] pb-[160px]  mx-auto flex justify-between  items-center    xl:px-[120px] xl:max-w-[1440px]   md:px-[30px] md:max-w-[1024px] ">
@@ -167,6 +167,6 @@ export default function Home() {
           <Discount />
         </section>
       </div>
-    </main>
+    </div>
   );
 }
