@@ -48,6 +48,7 @@ export default function Home() {
                 width={0}
                 height={0}
                 sizes="100vw"
+                priority={true}
                 className="w-full h-auto"
                 onError={() => setReveal(false)}
                 onLoad={() => setReveal(false)}
@@ -78,6 +79,7 @@ export default function Home() {
                   width={0}
                   height={0}
                   sizes="100vw"
+                  priority={true}
                   className="w-full h-auto"
                   onError={() => setReveal(false)}
                   onLoad={() => setReveal(false)}
