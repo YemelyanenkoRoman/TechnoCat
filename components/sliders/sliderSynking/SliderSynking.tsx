@@ -70,7 +70,7 @@ export const AsNavFor = () => {
           })}
         </Slider>
       </div>
-      <div className="w-[810px]">
+      <div className="w-[810px] absolute">
         <Slider
           {...settings}
           asNavFor={nav1}
