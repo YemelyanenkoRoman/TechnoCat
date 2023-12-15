@@ -183,7 +183,7 @@ const About = () => {
           </h3>
         </section>
 
-        <section className="md:mt-[70px] xs:mt-[50px] md:mb-[190px] xs:mb-[170px] xl:mx-[60px] md:mx-[30px]">
+        <section className="md:mt-[70px] xs:mt-[50px] md:mb-[110px] xs:mb-[70px] xl:mx-[60px] md:mx-[30px]">
           <div>
             <AsNavFor />
           </div>
