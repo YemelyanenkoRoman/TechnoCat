@@ -58,65 +58,59 @@ export default function Home() {
           </div>
         </section>
       ) : (
-        <section className="bg-fill-blue">
-          <div className="h-[calc(100vh-97px)] pt-[30px] text-text-lightblue flex ">
-            <div className=" s:mb-[30px] md:mb-0  mx-[16px] flex justify-around flex-col ">
-              <div>
-                <h1 className=" font-normal text-twentyfive">
-                  ТехноКот — место, где ваш ребенок реализует свои мечты и цели!
-                </h1>
-
-                <div className="text-fourteen font-poppins mt-[20px]">
-                  Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и
-                  подарят незабываемые впечатления от увлекательных занятий.
-                </div>
+        <section className="bg-fill-blue pt-[30px]">
+          {/* <div className="h-[calc(100vh-97px)] pt-[30px] text-text-lightblue flex "> */}
+          <div className="  text-text-lightblue flex ">
+            <div className="mx-[16px] flex flex-col ">
+              <h1 className=" font-normal font-gilroy text-[34px] leading-10">
+                ТехноКот — место, где ваш ребенок реализует свои мечты и цели!
+              </h1>
+              <div className="text-seexteen font-gilroy mt-[30px] mb-[40px] leading-[23px]">
+                Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и подарят
+                незабываемые впечатления от увлекательных занятий.
               </div>
 
-              <div>
-                <Image
-                  src="/homePage/main-page-h1.svg"
-                  alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  priority={true}
-                  className="w-full h-auto"
-                  onError={() => setReveal(false)}
-                  onLoad={() => setReveal(false)}
-                  onLoadingComplete={() => setReveal(true)}
-                />
-              </div>
+              <Image
+                src="/homePage/main-page-h1.svg"
+                alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
+                width={0}
+                height={0}
+                sizes="100vw"
+                priority={true}
+                className="w-full h-auto"
+                onError={() => setReveal(false)}
+                onLoad={() => setReveal(false)}
+                onLoadingComplete={() => setReveal(true)}
+              />
             </div>
           </div>
 
-          <div className="">
-            <div className="mx-[16px] pb-[70px]">
-              <Link href={'/about'} className="">
-                {width >= 768 ? (
-                  <Button
-                    width="185px"
-                    height="50px"
-                    title="Узнать больше"
-                    type="button"
-                    backgroundColor="bg-text-lightblue"
-                    bgHover={'hover:bg-d-blue'}
-                    focus={'hover:text-text-lightblue'}
-                    textColor="text-fill-blue"
-                  />
-                ) : (
-                  <Button
-                    width="100%"
-                    height="50px"
-                    title="Узнать больше"
-                    type="button"
-                    backgroundColor="bg-text-lightblue"
-                    bgHover={'hover:bg-d-blue'}
-                    focus={'hover:text-text-lightblue'}
-                    textColor="text-fill-blue"
-                  />
-                )}
-              </Link>
-            </div>
+          <div className="mx-[16px] pb-[70px] mt-[40px]">
+            <Link href={'/about'} className="">
+              {width >= 768 ? (
+                <Button
+                  width="185px"
+                  height="50px"
+                  title="Узнать больше"
+                  type="button"
+                  backgroundColor="bg-text-lightblue"
+                  bgHover={'hover:bg-d-blue'}
+                  focus={'hover:text-text-lightblue'}
+                  textColor="text-fill-blue"
+                />
+              ) : (
+                <Button
+                  width="100%"
+                  height="50px"
+                  title="Узнать больше"
+                  type="button"
+                  backgroundColor="bg-text-lightblue"
+                  bgHover={'hover:bg-d-blue'}
+                  focus={'hover:text-text-lightblue'}
+                  textColor="text-fill-blue"
+                />
+              )}
+            </Link>
           </div>
         </section>
       )}

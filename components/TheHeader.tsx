@@ -39,9 +39,9 @@ const TheHeader = () => {
                   />
                 </div>
 
-                <div className="xs:block md:hidden xs:w-[120px]">
+                <div className="xs:block md:hidden ">
                   <Image
-                    src="/logo/technocat-logo-min.png"
+                    src="/logo/technoCatLogoMin.svg"
                     alt="Главный логотип образовательного центра ТехноКот"
                     width={0}
                     height={0}
