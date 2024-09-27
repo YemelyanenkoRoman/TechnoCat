@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import Button from "@/components/buttons/Button";
-import Image from "next/image";
-import WhatFindCenter from "@/components/WhatFindCenter";
-import Discount from "@/components/Discount";
-import OftenQuestions from "@/components/OftenQuestions";
-import Link from "next/link";
-import { SliderCenterMode } from "@/components/sliders";
-import { useState } from "react";
-import Loader from "@/components/loader/Loader";
-import { useWindowWidth } from "@/utils/hooks/useWindowWidth";
+import Button from '@/components/buttons/Button';
+import Image from 'next/image';
+import WhatFindCenter from '@/components/WhatFindCenter';
+import Discount from '@/components/Discount';
+import OftenQuestions from '@/components/OftenQuestions';
+import Link from 'next/link';
+import { SliderCenterMode } from '@/components/sliders';
+import { useState } from 'react';
+import Loader from '@/components/loader/Loader';
+import { useWindowWidth } from '@/utils/hooks/useWindowWidth';
 
 export default function Home() {
   const [reveal, setReveal] = useState(false);
@@ -24,51 +24,31 @@ export default function Home() {
                 ТехноКот — место, где ваш ребенок реализует свои мечты и цели!
               </h1>
               <h2 className="text-sexteen font-poppins pt-10 pb-[60px]">
-                Наши квалифицированные преподаватели помогут получить вашему
-                ребенку качественное образование и подарят незабываемые
-                впечатления от увлекательных занятий!
+                Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и подарят
+                незабываемые впечатления от увлекательных занятий!
               </h2>
-              <Link href={"/about"}>
+              <Link href={'/about'}>
                 <Button
                   width="185px"
                   height="50px"
                   title="Узнать больше"
                   type="button"
                   backgroundColor="bg-text-lightblue"
-                  bgHover={"hover:bg-d-blue"}
-                  focus={"hover:text-text-lightblue"}
+                  bgHover={'hover:bg-d-blue'}
+                  focus={'hover:text-text-lightblue'}
                   textColor="text-fill-blue"
                 />
               </Link>
             </div>
 
             <div className={`w-[465px] h-[465px]`}>
-              {/* {reveal === false ? (
-                <div className="block relative">
-                  <div className="z-10 absolute flex items-center justify-center   w-[465px] h-[465px]">
-                    <Loader />
-                  </div>
-                </div>
-              ) : (
-                <Image
-                  src="/homePage/main-page-h1.svg"
-                  alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="w-full h-auto"
-                  onError={() => setReveal(false)}
-                  onLoad={() => setReveal(false)}
-                  onLoadingComplete={() => setReveal(true)}
-                />
-              )} */}
-
               <Image
                 src="/homePage/main-page-h1.svg"
                 alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
                 width={0}
                 height={0}
                 sizes="100vw"
+                priority={true}
                 className="w-full h-auto"
                 onError={() => setReveal(false)}
                 onLoad={() => setReveal(false)}
@@ -78,72 +58,66 @@ export default function Home() {
           </div>
         </section>
       ) : (
-        <section className="h-[calc(100vh-97px)] pt-[30px] text-text-lightblue bg-fill-blue flex ">
-          <div className=" s:mb-[30px] md:mb-0  mx-[16px] flex justify-around flex-col ">
-            <div>
-              <h1 className=" font-normal text-twentyfive">
+        <section className="bg-fill-blue pt-[30px]">
+          {/* <div className="h-[calc(100vh-97px)] pt-[30px] text-text-lightblue flex "> */}
+          <div className="  text-text-lightblue flex ">
+            <div className="mx-[16px] flex flex-col ">
+              <h1 className=" font-normal font-gilroy text-[34px] leading-10">
                 ТехноКот — место, где ваш ребенок реализует свои мечты и цели!
               </h1>
+              <div className="text-seexteen font-gilroy mt-[30px] mb-[40px] leading-[23px]">
+                Наши квалифицированные преподаватели помогут получить вашему ребенку качественное образование и подарят
+                незабываемые впечатления от увлекательных занятий.
+              </div>
 
-              {width >= 376 && (
-                <h2 className="text-sexteen font-poppins mt-[20px]">
-                  Наши квалифицированные преподаватели помогут получить вашему
-                  ребенку качественное образование и подарят незабываемые
-                  впечатления от увлекательных занятий.
-                </h2>
-              )}
-            </div>
-
-            <div className="">
               <Image
                 src="/homePage/main-page-h1.svg"
                 alt="Учитель, преподаватель по программированию, робототехнике, рисованию, подготовке к школе обьясняет детям, ученикам информацию."
                 width={0}
                 height={0}
                 sizes="100vw"
+                priority={true}
                 className="w-full h-auto"
                 onError={() => setReveal(false)}
                 onLoad={() => setReveal(false)}
                 onLoadingComplete={() => setReveal(true)}
               />
             </div>
+          </div>
 
-            <div>
-              <Link href={"/about"} className="">
-                {width >= 768 ? (
-                  <Button
-                    width="185px"
-                    height="50px"
-                    title="Узнать больше"
-                    type="button"
-                    backgroundColor="bg-text-lightblue"
-                    bgHover={"hover:bg-d-blue"}
-                    focus={"hover:text-text-lightblue"}
-                    textColor="text-fill-blue"
-                  />
-                ) : (
-                  <Button
-                    width="100%"
-                    height="50px"
-                    title="Узнать больше"
-                    type="button"
-                    backgroundColor="bg-text-lightblue"
-                    bgHover={"hover:bg-d-blue"}
-                    focus={"hover:text-text-lightblue"}
-                    textColor="text-fill-blue"
-                  />
-                )}
-              </Link>
-            </div>
+          <div className="mx-[16px] pb-[70px] mt-[40px]">
+            <Link href={'/about'} className="">
+              {width >= 768 ? (
+                <Button
+                  width="185px"
+                  height="50px"
+                  title="Узнать больше"
+                  type="button"
+                  backgroundColor="bg-text-lightblue"
+                  bgHover={'hover:bg-d-blue'}
+                  focus={'hover:text-text-lightblue'}
+                  textColor="text-fill-blue"
+                />
+              ) : (
+                <Button
+                  width="100%"
+                  height="50px"
+                  title="Узнать больше"
+                  type="button"
+                  backgroundColor="bg-text-lightblue"
+                  bgHover={'hover:bg-d-blue'}
+                  focus={'hover:text-text-lightblue'}
+                  textColor="text-fill-blue"
+                />
+              )}
+            </Link>
           </div>
         </section>
       )}
 
       <div className="text-blue-dark">
         <section className="m-auto  xs:pt-[80px] xs:px-4  xl:px-[120px] md:pt-[120px] md:px-[30px]">
-          <h2 className="md:text-forty xs:text-twentyfive text-center">
-            Что вы найдете в нашем центре?
-          </h2>
+          <h2 className="md:text-forty xs:text-twentyfive text-center">Что вы найдете в нашем центре?</h2>
           <WhatFindCenter />
         </section>
 
